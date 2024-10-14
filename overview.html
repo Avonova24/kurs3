@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kursintroduktion: Implementering av Ny Regelstruktur</title>
+	<link rel="stylesheet" href="styles.css">
+    <style>
+
+        .flexbox {
+            display: flex;
+            padding: 0 25px;
+        }
+
+        .column1 {
+            flex: 1;
+            margin-right: 30px;
+        }
+
+        .column2 {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        ul li {
+            margin: 15px 0 5px 0;
+            font-size: 18px;
+            line-height: 25px;
+        }
+
+        ul li:first-child {
+            margin-top: 0;
+        }
+
+        ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .bulletlevel2 {
+            margin-left: 0;
+            margin-top: 0;
+        }
+
+        .bulletlevel2 li {
+            margin-bottom: 30px;
+            background-image: none;
+            font-size: 15px;
+        }
+        
+    </style>
+</head>
+	
+<body>
+    <div class="container">
+		<div class="avonova-logo">
+            <img src="images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+       	</div>
+            <h1>Kursens delar</h1>
+            <p>Kursen består av en kursintroduktion samt 7 moduler, som var och en innehåller flera 
+            lektioner. Efter att du har genomfört en lektion, klickar du på knappen <b>fortsätt</b> 
+            längst ner på sidan för att gå vidare till nästa lektion. Du kan gå tillbaka genom att 
+            klicka på vänstra pilen i din webbläsare.</p>
+
+            <p>Lektioner och moduler varvas med ett quiz där du kan testa dina kunskaper. För att kunna påbörja nästa modul 
+            behöver du ha slutfört den föregående modulen.</p> 
+           
+        <div class="flexbox">
+            <div class="column1">
+                <ul>
+                    <li><strong>Kursintroduktion</strong></li> 
+                        <ul class="bulletlevel2">
+                            <li>Mål och kursöversikt</li>
+                        </ul>
+    
+                    <li><strong>Modul 1</strong></li> 
+                        <ul class="bulletlevel2">
+                            <li>Bakgrund till regelverket</li>
+                        </ul>
+                    
+                    <li><strong>Modul 2</strong></li>
+                        <ul class="bulletlevel2">
+                            <li>Den nya regelstrukturen</li>
+                        </ul>
+                        
+                    <li><strong>Modul 3</strong></li>
+                        <ul class="bulletlevel2">
+                            <li>Roller och ansvar i byggprojekt</li>
+                        </ul>
+                </ul>
+            </div>
+            <div class="column2">
+                <ul>
+                    <li><strong>Modul 4</strong></li>
+                        <ul class="bulletlevel2">
+                            <li>Specifika roller och ansvarsområden enligt AFS 2023:3</li>
+                        </ul>
+            
+                    <li><strong>Modul 5</strong></li>
+                        <ul class="bulletlevel2">
+                            <li>Projektering och arbetsmiljö</li>
+                        </ul>
+                    <li><Strong>Modul 6</Strong></li>
+                        <ul class="bulletlevel2">
+                            <li>Tillämpning av nya föreskrifter och säkerhet</li>
+                        </ul>
+
+                    <li><strong>Modul 7</strong></li>
+                        <ul class="bulletlevel2">
+                            <li>Förberedelser inför 2025</li>
+                        </ul>
+                </ul>
+            </div>
+        </div>
+
+</body>
+</html>

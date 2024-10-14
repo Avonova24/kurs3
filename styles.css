@@ -1,0 +1,163 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	padding: 5vh 1vw;
+	
+	background-color: #fdf2e9;
+	font-family: Arial, sans-serif;
+	color: #00211B;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+}
+
+.container {
+	min-width: 90%;
+	max-width: 90%;
+	padding: 5% 10%;
+
+	background-color: #fdf2e9;
+	border-radius: 8px;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+	
+	box-sizing: border-box;
+}
+
+ .avonova-logo {
+	 display: block;
+	 margin-bottom: -10px;
+}
+
+/*TEXTELEMENT*/
+
+h1, h2, h3 {
+	color: #005646;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.5em;
+
+}
+
+h3 { 
+	font-size: 1em;
+}
+
+
+
+p {
+	line-height: 1.5;
+	font-size: 18px;
+}
+
+.green {
+	color: #005646;
+}
+
+/*PUNKTLISTOR*/
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+ul li {
+	display: flex;
+	align-items: center;
+
+	font-size: 18px;
+	
+	margin-bottom: 10px;
+	padding-left: 30px; 
+	
+	background-image: url("images/bullet.png"); 
+	background-repeat: no-repeat;
+	background-size: 10px 10px;
+	background-position: 0 center;
+}
+
+.bulletlevel2 {
+	margin-top: 15px;
+	margin-left: 35px;
+	
+}
+
+
+.bulletlevel2 li {
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	background-image: url("images/arrow.png");
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: 0 center;
+	padding-left: 30px; /* Justera för att göra plats för ikonen */
+	color: #333;
+	font-size: 17px;
+}
+
+/*BLOCKCITAT*/	
+
+blockquote {
+	position: relative;
+    padding: 20px 0 10px 50px; /* Utrymme för ikonen */
+    margin: 15px 0 15px 20px;
+    
+	font-size: 17px;
+    font-style: italic;
+    
+    border-left: 5px solid #ff6c62;
+    color: #333;
+    line-height: 1.6;
+}
+
+.quote-icon {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 20px;
+    color: #005646;
+}
+
+
+
+/*FORTSÄTTNINGSKNAPP*/	
+		
+.button-link {
+	display: inline-block;
+	
+	background-color: #00211b;
+	padding: 13px 40px;
+	
+	color: #aff0e5;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	
+	text-align: center;
+	
+	border: 2px solid #00211b;
+	border-radius: 40px;
+	
+	cursor: pointer;
+	transition: background-color 0.3s ease;	
+
+			
+}
+
+.button-link:hover {
+	background-color: #aff0e5;
+	color: #00211b;
+	border: 2px solid #00211b; 
+}
+
