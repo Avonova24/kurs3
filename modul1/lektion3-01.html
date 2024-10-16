@@ -105,7 +105,14 @@
 
         .green {
             color: #005646;
-        }
+        }   
+
+        /* CSS för att markera den aktiva knappen */
+        .circle-button-green1.active, .circle-button-green2.active {
+        background-color: #aff0e5;
+        color: #01332a;
+}
+
     </style>
 </head>
 <body>
@@ -170,6 +177,21 @@
                 }
             });
         });
+
+        // Javascript för att markera en knapp som aktiv
+        document.querySelectorAll('.circle-button-green1, .circle-button-green2').forEach(button => {
+        button.addEventListener('click', function() {
+       
+        // Ta bort aktiv klass från alla knappar
+        document.querySelectorAll('.circle-button-green1, .circle-button-green2').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Lägg till aktiv klass på den klickade knappen
+        this.classList.add('active');
+    });
+});
+
     </script>
 </body>
 </html>
