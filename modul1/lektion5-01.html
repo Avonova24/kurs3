@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angränsande lagar</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;   
+        }
+
+        h1, p  {
+            text-align: center;
+            padding-right: 10%;
+            padding-left: 10%;
+        }
+
+        .circle-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            max-width: 800px;
+        }
+
+        .circle-button-green1, .circle-button-green2, .circle-button-green3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            width: 130px;
+            height: 130px;
+            padding: 14px;
+            
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            
+            border-radius: 50%;
+            border: none;
+            
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .circle-button-green1 {
+            background-color: #00866d;
+        }
+
+        .circle-button-green2 {
+            background-color: #005646;
+        }
+
+        .circle-button-green3 {
+            background-color: #01332a;
+
+        }
+
+        .circle-button-green1:hover, .circle-button-green2:hover, .circle-button-green3:hover {
+            background-color: #aff0e5;
+            color: #01332a;
+        }
+
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            align-items: end;
+            justify-content: space-between;
+            
+            max-width: 700px;
+            margin-top: 5%;  
+        }
+
+        .toggle-radio:checked + .content {
+            display: flex;
+        }
+
+        .content img {
+            width: 200px;
+            margin: 0;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 16px;
+            text-align: left;
+            padding: 0 5% 0 2%;
+            
+        }
+
+        .green {
+            color: #005646;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+        </div>
+        <h1>Vanliga utmaningar i bygg- och anläggningsbranschen</h1>
+        <p>Klicka på de olika <b class="green">gröna knapparna</b> nedan för att läsa mer om varje utmaning. 
+        Text visar sig längst ner på sidan. Scrolla neråt om du inte ser den.</p>
+        
+        <div class="circle-container">
+            <!-- FÖRSTA RADEN -->
+            <label class="circle-button-green1" for="toggle1">Olycksdrabbad bransch</label>
+            <label class="circle-button-green3" for="toggle2">Många aktörer</label>
+            <label class="circle-button-green2" for="toggle3">Under-entreprenörer</label>
+            <label class="circle-button-green1" for="toggle4">Arbetslivs-kriminalitet</label>
+            
+            <!-- ANDRA RADEN -->
+            <label class="circle-button-green2" for="toggle5">Höga kostnader för dålig kvalitet</label>
+            <label class="circle-button-green1" for="toggle6">Utländska aktörer: språk & kultur</label>
+            <label class="circle-button-green3" for="toggle7">Tidspress</label>
+        </div>
+
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/olycka.png" alt="Bild för Olycksdrabbad bransch">
+            <p><b>Olycksdrabbad bransch</b>
+            <br>Bygg- och anläggningsbranschen är en av de mest olycksdrabbade sektorerna i Sverige. 
+            Arbetet innebär ofta tunga lyft, arbete på höga höjder och användning av farliga verktyg 
+            och maskiner, vilket ökar risken för olyckor. Trots strikta regler och säkerhetsföreskrifter 
+            inträffar fortfarande många allvarliga olyckor, vilket gör det avgörande att arbetsmiljön och 
+            säkerheten prioriteras under hela projektets gång.</p>
+        </div>
+
+        <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/olika.png" alt="Bild för Många aktörer">
+            <p><b>Många aktörer</b>
+            <br>Byggprojekt involverar ofta ett stort antal olika aktörer, från byggherrar och projektledare 
+            till olika entreprenörer och underentreprenörer. Denna komplexitet kan leda till 
+            kommunikationsproblem och missförstånd, vilket i sin tur kan resultera i olyckor, 
+            förseningar och ökade kostnader. En tydlig samordning och kommunikation mellan alla parter är därför 
+            avgörande för att säkerställa projektets framgång.</p>
+        </div>
+
+        <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/underentrepreneur.png" alt="Bild för underentreprenörer">
+            <p><b>Underentreprenörer</b>
+            <br>Underentreprenörer spelar en central roll i många byggprojekt, men de kan också bidra till 
+            ökade risker. Eftersom de ofta arbetar under press för att leverera inom snäva tidsramar, kan det 
+            leda till att säkerhetsrutiner förbises. Dessutom kan underentreprenörer ibland ha lägre standarder 
+            eller bristande kunskaper om svenska arbetsmiljöregler, vilket kan påverka både arbetskvaliteten 
+            och säkerheten negativt.</p>
+        </div>
+
+        <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/arbetslivskriminalitet.png" alt="Bild för arbetslivskriminalitet">
+            <p><b>Arbetslivskriminalitet</b>
+            <br>Arbetslivskriminalitet är ett växande problem inom byggsektorn, där oseriösa aktörer bryter 
+            mot arbetsmiljöregler, undviker skatter och sociala avgifter, och exploaterar arbetskraft. 
+            Detta hotar inte bara de anställdas säkerhet och hälsa utan skapar också en snedvridning av 
+            konkurrensen. Att motverka arbetslivskriminalitet kräver effektiva kontroller och samverkan mellan 
+            olika myndigheter, samt att företag tar ansvar för att välja seriösa underentreprenörer.</p>
+        </div>
+
+        <input type="radio" id="toggle5" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/kvalitet.png" alt="Höga kostnader för dålig kvalitet">
+            <p><b>Höga kostnader för dålig kvalitet</b>
+            <br>Dålig kvalitet i byggprocessen kan leda till omfattande kostnader för att åtgärda fel, 
+            förseningar och till och med rättsliga tvister. Förutom de direkta ekonomiska konsekvenserna 
+            kan dålig kvalitet också skada företagets rykte och leda till förlorade affärsmöjligheter. 
+            Därför är det viktigt att säkerställa att alla arbeten utförs med högsta möjliga kvalitet 
+            redan från början, med rätt kompetens och material.</p>
+        </div>
+
+        <input type="radio" id="toggle6" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/kulturer.png" alt="Bild för utländska aktörer - språk och kultur">
+            <p><b>Utländska aktörer: språk & kultur</b>
+            <br>Internationella aktörer i byggprojekt kan medföra språk- och kulturbarriärer som påverkar 
+            kommunikationen och förståelsen av arbetsmiljöregler och säkerhetsföreskrifter. Missförstånd på 
+            grund av språk eller kulturella skillnader kan leda till allvarliga säkerhetsrisker och ineffektivitet. 
+            Det är därför viktigt att skapa tydliga kommunikationskanaler och att säkerställa att alla på 
+            arbetsplatsen har en gemensam förståelse för de regler och förväntningar som gäller.</p>
+        </div>
+
+        <input type="radio" id="toggle7" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/tidspress.png" alt="Bild för tidspress">
+            <p><b>Tidspress</b>
+            <br>Tidspress är en vanlig utmaning i bygg- och anläggningsprojekt. Begränsade tidsplaner kan leda 
+            till att viktiga säkerhetsrutiner hoppar över eller att arbetsmoment stressas igenom, vilket ökar 
+            risken för fel och olyckor. Att balansera behovet av att hålla tidsplanen med att upprätthålla 
+            en hög säkerhetsstandard är en ständig utmaning för projektledare och arbetsledare.</p>
+        </div>
+    </div>
+</body>
+</html>
