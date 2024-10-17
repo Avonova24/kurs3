@@ -105,6 +105,12 @@
             color: #005646;
         }
 
+           /* CSS för att markera den aktiva knappen */
+           .circle-button-green1.active, .circle-button-green2.active, .circle-button-green3.active {
+        background-color: #aff0e5;
+        color: #01332a;
+}
+
     </style>
 </head>
 
@@ -113,98 +119,104 @@
         <div class="avonova-logo">
             <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
         </div>
-        <h1>Vanliga utmaningar i bygg- och anläggningsbranschen</h1>
-        <p>Klicka på de olika <b class="green">gröna knapparna</b> nedan för att läsa mer om varje utmaning. 
-        Text visar sig längst ner på sidan. Scrolla neråt om du inte ser den.</p>
+        <h1>Angränsande lagar</h1>
+        <p>Klicka på de olika <b class="green">gröna knapparna</b> nedan för att läsa mer om varje angränsande lag till arbetsmiljölagen.</p>
         
         <div class="circle-container">
             <!-- FÖRSTA RADEN -->
-            <label class="circle-button-green1" for="toggle1">Olycksdrabbad bransch</label>
-            <label class="circle-button-green3" for="toggle2">Många aktörer</label>
-            <label class="circle-button-green2" for="toggle3">Under-entreprenörer</label>
-            <label class="circle-button-green1" for="toggle4">Arbetslivs-kriminalitet</label>
+            <label class="circle-button-green1" for="toggle1">Diskriminerings-<br>lagen</label>
+            <label class="circle-button-green3" for="toggle2">Lag om anställningsskydd (LAS)</label>
+            <label class="circle-button-green2" for="toggle3">Arbetstidslagen</label>
+            <label class="circle-button-green1" for="toggle4">Förtroendemanna-<br>lagen</label>
             
             <!-- ANDRA RADEN -->
-            <label class="circle-button-green2" for="toggle5">Höga kostnader för dålig kvalitet</label>
-            <label class="circle-button-green1" for="toggle6">Utländska aktörer: språk & kultur</label>
-            <label class="circle-button-green3" for="toggle7">Tidspress</label>
+            <label class="circle-button-green2" for="toggle5">Lag om skydd mot olyckor</label>
+            <label class="circle-button-green1" for="toggle6">Miljöbalken</label>
+            <label class="circle-button-green3" for="toggle7">Socialförsäkrings-<br>balken</label>
         </div>
 
         <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
         <div class="content">
-            <img src="../images/olycka.png" alt="Bild för Olycksdrabbad bransch">
-            <p><b>Olycksdrabbad bransch</b>
-            <br>Bygg- och anläggningsbranschen är en av de mest olycksdrabbade sektorerna i Sverige. 
-            Arbetet innebär ofta tunga lyft, arbete på höga höjder och användning av farliga verktyg 
-            och maskiner, vilket ökar risken för olyckor. Trots strikta regler och säkerhetsföreskrifter 
-            inträffar fortfarande många allvarliga olyckor, vilket gör det avgörande att arbetsmiljön och 
-            säkerheten prioriteras under hela projektets gång.</p>
+            <img src="../images/diskrimineringslagen.png" alt="Bild för diskrimineringslagen">
+            <p><b>Diskrimineringslagen</b>
+            <br>Denna lag syftar till att motverka diskriminering och främja lika 
+            rättigheter och möjligheter oavsett kön, könsöverskridande identitet eller uttryck, 
+            etnisk tillhörighet, religion eller annan trosuppfattning, funktionsnedsättning, 
+            sexuell läggning eller ålder.</p>
         </div>
 
         <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
         <div class="content">
-            <img src="../images/olika.png" alt="Bild för Många aktörer">
-            <p><b>Många aktörer</b>
-            <br>Byggprojekt involverar ofta ett stort antal olika aktörer, från byggherrar och projektledare 
-            till olika entreprenörer och underentreprenörer. Denna komplexitet kan leda till 
-            kommunikationsproblem och missförstånd, vilket i sin tur kan resultera i olyckor, 
-            förseningar och ökade kostnader. En tydlig samordning och kommunikation mellan alla parter är därför 
-            avgörande för att säkerställa projektets framgång.</p>
+            <img src="../images/anstskydd.png" alt="Bild för lagen om anställningsskydd">
+            <p><b>Lag om anställningskydd (LAS)</b>
+            <br>Denna lag skyddar arbetstagares rättigheter och reglerar uppsägning, avsked och 
+            anställningsformer.</p>
         </div>
 
         <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
         <div class="content">
-            <img src="../images/underentrepreneur.png" alt="Bild för underentreprenörer">
-            <p><b>Underentreprenörer</b>
-            <br>Underentreprenörer spelar en central roll i många byggprojekt, men de kan också bidra till 
-            ökade risker. Eftersom de ofta arbetar under press för att leverera inom snäva tidsramar, kan det 
-            leda till att säkerhetsrutiner förbises. Dessutom kan underentreprenörer ibland ha lägre standarder 
-            eller bristande kunskaper om svenska arbetsmiljöregler, vilket kan påverka både arbetskvaliteten 
-            och säkerheten negativt.</p>
+            <img src="../images/arbetstid.png" alt="Bild för arbetstidslagen">
+            <p><b>Arbetstidslagen</b>
+            <br>Arbetstidslagen innehåller bestämmelser om arbetstidens längd och förläggning.
+        </p>
         </div>
 
         <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
         <div class="content">
-            <img src="../images/arbetslivskriminalitet.png" alt="Bild för arbetslivskriminalitet">
-            <p><b>Arbetslivskriminalitet</b>
-            <br>Arbetslivskriminalitet är ett växande problem inom byggsektorn, där oseriösa aktörer bryter 
-            mot arbetsmiljöregler, undviker skatter och sociala avgifter, och exploaterar arbetskraft. 
-            Detta hotar inte bara de anställdas säkerhet och hälsa utan skapar också en snedvridning av 
-            konkurrensen. Att motverka arbetslivskriminalitet kräver effektiva kontroller och samverkan mellan 
-            olika myndigheter, samt att företag tar ansvar för att välja seriösa underentreprenörer.</p>
+            <img src="../images/fortroendeskydd.png" alt="Bild för förtroendemannalagen">
+            <p><b>Förtroendemannalagen</b>
+            <br>Lag om facklig förtroendemans ställning på arbetsplatsen. Innehåller regler och 
+            skydd för de fackliga förtroendemän som de anställda utsett till sina företrädare.</p>
         </div>
 
         <input type="radio" id="toggle5" name="toggle" class="toggle-radio">
         <div class="content">
-            <img src="../images/kvalitet.png" alt="Höga kostnader för dålig kvalitet">
-            <p><b>Höga kostnader för dålig kvalitet</b>
-            <br>Dålig kvalitet i byggprocessen kan leda till omfattande kostnader för att åtgärda fel, 
-            förseningar och till och med rättsliga tvister. Förutom de direkta ekonomiska konsekvenserna 
-            kan dålig kvalitet också skada företagets rykte och leda till förlorade affärsmöjligheter. 
-            Därför är det viktigt att säkerställa att alla arbeten utförs med högsta möjliga kvalitet 
-            redan från början, med rätt kompetens och material.</p>
+            <img src="../images/skyddolyckor.png" alt="Bild för lag om skydd mot olyckor">
+            <p><b>Lag om skydd mot olyckor</b>
+            <br>Syftar till att skydda människors liv och hälsa samt egendom och miljö mot olyckor.</p>
         </div>
 
         <input type="radio" id="toggle6" name="toggle" class="toggle-radio">
         <div class="content">
-            <img src="../images/kulturer.png" alt="Bild för utländska aktörer - språk och kultur">
-            <p><b>Utländska aktörer: språk & kultur</b>
-            <br>Internationella aktörer i byggprojekt kan medföra språk- och kulturbarriärer som påverkar 
-            kommunikationen och förståelsen av arbetsmiljöregler och säkerhetsföreskrifter. Missförstånd på 
-            grund av språk eller kulturella skillnader kan leda till allvarliga säkerhetsrisker och ineffektivitet. 
-            Det är därför viktigt att skapa tydliga kommunikationskanaler och att säkerställa att alla på 
-            arbetsplatsen har en gemensam förståelse för de regler och förväntningar som gäller.</p>
+            <img src="../images/miljobalken.png" alt="Bild för miljöbalken">
+            <p><b>Miljöbalken</b>
+            <br>Miljöbalken syftar till att främja en hälsosam och god miljö.</p>
         </div>
 
         <input type="radio" id="toggle7" name="toggle" class="toggle-radio">
         <div class="content">
-            <img src="../images/tidspress.png" alt="Bild för tidspress">
-            <p><b>Tidspress</b>
-            <br>Tidspress är en vanlig utmaning i bygg- och anläggningsprojekt. Begränsade tidsplaner kan leda 
-            till att viktiga säkerhetsrutiner hoppar över eller att arbetsmoment stressas igenom, vilket ökar 
-            risken för fel och olyckor. Att balansera behovet av att hålla tidsplanen med att upprätthålla 
-            en hög säkerhetsstandard är en ständig utmaning för projektledare och arbetsledare.</p>
+            <img src="../images/social.png" alt="Bild för socialförsäkring">
+            <p><b>Socialförsäkringsbalken</b>
+            <br>Denna lag bestämmer om social trygghet genom olika socialförsäkringar 
+            och bidrag.</p>
         </div>
     </div>
+
+    <script>
+        // JavaScript för att scrolla ner när ett alternativ väljs
+document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Javascript för att markera en knapp som aktiv
+document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(button => {
+    button.addEventListener('click', function() {
+        // Ta bort aktiv klass från alla knappar
+        document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Lägg till aktiv klass på den klickade knappen
+        this.classList.add('active');
+    });
+});
+
+
+    </script>
+    
 </body>
 </html>
