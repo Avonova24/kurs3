@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="../styles.css">
     
     <style>
-
         .container {
             display: flex;
             justify-content: center;
             flex-direction: column;   
             padding-right: 5%;
+            position: relative; /* För att placera den expanderade bilden korrekt */
         }
 
         h1 {
@@ -42,22 +42,17 @@
         }
 
         .image-container img {
-            min-width: 300px;
-            max-width: 360px;
-            transition: all 0.5s ease;
+            width: 370px;
             cursor: pointer;
+            transition: all 0.5s ease;
         }
 
-        /* Fullskärmsläge för bilden */
-        .image-container img.fullscreen {
-            width: 100vw; /* Fyll hela bredden av viewporten */
-            height: 100vh; /* Fyll hela höjden av viewporten */
-            object-fit: contain; /* Se till att bilden skalar proportionerligt */
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            background-color: white;
+        .illustration {
+            width: 100px;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05); /* Expanderar bilden lite */
         }
 
         .bildtext {
@@ -66,24 +61,42 @@
             font-size: 15px;
         }
 
-        /* Bakgrunds-overlay för fullskärmseffekt */
+        /* Stilen för den expanderade bilden som täcker hela containern */
+        .expanded-image {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90vw;  /* Täcker 90% av viewport-bredden */
+            height: auto;
+            max-height: 90vh; /* Justera för att hålla inom viewport-höjden */
+            z-index: 1000; /* Lägger bilden framför allt */
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        /* Bakgrundslager för att dimma innehållet */
         .overlay {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Mörk bakgrund när bilden är i fullskärm */
-            z-index: 999;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999; /* Under den expanderade bilden */
             display: none;
+        }
+
+        /* Visa overlay */
+        .show {
+            display: block;
         }
 
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="overlay" id="overlay"></div> <!-- Overlay för fullskärmseffekt -->
-
         <div class="flexbox">
             <div class="column1">
                 <div class="avonova-logo">
@@ -93,37 +106,43 @@
                 <p>1 januari 2025 ändrar Arbetsmiljöverket sin regelstruktur, <b>från 67 föreskrifter till 15 stycken</b>. 
                 Den nya regelstrukturen beskriver roller, grundläggande regler, övriga regler och produktregler. 
                 <br><br>Det är viktigt att personer med arbetsmiljöansvar har kunskap kring de nya föreskrifterna. 
-                Avonova har flera utbildningar inom den nya regelstrukturen, klicka på knappen under bilden om du är intresserad.</p>
+                Avonova har flera utbildningar inom den nya regelstrukturen. Om du är intresserad, klicka på knappen 
+                nedan för att komma till vår utbildningskatalog.</p>
 
                 <a href="https://www.google.com/url?q=https://www.avonova.se/utbildningar&sa=D&source=docs&ust=1729072380013352&usg=AOvVaw190qQ6V2dbsrBwxLwSanhe" class="button-link">Avonovas utbildningskatalog</a>
             </div>
 
             <div class="image-container">
-                <img src="../images/oversiktbild1.png" alt="Översiktsbild av den nya regelstrukturen" id="expandableImage">
-                <p class="bildtext"><i>Klicka på bilden för att se den i fullskärm.</i></p>
+                <img src="../images/oversiktbild1.png" alt="Översiktsbild av den nya regelstrukturen" class="expandable" id="expandableImage">
+                <!--<p class="bildtext"><i>Klicka på bilden för att se den i fullskärm.</i></p>-->
+                <img src="../images/klicka.png" alt="Översiktsbild av den nya regelstrukturen" class="illustration">
             </div>
         </div>
     </div>
+
+    <!-- Overlay-element som skapar bakgrundsdimning -->
+    <div class="overlay" id="overlay"></div>
 
     <script>
         const image = document.getElementById('expandableImage');
         const overlay = document.getElementById('overlay');
 
         image.addEventListener('click', function() {
-            // Kontrollera om bilden redan är i fullskärm
-            if (image.classList.contains('fullscreen')) {
-                image.classList.remove('fullscreen');
-                overlay.style.display = 'none'; // Döljer overlay när bilden minimeras
-            } else {
-                image.classList.add('fullscreen');
-                overlay.style.display = 'block'; // Visar overlay när bilden expanderas
-            }
-        });
+            const expandedImage = document.createElement('img');
+            expandedImage.src = image.src;
+            expandedImage.classList.add('expanded-image');
 
-        // Lägg till en klickfunktion på overlay för att minimera bilden när man klickar utanför den
-        overlay.addEventListener('click', function() {
-            image.classList.remove('fullscreen');
-            overlay.style.display = 'none';
+            // Lägg till den expanderade bilden på body
+            document.body.appendChild(expandedImage);
+
+            // Visa overlay
+            overlay.classList.add('show');
+
+            // Stäng bilden och overlay om man klickar på den expanderade bilden
+            expandedImage.addEventListener('click', function() {
+                expandedImage.remove();
+                overlay.classList.remove('show');
+            });
         });
     </script>
 </body>
