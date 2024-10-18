@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Den nya regelstrukturen</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;   
+            padding-right: 5%;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .flexbox {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+            margin-right: 5%;
+        }
+
+        .image-container {
+            flex: 0.5;
+            text-align: center;
+            position: relative;
+        }
+
+        .image-container img {
+            min-width: 300px;
+            max-width: 360px;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        /* Fullskärmsläge för bilden */
+        .image-container img.fullscreen {
+            width: 100vw; /* Fyll hela bredden av viewporten */
+            height: 100vh; /* Fyll hela höjden av viewporten */
+            object-fit: contain; /* Se till att bilden skalar proportionerligt */
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: white;
+        }
+
+        .bildtext {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+
+        /* Bakgrunds-overlay för fullskärmseffekt */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Mörk bakgrund när bilden är i fullskärm */
+            z-index: 999;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="overlay" id="overlay"></div> <!-- Overlay för fullskärmseffekt -->
+
+        <div class="flexbox">
+            <div class="column1">
+                <div class="avonova-logo">
+                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+                </div>
+                <h1>Den nya regelstrukturen</h1>
+                <p>1 januari 2025 ändrar Arbetsmiljöverket sin regelstruktur, <b>från 67 föreskrifter till 15 stycken</b>. 
+                Den nya regelstrukturen beskriver roller, grundläggande regler, övriga regler och produktregler. 
+                <br><br>Det är viktigt att personer med arbetsmiljöansvar har kunskap kring de nya föreskrifterna. 
+                Avonova har flera utbildningar inom den nya regelstrukturen, klicka på knappen under bilden om du är intresserad.</p>
+
+                <a href="https://www.google.com/url?q=https://www.avonova.se/utbildningar&sa=D&source=docs&ust=1729072380013352&usg=AOvVaw190qQ6V2dbsrBwxLwSanhe" class="button-link">Avonovas utbildningskatalog</a>
+            </div>
+
+            <div class="image-container">
+                <img src="../images/oversiktbild1.png" alt="Översiktsbild av den nya regelstrukturen" id="expandableImage">
+                <p class="bildtext"><i>Klicka på bilden för att se den i fullskärm.</i></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const image = document.getElementById('expandableImage');
+        const overlay = document.getElementById('overlay');
+
+        image.addEventListener('click', function() {
+            // Kontrollera om bilden redan är i fullskärm
+            if (image.classList.contains('fullscreen')) {
+                image.classList.remove('fullscreen');
+                overlay.style.display = 'none'; // Döljer overlay när bilden minimeras
+            } else {
+                image.classList.add('fullscreen');
+                overlay.style.display = 'block'; // Visar overlay när bilden expanderas
+            }
+        });
+
+        // Lägg till en klickfunktion på overlay för att minimera bilden när man klickar utanför den
+        overlay.addEventListener('click', function() {
+            image.classList.remove('fullscreen');
+            overlay.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
