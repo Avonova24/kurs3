@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produktregler</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;   
+            padding-right: 5%;
+            position: relative; /* För att placera den expanderade bilden korrekt */
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .flexbox {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+            margin-right: 5%;
+        }
+
+        .image-container {
+            flex: 0.5;
+            text-align: end;
+            position: relative;
+        }
+
+        .image-container img.expandable {
+            width: 370px;
+            margin-top: 15%;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        /* Hover-effekt för den klickbara bilden */
+        .image-container img.expandable:hover {
+            transform: scale(1.05); /* Expanderar bilden lite */
+        }
+
+        .bildtext {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+
+        /* Separat styling för illustrationen */
+        .image-container .illustration {
+            width: 250px;
+            margin-bottom: 0;
+            margin-top: -20px;
+            padding-bottom: 0;
+            
+           
+        }
+
+        /* Stilen för den expanderade bilden som täcker hela containern */
+        .expanded-image {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90vw;  /* Täcker 90% av viewport-bredden */
+            height: auto;
+            max-height: 90vh; /* Justera för att hålla inom viewport-höjden */
+            z-index: 1000; /* Lägger bilden framför allt */
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        /* Bakgrundslager för att dimma innehållet */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999; /* Under den expanderade bilden */
+            display: none;
+        }
+
+        /* Visa overlay */
+        .show {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flexbox">
+            <div class="column1">
+                <div class="avonova-logo">
+                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+                </div>
+                <h1>Produktregler</h1>
+                <p>Den som är tillverkare, importör eller distributör av vissa produkter ska 
+                följa de 6 föreskriftshäftena med produktregler. Produktreglerna behandlar produkternas 
+                säkerhet inför att de släpps på den svenska och europeiska marknaden. Men de reglerar inte 
+                själva användningen av produkterna. Föreskrifterna som innehåller krav på produkter 
+                innehåller ordet ”produkter” i titeln för att det ska vara tydligt.
+            
+                <br><br>Produktreglerna består av 6 föreskriftshäften. Klicka på knappen nedan för att 
+                se vilka de är.</p>
+
+                <a href="javascript:void(0);" class="button-link" id="openPopup1">Relevanta kapitel - Klicka här</a>
+            </div>
+
+            <div class="image-container">
+                <img src="../images/oversiktbild1.png" alt="Översiktsbild av den nya regelstrukturen" class="expandable" id="expandableImage">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up för relevanta kapitel -->
+    <div class="popup" id="popup1">
+        <button class="close-btn" id="closePopup1">Stäng</button>
+        <div class="popup-content">
+            <h2>Produktregler - Föreskriftshäften</h2>
+            <ul>
+                <li><b>1. (2023:4) Produkter – Maskiner</b></li>
+                <li><b>2. (2023:5) Produkter – Tryckbärande anordningar</b></li>
+                <li><b>3. (2023:6) Produkter – Enkla tryckkärl</b></li>
+                <li><b>4. (2023:7) Produkter – Utrustning för potentiellt explosiva atmosfärer</b></li>
+                <li><b>5. (2023:8) Produkter – Förbud att på marknaden släppa ut ledade skärverktyg avsedda för bärbara handhållna röjsågar</b></li>
+                <li><b>6. (2023:9) Produkter – Stegar, ställningar, och viss annan utrustning för arbete på höjd, samt vissa trycksatta anordningar</b></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Overlay-lagret för att dimma sidan -->
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        
+
+        // Hantering av pop-up för första knappen
+        const openPopupBtn1 = document.getElementById('openPopup1');
+        const closePopupBtn1 = document.getElementById('closePopup1');
+        const popup1 = document.getElementById('popup1');
+        const overlay = document.getElementById('overlay');
+
+        openPopupBtn1.addEventListener('click', function() {
+            popup1.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn1.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Stäng popup om man klickar på overlayn
+        overlay.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+    </script>
+</body>
+</html>
