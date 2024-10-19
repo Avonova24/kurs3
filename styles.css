@@ -161,3 +161,88 @@ blockquote {
 	border: 2px solid #00211b; 
 }
 
+ /* CSS för att markera den aktiva knappen */
+ .buttons.active {
+	background-color: #00866d;
+	color: white;
+}
+
+/* Pop-up styling */
+.popup {
+	display: none; /* Börjar som dold */
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 20px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+	z-index: 1000; /* Lägger den över annat innehåll */
+	border-radius: 10px;
+	width: 90%;
+	max-width: 600px;
+	max-height: 80vh; /* Sätter maxhöjd för att förhindra att den fyller hela skärmen */
+	overflow-y: auto; /* Aktiverar scroll om innehållet är för stort */
+	text-align: left; /* Justera all text i pop-up till vänster */
+}
+
+/* Bakgrundslager för att dimma sidan */
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 999;
+}
+
+/* Visa pop-up */
+.show {
+	display: block;
+}
+
+/* Stäng-knapp i pop-up */
+.close-btn {
+	background-color: #fc4b47;
+	color: white;
+	border: none;
+	padding: 5px 10px;
+	cursor: pointer;
+	border-radius: 5px;
+	float: right;
+}
+
+.close-btn:hover {
+	background-color: #aff0e5;
+	color: #00211b;
+	border: 1px solid #00211b; 
+
+}
+
+/* Formatering för listan i pop-up */
+.popup-content h2 {
+	margin-top: 0;
+	text-align: left; /* Vänsterjustera rubriken */
+}
+
+.popup-content ul {
+	padding-left: 0;
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	text-align: left; /* Vänsterjusterar listan */
+}
+
+.popup-content ul li {
+	margin-bottom: 10px;
+	text-align: left; /* Vänsterjusterar list-elementen */
+}
+
+.popup-content ul li ul {
+	padding-left: 20px; /* Gör underlistan indragen */
+	list-style-type: disc;
+	margin-top: 5px;
+}
+

@@ -101,6 +101,11 @@
             background-color: #00866d;
             color: white;
         }
+
+        .button-link {
+            margin-top: 4%;
+            cursor: pointer;
+        }
     
 		
     </style>
@@ -144,12 +149,15 @@
                    
             <div class="content">
                 <img src="../images/grundlagganderegler.png" alt="Bild för grundläggande regler">
-                <p><b>Planering och organisering av arbetsmiljöarbete 
-                <br>– Grundläggande skyldigheter för dig med arbetsgivaransvar (AFS 2023:2)</b>
-                <br><br>Syftet med dessa föreskrifter är att arbetsgivare ska planera, organisera och 
-                genomföra sitt arbetsmiljöarbete för att förebygga ohälsa och olycksfall i arbetet och 
-                uppnå en tillfredsställande arbetsmiljö.</p>
-                    
+                <div class="column2">
+                    <p><b>Planering och organisering av arbetsmiljöarbete 
+                    <br>– Grundläggande skyldigheter för dig med arbetsgivaransvar (AFS 2023:2)</b>
+                    <br><br>Syftet med dessa föreskrifter är att arbetsgivare ska planera, organisera och 
+                    genomföra sitt arbetsmiljöarbete för att förebygga ohälsa och olycksfall i arbetet och 
+                    uppnå en tillfredsställande arbetsmiljö.</p>
+
+                    <a href="javascript:void(0);" class="button-link" id="openPopup1">Relevanta kapitel - Klicka här</a>
+                </div>
             </div>
         
             <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
@@ -164,6 +172,27 @@
                 arbetsplatser.</p>
             </div>
 	</div>
+
+    <!-- Pop-up för relevanta kapitel -->
+    <div class="popup" id="popup1">
+        <button class="close-btn" id="closePopup1">Stäng</button>
+        <div class="popup-content">
+            <h2>Relevanta kapitel - Planering och <br>organisering av arbetsmiljön</h2>
+            <ul>
+                <li><b>Kap. 2. Organisatorisk och social arbetsmiljö</b></li>
+                <li><b>Kap. 3. Arbetsanpassning</b></li>
+                <li><b>Kap. 4. Första hjälpen och krisstöd</b></li>
+                <li><b>Kap. 5. Våld och hot om våld</b></li>
+                <li><b>Kap. 6. Ensamarbete</b></li>
+                <li><b>Kap. 7. Gravida, nyförlösta och ammande arbetstagare</b></li>   
+                <li><b>Kap. 8. Minderårigas arbetsmiljö</b></li>
+                <li><b>Kap. 9. Anteckningar om jourtid, övertid och mertid</b></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Overlay-lagret för att dimma sidan -->
+    <div class="overlay" id="overlay"></div>
 
     <script>
         // JavaScript för att scrolla ner när ett alternativ väljs
@@ -188,6 +217,44 @@ document.querySelectorAll('.buttons').forEach(button => {
         this.classList.add('active');
     });
 });
+
+// Hantering av pop-up för första knappen
+const openPopupBtn1 = document.getElementById('openPopup1');
+        const closePopupBtn1 = document.getElementById('closePopup1');
+        const popup1 = document.getElementById('popup1');
+        const overlay = document.getElementById('overlay');
+
+        openPopupBtn1.addEventListener('click', function() {
+            popup1.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn1.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Hantering av pop-up för andra knappen
+        const openPopupBtn2 = document.getElementById('openPopup2');
+        const closePopupBtn2 = document.getElementById('closePopup2');
+        const popup2 = document.getElementById('popup2');
+
+        openPopupBtn2.addEventListener('click', function() {
+            popup2.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn2.addEventListener('click', function() {
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Stäng popup om man klickar på overlayn
+        overlay.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
 
 
     </script>

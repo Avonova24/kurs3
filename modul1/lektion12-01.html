@@ -72,7 +72,6 @@
             
             max-width: 790px;
             margin-top: 5%; 
-            
         }
 
         .content img {
@@ -85,12 +84,12 @@
             font-size: 16px;
             text-align: left;
             padding: 0 5% 0 2%;
-            
         }
 
         .content ul {
             margin-left: 20%;
             text-align: left;
+            list-style-position: inside; /* Ensure bullets align properly */
         }
 
         .toggle-radio:checked + .content {
@@ -99,15 +98,18 @@
 
         .button-link {
             margin-top: 4%;
+            cursor: pointer;
         }
 
-         /* CSS för att markera den aktiva knappen */
-         .buttons.active {
-            background-color: #00866d;
-            color: white;
+        .bulletlevel2 {
+            margin-bottom: 10px;
         }
-    
-		
+
+        .bulletlevel2 li {
+            background-size: 15px 15px;
+
+        }
+        
     </style>
 </head>
 	
@@ -125,7 +127,7 @@
         <div class="buttons-container">
             <label class="buttons" for="toggle1">Risker i arbetsmiljön</label>
                     
-            <label class="buttons" for="toggle2">Arbetsutrustning och personlig skyddsutrustning – Säker användning</label>
+            <label class="buttons" for="toggle2">Arbetsutrustning och personlig skyddsutrustning <br>– Säker användning</label>
                     
             <label class="buttons" for="toggle3">Utformning av arbetsplatser</label>
 
@@ -146,7 +148,7 @@
                     <br><br>I denna föreskrift kan du läsa vad som gäller vid undersökning, riskbedömning och 
                     åtgärder vid buller, vibrationer, kemiska riskkällor och belastningsergonomi.
                     <br><br> Klicka på knappen för att komma till översikten över de relevanta kapitlen.</p>
-                    <a href="" class="button-link">Relevanta kapitel - Klicka här</a>
+                    <a href="javascript:void(0);" class="button-link" id="openPopup1">Relevanta kapitel - Klicka här</a>
                 </div>
             </div>
         
@@ -157,9 +159,11 @@
                 <div class="column2">
                     <p><b>Arbetsutrustning och personlig skyddsutrustning – Säker användning (AFS 2023:11)</b>
                     <br><br>Denna föreskrift gäller användning av arbetsutrustning såsom maskiner, anordningar, 
-                    verktyg, redskap eller installationer som används i arbetet.</p>
+                    verktyg, redskap eller installationer som används i arbetet.
+                
+                    <br><br> Klicka på knappen för att komma till översikten över de relevanta kapitlen.</p>
 
-                    <a href="" class="button-link">Relevanta kapitel - Klicka här</a>
+                    <a href="javascript:void(0);" class="button-link" id="openPopup2">Relevanta kapitel - Klicka här</a>
                 </div>   
             </div>
         
@@ -197,37 +201,123 @@
                 <p><b>Medicinska kontroller i arbetslivet (AFS 2023:15)</b>
                 <br><br>Syftet med dessa föreskrifter är att minska risken för arbetsrelaterad ohälsa 
                 genom medicinska kontroller som:
-                <br>1. Bedömer om arbetstagarens hälsotillstånd tillåter en viss typ av arbete,
+                <br><br>1. Bedömer om arbetstagarens hälsotillstånd tillåter en viss typ av arbete,
                 <br>2. Möjliggör tidig upptäckt av tecken på ohälsa som orsakas av exponering,
                 <br>3. Ger underlag för att vidta åtgärder på arbetsplatsen.
                 </p>
             </div>
 	</div>
 
+    <!-- Pop-up för relevanta kapitel -->
+    <div class="popup" id="popup1">
+        <button class="close-btn" id="closePopup1">Stäng</button>
+        <div class="popup-content">
+            <h2>Relevanta kapitel - Risker i arbetsmiljön</h2>
+            <ul>
+                <li><b>2 kap. Buller</b></li>
+                <li><b>3 kap. Vibrationer</b></li>
+                <li><b>4 kap. Skydd mot skada genom fall</b></li>
+                <li><b>5 kap. Skydd mot skada genom ras</b></li>
+                <li><b>6 kap. Belastningsergonomi</b></li>
+                <li><b>7-10 kap. Kemiska riskkällor:</b></li>
+                    <ul class="bulletlevel2">
+                        <li>Anestesigas</li>
+                        <li>Bekämpningsmedel</li>
+                        <li>Blybatterier</li>
+                        <li>Cytostatika och andra läkemedel som kan orsaka bestående ohälsa</li>
+                        <li>Färg och lack</li>
+                        <li>Gaser</li>
+                        <li>Kvartshaltigt damm</li>
+                        <li>Syntetiska oorganiska fibrer</li>
+                    </ul>
+                <li><b>11 kap. Smittrisker</b></li>
+                <li><b>12 kap. Artificiell optisk strålning</b></li>
+                <li><b>13 kap. Elektromagnetiska fält</b></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="popup" id="popup2">
+        <button class="close-btn" id="closePopup2">Stäng</button>
+        <h2>Relevanta kapitel - Arbetsutrustning och personlig skyddsutrustning</h2>
+        <ul>
+            <li><b>2 kap. Användning av arbetsutrustning</b></li>
+            <li><b>3 kap. Användning av bildskärm</b></li>
+            <li><b>4 kap. Användning av truckar</b></li>
+            <li><b>5 kap. Användning av motorkedjesågar och röjsågar</b></li>
+            <li><b>6 kap. Användning av traktorer</b></li>
+            <li><b>7 kap. Användning av stegar och arbetsbockar</b></li>
+            <li><b>8 kap. Användning av Ställningar</b></li>
+            <li><b>9 kap. Användning av trycksatta anordningar</b></li>
+            <li><b>10 kap. Kontroll av trycksatta anordningar</b></li>
+            <li><b>11 kap. Användning av lyftanordningar och lyftredskap</b></li>
+            <li><b>12 kap. Krav vid tillfälliga personlyft med kranar eller truckar som inte är konstruerade för personlyft</b></li>
+            <li><b>13 kap. Besiktning av lyftanordningar och vissa andra tekniska anordningar</b></li>
+            <li><b>14 kap. Användning av pressar och gradsaxar</b></li>
+            <li><b>15 kap. Val och användning av personlig skyddsutrustning</b></li>
+        </ul>
+    </div>
+
+    <!-- Overlay-lagret för att dimma sidan -->
+    <div class="overlay" id="overlay"></div>
+
     <script>
         // JavaScript för att scrolla ner när ett alternativ väljs
-document.querySelectorAll('.toggle-radio').forEach(function(radio) {
-    radio.addEventListener('change', function() {
-        if (this.checked) {
-            this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-});
-
-// Javascript för att markera en knapp som aktiv
-document.querySelectorAll('.buttons').forEach(button => {
-    button.addEventListener('click', function() {
-
-// Ta bort aktiv klass från alla knappar
-    document.querySelectorAll('.buttons').forEach(btn => {
-            btn.classList.remove('active');
+        document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         });
-        
-// Lägg till aktiv klass på den klickade knappen
-        this.classList.add('active');
-    });
-});
 
+        // Javascript för att markera en knapp som aktiv
+        document.querySelectorAll('.buttons').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.buttons').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Hantering av pop-up för första knappen
+        const openPopupBtn1 = document.getElementById('openPopup1');
+        const closePopupBtn1 = document.getElementById('closePopup1');
+        const popup1 = document.getElementById('popup1');
+        const overlay = document.getElementById('overlay');
+
+        openPopupBtn1.addEventListener('click', function() {
+            popup1.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn1.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Hantering av pop-up för andra knappen
+        const openPopupBtn2 = document.getElementById('openPopup2');
+        const closePopupBtn2 = document.getElementById('closePopup2');
+        const popup2 = document.getElementById('popup2');
+
+        openPopupBtn2.addEventListener('click', function() {
+            popup2.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn2.addEventListener('click', function() {
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Stäng popup om man klickar på overlayn
+        overlay.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
 
     </script>
 
