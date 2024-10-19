@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regelstrukturens indelning - Grundläggande regler</title>
+	<link rel="stylesheet" href="../styles.css">
+    <style>
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; 
+        }
+
+        h1, p  {
+            text-align: center;
+            padding-right: 10%;
+            padding-left: 10%;
+        }
+
+        .buttons-container {
+            display: flex;
+            
+            justify-content: center;
+            
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            
+            background-color: #ffdcaf;
+            color: #005646;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            
+            width: 180px;
+            height: 100px;
+            padding: 20px;
+            
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .buttons:hover {
+            background-color: #00866d;
+            color: white;
+        }
+      
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            
+            max-width: 790px;
+            margin-top: 5%; 
+            
+        }
+
+        .content img {
+            width: 200px;
+            margin: 0;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 16px;
+            text-align: left;
+            padding: 0 5% 0 2%;
+            
+        }
+
+        .content ul {
+            margin-left: 20%;
+            text-align: left;
+        }
+
+        .toggle-radio:checked + .content {
+            display: flex;
+        }
+
+         /* CSS för att markera den aktiva knappen */
+         .buttons.active {
+            background-color: #00866d;
+            color: white;
+        }
+    
+		
+    </style>
+</head>
+	
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+       	</div>
+        <h1>Regelstrukturens indelning - Grundläggande regler</h1>
+        <p>Grundläggande regler handlar om de grundläggande skyldigheter som gäller för arbetsgivare 
+        eller motsvarande oavsett verksamhet. Detta gäller även för byggherrar, projektörer och 
+        byggarbetsmiljösamordnare.</p>
+        
+      
+        <div class="buttons-container">
+            <label class="buttons" for="toggle1">Systematiskt arbetsmiljöarbete</label>
+                    
+            <label class="buttons" for="toggle2">Planering och organisering av arbetsmiljöarbete</label>
+                    
+            <label class="buttons" for="toggle3">Projektering och byggarbetsmiljö-<br>samordning</label>
+                    
+        </div>
+        
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <img src="../images/grundlagganderegler.png" alt="Bild för grundläggande regler">
+                <p><b>Systematiskt arbetsmiljöarbete 
+                <br>- Grundläggande skyldigheter för dig med arbetsgivaransvar (AFS 2023:1)</b>
+                <br><br>Föreskrifterna i systematiskt arbetsmiljöarbete gäller för alla arbetsgivare och 
+                beskriver bland annat arbetsgivarens ansvar och att de som arbetsgivaren fördelar 
+                uppgifter till har de resurser, befogenheter och kunskaper som behövs för uppgiften. 
+                Här beskrivs regler för arbetsmiljöpolicy och företagshälsovård. Framförallt beskrivs 
+                det systematiska arbetsmiljöarbetet - vilket innebär att undersöka, genomföra och följa 
+                upp verksamheten för att förebygga olyckor och ohälsa.</p>
+            </div>
+        
+            <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <img src="../images/grundlagganderegler.png" alt="Bild för grundläggande regler">
+                <p><b>Planering och organisering av arbetsmiljöarbete 
+                <br>– Grundläggande skyldigheter för dig med arbetsgivaransvar (AFS 2023:2)</b>
+                <br><br>Syftet med dessa föreskrifter är att arbetsgivare ska planera, organisera och 
+                genomföra sitt arbetsmiljöarbete för att förebygga ohälsa och olycksfall i arbetet och 
+                uppnå en tillfredsställande arbetsmiljö.</p>
+                    
+            </div>
+        
+            <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <img src="../images/grundlagganderegler.png" alt="Bild för grundläggande regler">
+                <p><b>Projektering och byggarbetsmiljösamordning 
+                <br>– Grundläggande skyldigheter, (AFS 2023:3)</b>
+                <br><br>Syftet med dessa föreskrifter är att vid planeringen, projekteringen och samordningen 
+                av byggnads- eller anläggningsarbete förebygga ohälsa och olycksfall som kan uppstå under 
+                bygg- och bruksskedet, samt ge förutsättningar för en god arbetsmiljö vid utformningen av 
+                arbetsplatser.</p>
+            </div>
+	</div>
+
+    <script>
+        // JavaScript för att scrolla ner när ett alternativ väljs
+document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Javascript för att markera en knapp som aktiv
+document.querySelectorAll('.buttons').forEach(button => {
+    button.addEventListener('click', function() {
+
+// Ta bort aktiv klass från alla knappar
+    document.querySelectorAll('.buttons').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+// Lägg till aktiv klass på den klickade knappen
+        this.classList.add('active');
+    });
+});
+
+
+    </script>
+
+</body>
+</html>

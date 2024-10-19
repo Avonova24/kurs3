@@ -99,7 +99,7 @@
 
         .button-link {
             margin-top: 4%;
-        
+            cursor: pointer;
         }
 
          /* CSS för att markera den aktiva knappen */
@@ -108,21 +108,24 @@
             color: white;
         }
 
-        /* CSS för pop-up */
-
+        /* Pop-up styling */
         .popup {
             display: none; /* Börjar som dold */
-            position: fixed; /* Fixerad position */
+            position: fixed;
+            
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
+            
             background-color: white;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             z-index: 1000; /* Lägger den över annat innehåll */
             border-radius: 10px;
-            width: 80%;
-            max-width: 400px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh; /* Sätter maxhöjd för att förhindra att den fyller hela skärmen */
+            overflow-y: auto; /* Aktiverar scroll om innehållet är för stort */
         }
 
         /* Bakgrundslager för att dimma sidan */
@@ -142,9 +145,50 @@
             display: block;
         }
 
-       
-    
-		
+        /* Stäng-knapp i pop-up */
+        .close-btn {
+            background-color: #ff5f5f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            float: right;
+        }
+
+        /* Formatering för listan i pop-up */
+
+        .popup-content {
+            
+        }
+
+        .popup-content h2 {
+            margin-top: 0;
+        }
+
+        .popup-content ul {
+            padding-left: 0;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            
+        }
+
+        .popup-content ul li {
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .popup-content ul li ul {
+            padding-left: 20px; /* Gör underlistan indragen */
+            list-style-type: disc;
+            margin-top: 5px;
+            text-align: left;
+        }
+
     </style>
 </head>
 	
@@ -183,16 +227,7 @@
                     <br><br>I denna föreskrift kan du läsa vad som gäller vid undersökning, riskbedömning och 
                     åtgärder vid buller, vibrationer, kemiska riskkällor och belastningsergonomi.
                     <br><br> Klicka på knappen för att komma till översikten över de relevanta kapitlen.</p>
-                    
-                    <!-- Pop-up fönstret -->
-                    <div class="popup" id="popup">
-                        <button class="button-link" id="closePopupBtn">Relevanta kapitel - Klicka här</button>
-                        <h2>Relevanta kapitel</h2>
-                        <p>Här är informationen som visas i din pop-up. Du kan lägga till mer text eller annan information här.</p>
-                    </div>
-
-                    <!-- Bakgrunds-dimning -->
-                    <div class="overlay" id="overlay"></div>
+                    <a href="javascript:void(0);" class="button-link" id="openPopup1">Relevanta kapitel - Klicka här</a>
                 </div>
             </div>
         
@@ -205,7 +240,7 @@
                     <br><br>Denna föreskrift gäller användning av arbetsutrustning såsom maskiner, anordningar, 
                     verktyg, redskap eller installationer som används i arbetet.</p>
 
-                    <a href="" class="button-link">Relevanta kapitel - Klicka här</a>
+                    <a href="javascript:void(0);" class="button-link" id="openPopup2">Relevanta kapitel - Klicka här</a>
                 </div>   
             </div>
         
@@ -250,54 +285,102 @@
             </div>
 	</div>
 
+    <!-- Pop-up för relevanta kapitel -->
+    <div class="popup" id="popup1">
+        <button class="close-btn" id="closePopup1">Stäng</button>
+        <div class="popup-content">
+            <h2>Relevanta kapitel - Risker i arbetsmiljön</h2>
+            <ul>
+                <li><b>2 kap. Buller</b></li>
+                <li><b>3 kap. Vibrationer</b></li>
+                <li><b>4 kap. Skydd mot skada genom fall</b> </li>
+                <li><b>5 kap. Skydd mot skada genom ras</b> </li>
+                <li><b>6 kap. Belastningsergonomi</b> </li>
+                <li><b>7-10 kap. Kemiska riskkällor:</b> 
+                    <ul>
+                        <li>Anestesigas</li>
+                        <li>Bekämpningsmedel</li>
+                        <li>Blybatterier</li>
+                        <li>Cytostatika och andra läkemedel som kan orsaka bestående ohälsa</li>
+                        <li>Färg och lack</li>
+                        <li>Gaser</li>
+                        <li>Kvartshaltigt damm</li>
+                        <li>Syntetiska oorganiska fibrer</li>
+                    </ul>
+                </li>
+                <li><b>11 kap.</b> Smittrisker</li>
+                <li><b>12 kap.</b> Artificiell optisk strålning</li>
+                <li><b>13 kap.</b> Elektromagnetiska fält</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="popup" id="popup2">
+        <button class="close-btn" id="closePopup2">Stäng</button>
+        <h2>Relevanta kapitel - Arbetsutrustning och personlig skyddsutrustning</h2>
+        <p>Kapitel om säker användning av maskiner och utrustning.</p>
+    </div>
+
+    <!-- Overlay-lagret för att dimma sidan -->
+    <div class="overlay" id="overlay"></div>
+
     <script>
         // JavaScript för att scrolla ner när ett alternativ väljs
-    document.querySelectorAll('.toggle-radio').forEach(function(radio) {
-        radio.addEventListener('change', function() {
-            if (this.checked) {
-                this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
-            }
+        document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         });
-    });
 
-    // Javascript för att markera en knapp som aktiv
-    document.querySelectorAll('.buttons').forEach(button => {
-        button.addEventListener('click', function() {
-
-    // Ta bort aktiv klass från alla knappar
-        document.querySelectorAll('.buttons').forEach(btn => {
-                btn.classList.remove('active');
+        // Javascript för att markera en knapp som aktiv
+        document.querySelectorAll('.buttons').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.buttons').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
             });
-            
-    // Lägg till aktiv klass på den klickade knappen
-            this.classList.add('active');
         });
-    });
 
-    // Pop-up fönster
-    const openPopupBtn = document.getElementById('openPopupBtn');
-            const closePopupBtn = document.getElementById('closePopupBtn');
-            const popup = document.getElementById('popup');
-            const overlay = document.getElementById('overlay');
+        // Hantering av pop-up för första knappen
+        const openPopupBtn1 = document.getElementById('openPopup1');
+        const closePopupBtn1 = document.getElementById('closePopup1');
+        const popup1 = document.getElementById('popup1');
+        const overlay = document.getElementById('overlay');
 
-            // Öppna pop-up när man klickar på knappen
-            openPopupBtn.addEventListener('click', function() {
-                popup.classList.add('show');
-                overlay.classList.add('show');
-            });
+        openPopupBtn1.addEventListener('click', function() {
+            popup1.classList.add('show');
+            overlay.classList.add('show');
+        });
 
-            // Stäng pop-up när man klickar på stäng-knappen
-            closePopupBtn.addEventListener('click', function() {
-                popup.classList.remove('show');
-                overlay.classList.remove('show');
-            });
+        closePopupBtn1.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            overlay.classList.remove('show');
+        });
 
-            // Stäng pop-up om man klickar på overlayn (bakgrunds-lagret)
-            overlay.addEventListener('click', function() {
-                popup.classList.remove('show');
-                overlay.classList.remove('show');
-            });
+        // Hantering av pop-up för andra knappen
+        const openPopupBtn2 = document.getElementById('openPopup2');
+        const closePopupBtn2 = document.getElementById('closePopup2');
+        const popup2 = document.getElementById('popup2');
 
+        openPopupBtn2.addEventListener('click', function() {
+            popup2.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn2.addEventListener('click', function() {
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Stäng popup om man klickar på overlayn
+        overlay.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
 
     </script>
 
