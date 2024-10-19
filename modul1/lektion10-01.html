@@ -3,45 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Översikt av den nya regelstrukturen</title>
-	<link rel="stylesheet" href="../styles.css">
+    <title>Regelstrukturens indelning</title>
+    <link rel="stylesheet" href="../styles.css">
+    
     <style>
-        
+
         .container {
             display: flex;
-            padding: 0;
-            margin: 0;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
+            flex-direction: column;   
         }
 
-        h1, p {
-          text-align: center;
+        h1, p  {
+            text-align: center;
+            padding-right: 10%;
+            padding-left: 10%;
         }
 
-        h1 {
-            margin-bottom: 5px;
+        .circle-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            max-width: 800px;
         }
 
-        p {
-            max-width: 70%;
+        .circle-button-green1, .circle-button-green2, .circle-button-green3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            width: 130px;
+            height: 130px;
+            padding: 14px;
+            
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            
+            border-radius: 50%;
+            border: none;
+            
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
-        
-        img {
-            width: 100%;
 
-        } 
-    
-    
+        .circle-button-green1 {
+            background-color: #00866d;
+        }
+
+        .circle-button-green2 {
+            background-color: #005646;
+        }
+
+        .circle-button-green3 {
+            background-color: #01332a;
+
+        }
+
+        .circle-button-green1:hover, .circle-button-green2:hover, .circle-button-green3:hover {
+            background-color: #aff0e5;
+            color: #01332a;
+        }
+
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            
+            max-width: 700px;
+            margin-top: 5%;  
+        }
+
+        .toggle-radio:checked + .content {
+            display: flex;
+        }
+
+        .content img {
+            width: 200px;
+            margin: 0;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 16px;
+            text-align: left;
+            padding: 0 5% 0 2%;
+            
+        }
+
+        .green {
+            color: #005646;
+        }
+
+           /* CSS för att markera den aktiva knappen */
+           .circle-button-green1.active, .circle-button-green2.active, .circle-button-green3.active {
+        background-color: #aff0e5;
+        color: #01332a;
+        }
+
     </style>
-    
 </head>
 
 <body>
     <div class="container">
-        <img src="../images/oversiktbild1.png">
-     
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+        </div>
+        <h1>Regelstrukturens indelning</h1>
+        <p>Klicka på de olika <b class="green">gröna knapparna</b> nedan för att läsa mer om varje rubrik.</p>
+        
+        <div class="circle-container">
+            <!-- FÖRSTA RADEN -->
+            <label class="circle-button-green1" for="toggle1">Roller</label>
+            <label class="circle-button-green2" for="toggle2">Grundläggande regler</label>
+            <label class="circle-button-green1" for="toggle3">Övriga regler</label>
+        </div>
+
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/roller.png" alt="Bild för roller">
+            <p><b>Roller</b>
+            <br>Arbetsgivare, skyddsombud, byggherre och byggarbetsmiljösamordnare (BAS-P, BAS-U) är roller 
+            som har ansvar i  att skapa en trygg arbetsmiljö. Dessa roller ska arbeta tillsammans med 
+            arbetstagarna för att bidra till ett gemensamt ansvar för arbetsmiljöarbetet.  
+
+            <br><br>Det är också viktigt att komma ihåg att flera andra roller omfattas av reglerna och är 
+            en del av samarbetet.
+            </p>
+        </div>
+
+        <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/grundlagganderegler.png" alt="Bild för grundläggande regler">
+            <p><b>Grundläggande regler</b>
+            <br>Handlar om de grundläggande skyldigheter som gäller för arbetsgivare eller motsvarande 
+            oavsett verksamhet. Detta gäller även för byggherrar, projektörer och byggarbetsmiljösamordnare.</p>
+        </div>
+
+        <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/ovrigaregler.png" alt="Bild för övriga regler">
+            <p><b>Övriga regler</b>
+            <br>...</p>
+        </div>
     </div>
+
+    <script>
+
+        // JavaScript för att scrolla ner när ett alternativ väljs
+        document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Javascript för att markera en knapp som aktiv
+        document.querySelectorAll('.circle-button-green1, .circle-button-green2').forEach(button => {
+            button.addEventListener('click', function() {
+        
+                // Ta bort aktiv klass från alla knappar
+                document.querySelectorAll('.circle-button-green1, .circle-button-green2').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Lägg till aktiv klass på den klickade knappen
+                this.classList.add('active');
+            });
+        });
+
+
+    </script>
+    
 </body>
 </html>
