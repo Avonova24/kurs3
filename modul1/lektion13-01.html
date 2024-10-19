@@ -41,61 +41,18 @@
             position: relative;
         }
 
-        .image-container img.expandable {
-            width: 370px;
-            margin-top: 15%;
-            cursor: pointer;
-            transition: all 0.5s ease;
+        .image-container img {
+            width: 350px;
         }
 
-        /* Hover-effekt för den klickbara bilden */
-        .image-container img.expandable:hover {
-            transform: scale(1.05); /* Expanderar bilden lite */
-        }
+        
 
         .bildtext {
             margin: 0;
             padding: 0;
             font-size: 15px;
         }
-
-        /* Separat styling för illustrationen */
-        .image-container .illustration {
-            width: 250px;
-            margin-bottom: 0;
-            margin-top: -20px;
-            padding-bottom: 0;
-            
-           
-        }
-
-        /* Stilen för den expanderade bilden som täcker hela containern */
-        .expanded-image {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90vw;  /* Täcker 90% av viewport-bredden */
-            height: auto;
-            max-height: 90vh; /* Justera för att hålla inom viewport-höjden */
-            z-index: 1000; /* Lägger bilden framför allt */
-            background-color: white;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            cursor: pointer;
-        }
-
-        /* Bakgrundslager för att dimma innehållet */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 999; /* Under den expanderade bilden */
-            display: none;
-        }
-
+    
         /* Visa overlay */
         .show {
             display: block;

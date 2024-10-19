@@ -75,25 +75,15 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            
             width: 90vw;  /* Täcker 90% av viewport-bredden */
             height: auto;
             max-height: 90vh; /* Justera för att hålla inom viewport-höjden */
+            
             z-index: 1000; /* Lägger bilden framför allt */
-            background-color: white;
+            
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             cursor: pointer;
-        }
-
-        /* Bakgrundslager för att dimma innehållet */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 999; /* Under den expanderade bilden */
-            display: none;
         }
 
         /* Visa overlay */
