@@ -121,7 +121,7 @@
             <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
         </div>
         
-        <h1>Det förebyggande arbetet</h1>
+        <h1 class="typewriter" id="typewriterText">Det förebyggande arbetet</h1>
         <p>Lagen lägger stor vikt vid det förebyggande arbetsmiljöarbetet. Det innebär 
         att arbetsgivaren har ansvar för att identifiera och förebygga risker som kan påverka 
         arbetstagarnas hälsa och säkerhet, för att förhindra skador och ohälsa innan de 
@@ -191,6 +191,24 @@
         this.classList.add('active');
     });
 });
+
+
+        const text = document.getElementById('typewriterText').innerText;
+        let index = 0;
+        
+        function typeWriterEffect() {
+            if (index < text.length) {
+                document.getElementById('typewriterText').style.width = (index + 1) + "ch";
+                index++;
+                setTimeout(typeWriterEffect, 100); // 100ms per bokstav
+            } else {
+                // När effekten är klar, ta bort markören
+                document.getElementById('typewriterText').style.borderRight = "none";
+            }
+        }
+        
+        // Starta effekten
+        typeWriterEffect();
 
     </script>
 </body>

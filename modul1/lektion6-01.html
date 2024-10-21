@@ -62,7 +62,7 @@
                 <div class="avonova-logo">
                     <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
                 </div>
-                <h1>Arbetsmiljöförordningen</h1>
+                <h1 class="typewriter" id="typewriterText">Arbetsmiljöförordningen</h1>
                 <p>Arbetsmiljöförordningen är ett kompletterande regelverk till arbetsmiljölagen, 
                 och den spelar en viktig roll i att precisera och klargöra hur olika bestämmelser 
                 i lagen ska tolkas och tillämpas i praktiken. 
@@ -80,5 +80,24 @@
         </div>
        
     </div>
+
+    <script>
+        const text = document.getElementById('typewriterText').innerText;
+        let index = 0;
+        
+        function typeWriterEffect() {
+            if (index < text.length) {
+                document.getElementById('typewriterText').style.width = (index + 1) + "ch";
+                index++;
+                setTimeout(typeWriterEffect, 100); // 100ms per bokstav
+            } else {
+                // När effekten är klar, ta bort markören
+                document.getElementById('typewriterText').style.borderRight = "none";
+            }
+        }
+        
+        // Starta effekten
+        typeWriterEffect();
+    </script>
 </body>
 </html>
