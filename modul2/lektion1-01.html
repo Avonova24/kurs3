@@ -31,16 +31,15 @@
 
         .column1 {
             text-align: left;
-            flex: 1.5;
-            margin-right: 5%;
+            
         }
 
         .image-container {
-            flex: 0.5;
+            margin-left: 5%;
         }
 
         .image-container img {
-            width: 300px;
+            width: 230px;
             
         }
 
@@ -55,7 +54,7 @@
                 <div class="avonova-logo">
                     <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
                 </div>
-                <h1 class="typewriter" id="typewriterText">Arbetsmiljöverkets ansvarsområden</h1>
+                <h1>Arbetsmiljöverkets ansvarsområden</h1>
                 <p>Arbetsmiljöverket är en myndighet som har regeringens och riksdagens uppdrag att se till att 
                 lagar om arbetsmiljö- och arbetstider följs av företag och organisationer. Myndighetens främsta 
                 uppgift är att utfärda föreskrifter som klargör och konkretiserar arbetsmiljölagen (AML), samt att 
@@ -66,28 +65,9 @@
             </div>
 
             <div class="image-container">
-                <img src="../images/.svg" alt="Bild för föreskrifter">
+                <img src="../images/arbansvar.png" alt="Bild för arbetsmiljöverkets ansvar">
             </div>
         </div>
     </div>
-
-    <script>
-        const text = document.getElementById('typewriterText').innerText;
-        let index = 0;
-        
-        function typeWriterEffect() {
-            if (index < text.length) {
-                document.getElementById('typewriterText').style.width = (index + 1) + "ch";
-                index++;
-                setTimeout(typeWriterEffect, 100); // 100ms per bokstav
-            } else {
-                // När effekten är klar, ta bort markören
-                document.getElementById('typewriterText').style.borderRight = "none";
-            }
-        }
-        
-        // Starta effekten
-        typeWriterEffect();
-    </script>
 </body>
 </html>
