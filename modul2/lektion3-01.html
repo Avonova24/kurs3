@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanktionsavgifter</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;   
+            padding-right: 5%;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .flexbox {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+            margin-right: 5%;
+        }
+
+        .image-container {
+            flex: 0.5;
+        }
+
+        .image-container img {
+            width: 300px;
+            
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flexbox">
+            <div class="column1">
+                <div class="avonova-logo">
+                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+                </div>
+                <h1 class="typewriter" id="typewriterText">Sanktionsavgifter</h1>
+                <p>För att säkerställa att alla arbetsgivare efterlever arbetsmiljöreglerna utför Arbetsmiljöverket 
+                regelbundna inspektioner och kontroller på arbetsplatser. Arbetsgivare kan få sanktionsavgifter upp 
+                mot 1 miljon kronor om man bryter mot arbetsmiljöregler. Sanktionsavgifter är förutbestämda belopp som 
+                Arbetsmiljöverket kan utdöma vid överträdelser av föreskrifter. Dessa avgifter är relativt enkla att 
+                fastställa och tillämpas direkt. Böter däremot, är en form av straffansvar som hanteras av polis, 
+                åklagare och domstol. Att bryta mot regler som belagts med böter är en kriminell handling och kräver 
+                en mer omfattande utredning.</p>
+            </div>
+
+            <div class="image-container">
+                <img src="../images/foreskrifter.svg" alt="Bild för föreskrifter">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const text = document.getElementById('typewriterText').innerText;
+        let index = 0;
+        
+        function typeWriterEffect() {
+            if (index < text.length) {
+                document.getElementById('typewriterText').style.width = (index + 1) + "ch";
+                index++;
+                setTimeout(typeWriterEffect, 100); // 100ms per bokstav
+            } else {
+                // När effekten är klar, ta bort markören
+                document.getElementById('typewriterText').style.borderRight = "none";
+            }
+        }
+        
+        // Starta effekten
+        typeWriterEffect();
+    </script>
+</body>
+</html>

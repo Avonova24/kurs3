@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utredning av arbetsplatsolyckor</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;   
+            padding-right: 5%;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .flexbox {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+            margin-right: 5%;
+        }
+
+        .image-container {
+            flex: 0.5;
+        }
+
+        .image-container img {
+            width: 300px;
+            
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flexbox">
+            <div class="column1">
+                <div class="avonova-logo">
+                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+                </div>
+                <h1 class="typewriter" id="typewriterText">Utredning av arbetsplatsolyckor</h1>
+                <p>När en olycka inträffar på arbetsplatsen, anmäls det ofta till polisen. Arbetsgivaren är skyldig 
+                att rapportera olyckor till Arbetsmiljöverket, som i sin tur kan göra en polisanmälan. Detta leder 
+                till en utredning för att fastställa vem som har haft ansvaret för arbetsmiljön och om det har brustit 
+                i detta ansvar. Arbetsmiljöbrott regleras i brottsbalkens 3 kapitel, 10 §. Om någon uppsåtligen eller 
+                av oaktsamhet åsidosätter sitt ansvar enligt arbetsmiljölagen och detta leder till brott som vållande 
+                till annans död, kroppsskada eller framkallande av fara för annan, kan personen dömas för 
+                arbetsmiljöbrott. Straffskalan för dessa brott varierar från böter till fängelse i upp till sex år 
+                beroende på brottets allvar och omständigheterna kring det. När arbetsmiljöbrott begås inom 
+                näringsverksamhet kan företaget också drabbas av en företagsbot. Företagsboten kan ligga mellan 5 000 
+                kronor och 10 miljoner kronor. </p>
+            </div>
+
+            <div class="image-container">
+                <img src="../images/foreskrifter.svg" alt="Bild för föreskrifter">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const text = document.getElementById('typewriterText').innerText;
+        let index = 0;
+        
+        function typeWriterEffect() {
+            if (index < text.length) {
+                document.getElementById('typewriterText').style.width = (index + 1) + "ch";
+                index++;
+                setTimeout(typeWriterEffect, 100); // 100ms per bokstav
+            } else {
+                // När effekten är klar, ta bort markören
+                document.getElementById('typewriterText').style.borderRight = "none";
+            }
+        }
+        
+        // Starta effekten
+        typeWriterEffect();
+    </script>
+</body>
+</html>
