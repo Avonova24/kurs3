@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undersöka arbetsmiljön</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;   
+            
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .flexbox {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+            margin-right: 5%;
+        }
+
+        .image-container {
+            flex: 0.5;
+        }
+
+        .image-container img {
+            width: 320px;
+            
+        }
+
+        ul li {
+            margin-left: 20px;
+
+
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flexbox">
+            <div class="column1">
+                <div class="avonova-logo">
+                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+                </div>
+                <h1 class="typewriter" id="typewriterText">Undersöka arbetsmiljön</h1>
+                <p>En central del av arbetsmiljöarbetet är att undersöka arbetsmiljön för att bedöma risker. En risk 
+                definieras som sannolikheten för att en farlig händelse eller exponering ska inträffa och de potentiella 
+                konsekvenserna, som skada eller ohälsa. Arbetsgivaren ansvarar för att systematiskt och planerat undersöka, 
+                bedöma och åtgärda risker i verksamheten.</p>
+
+                <p>För att effektivt undersöka arbetsmiljön bör rutiner skapas som svarar på följande frågor:</p>
+
+                <ul>
+                    <li>Vad ska vi undersöka?</li>
+                    <li>När ska vi undersöka det?</li>
+                    <li>Hur ska vi undersöka det?</li>
+                    <li>Vilka ska göra det?</li>
+                </ul>
+            </div>
+
+            <div class="image-container">
+                <img src="../images/undersoka.png" alt="Man med förstoringsglas">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const text = document.getElementById('typewriterText').innerText;
+        let index = 0;
+        
+        function typeWriterEffect() {
+            if (index < text.length) {
+                document.getElementById('typewriterText').style.width = (index + 1) + "ch";
+                index++;
+                setTimeout(typeWriterEffect, 100); // 100ms per bokstav
+            } else {
+                // När effekten är klar, ta bort markören
+                document.getElementById('typewriterText').style.borderRight = "none";
+            }
+        }
+        
+        // Starta effekten
+        typeWriterEffect();
+    </script>
+</body>
+</html>
