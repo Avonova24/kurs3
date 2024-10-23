@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vad är SAM?</title>
+	<link rel="stylesheet" href="../styles.css">
+    <style>
+
+        .container {
+            text-align: center;
+            
+        }
+
+        p {
+            padding-right: 15%;
+            padding-left: 15%;
+        }
+
+        .buttons-container {
+            display: flex;
+            
+            justify-content: center;
+            
+            width: 100%;
+            max-width: 1000px;
+
+            
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            
+            background-color: #ffdcaf;
+            color: #005646;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            
+            width: 180px;
+            height: 100px;
+            padding: 20px;
+            
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .buttons:hover {
+            background-color: #00866d;
+            color: white;
+        }
+      
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            margin-top: 5px;
+            
+        }
+
+        .content ul {
+            margin-left: 20%;
+            text-align: left;
+        }
+
+        .toggle-radio:checked + .content {
+            display: block;
+        }
+
+         /* CSS för att markera den aktiva knappen */
+         .buttons.active {
+            background-color: #00866d;
+            color: white;
+        }
+
+        ul li {
+            margin-left: 20px;
+        }
+    
+		
+    </style>
+</head>
+	
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+       	</div>
+        <h1>Vad är SAM?</h1>
+        <p>Systematiskt arbetsmiljöarbete innebär att arbetsmiljörisker ska upptäckas och åtgärdas i tid innan någon 
+        skadas eller blir sjuk av sitt arbete. SAM ska ses som en naturlig del i det dagliga arbetet. Klicka på de gular
+        korten nedan för att läsa mer om de delar som ingår i det systematiska arbetsmiljöarbetet.</p>
+        
+      
+        <div class="buttons-container">
+            <label class="buttons" for="toggle1">Undersöka</label>
+                    
+            <label class="buttons" for="toggle2">Bedöma</label>
+                    
+            <label class="buttons" for="toggle3">Åtgärda</label>
+                    
+            <label class="buttons" for="toggle4">Kontrollera</label>
+        </div>
+        
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Undersöka</b>
+                <br>Innebär att undersöka verksamheten och identifiera risker. Detta omfattar risker inom samtliga 
+                områden (fysiska, sociala, organisatoriska och digitala)</p>
+            </div>
+        
+            <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <p><b>Bedöma</b>
+                <br>Handlar om att bedöma riskerna och besvara nedan frågor.</p>
+                <ul>
+                    <li>Hur allvarlig är risken?</li>
+                    <li>Hur sannolikt är det att den inträffar?</li>
+                    <li>Vad blir konsekvenserna?</li>
+                </ul>    
+            </div>
+        
+            <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <p><b>Åtgärda</b>
+                <br>Innebär att vidta nödvändiga åtgärder för att ta bort risken eller minimera den till en 
+                acceptabel och hanterbar nivå.</p>
+            </div>
+        
+            <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Kontrollera</b>
+                <br>Det är viktigt att kontrollera och följa upp att åtgärden har bidragit till en positiv effekt, 
+                alltså tagit bort eller minskat risken.</p>
+            </div>
+	</div>
+
+    <script>
+        // JavaScript för att scrolla ner när ett alternativ väljs
+document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Javascript för att markera en knapp som aktiv
+document.querySelectorAll('.buttons').forEach(button => {
+    button.addEventListener('click', function() {
+
+// Ta bort aktiv klass från alla knappar
+    document.querySelectorAll('.buttons').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+// Lägg till aktiv klass på den klickade knappen
+        this.classList.add('active');
+    });
+});
+
+
+    </script>
+
+</body>
+</html>
