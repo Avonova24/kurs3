@@ -186,6 +186,11 @@ blockquote {
 	text-align: left; /* Justera all text i pop-up till vänster */
 }
 
+.popup-content {
+	text-align: left;
+
+}
+
 /* Bakgrundslager för att dimma sidan */
 .overlay {
 	display: none;
@@ -222,6 +227,7 @@ blockquote {
 }
 
 /* Formatering för listan i pop-up */
+
 .popup-content h2 {
 	margin-top: 0;
 	text-align: left; /* Vänsterjustera rubriken */
