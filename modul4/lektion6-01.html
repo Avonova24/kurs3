@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Förtroendevaldas ansvar</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;   
+            padding-right: 5%;
+            position: relative; /* För att placera den expanderade bilden korrekt */
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .flexbox {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+            margin-right: 5%;
+        }
+
+        .image-container {
+            flex: 0.5;
+            text-align: end;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 350px;
+        }
+
+        
+
+        .bildtext {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+    
+        /* Visa overlay */
+        .show {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flexbox">
+            <div class="column1">
+                <div class="avonova-logo">
+                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+                </div>
+                <h1>Förtroendevaldas ansvar</h1>
+                <p>Denna lag gäller för anställda som blivit utsedda av ett fackförbund att representera sina kollegor 
+                i frågor som rör relationen till arbetsgivaren eller andra fackliga ärenden på arbetsplatsen.</p>
+            
+                <p>Enligt förtroendemannalagen har arbetsgivaren inte rätt att hindra en facklig förtroendeman 
+                från att fullgöra sitt uppdrag.</p>
+
+                <p>Som förtroendeman har du också rätt att få tillgång till en lokal eller annat utrymme på arbetsplatsen 
+                som behövs för att kunna utföra dina fackliga uppgifter på ett bra sätt</p>
+
+            </div>
+
+            <div class="image-container">
+                <img src="../images/.png" alt="Bild för ">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up -->
+    <div class="popup" id="popup1">
+        <button class="close-btn" id="closePopup1">Stäng</button>
+        <div class="popup-content">
+            <h2>Vid omedelbar fara</h2>
+            <p>Om arbetstagaren upptäcker en omedelbar och allvarlig fara för liv eller hälsa i sitt arbete, ska detta 
+            genast rapporteras till arbetsgivaren eller skyddsombudet. Arbetstagaren har då rätt att avbryta sitt 
+            arbete tills besked ges om att det är säkert att återuppta. Ingen ersättningsskyldighet gäller för skador 
+            som uppstår under väntetiden.</p>
+        </div>
+    </div>
+
+    <!-- Overlay-lagret för att dimma sidan -->
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        
+
+        // Hantering av pop-up för första knappen
+        const openPopupBtn1 = document.getElementById('openPopup1');
+        const closePopupBtn1 = document.getElementById('closePopup1');
+        const popup1 = document.getElementById('popup1');
+        const overlay = document.getElementById('overlay');
+
+        openPopupBtn1.addEventListener('click', function() {
+            popup1.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn1.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Stäng popup om man klickar på overlayn
+        overlay.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+    </script>
+</body>
+</html>
