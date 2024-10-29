@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dödsolyckor</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;   
+            padding-right: 5%;
+            position: relative; /* För att placera den expanderade bilden korrekt */
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .flexbox {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+            margin-right: 5%;
+        }
+
+        .image-container {
+            flex: 0.5;
+            text-align: end;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 350px;
+        }
+
+        
+
+        .bildtext {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+    
+        /* Visa overlay */
+        .show {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flexbox">
+            <div class="column1">
+                <div class="avonova-logo">
+                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+                </div>
+                <h1>Dödsolyckor</h1>
+                <p>Varje år omkommer nästan 50 personer i arbetsplatsolyckor i Sverige, vilket motsvarar nästan en 
+                person i veckan. De flesta av dessa olyckor drabbar män.</p>
+            
+                <p>En dödsolycka innebär att en eller flera personer hastigt omkommit och detta ska rapporteras utan 
+                dröjsmål. Antalet dödsolyckor på arbetsplatser har minskat under de senaste årtiondena, men fortfarande 
+                är det många som drabbas av allvarliga skador eller dör i arbetet. Regeringen har som mål att helt 
+                eliminera dödsolyckor och strävar efter en arbetsmiljö där ingen förlorar livet på jobbet.</p>
+
+                <p>Klicka på knappen för att läsa om de värst drabbade branscherna.</p>
+
+                <a href="javascript:void(0);" class="button-link" id="openPopup1">Vilka branscher är mest drabbade?</a>
+            </div>
+
+            <div class="image-container">
+                <img src="../images/.png" alt="Bild för skyddsombudsstopp">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up för relevanta kapitel -->
+    <div class="popup" id="popup1">
+        <button class="close-btn" id="closePopup1">Stäng</button>
+        <div class="popup-content">
+            <h2>Vilka branscher är mest drabbade?</h2>
+            <p>Dödsolyckorna sker främst inom byggbranschen, transport samt inom jordbruk, skogsbruk och fiske. Även tillverkningsindustrin är hårt drabbad. Ungefär 80 procent av dessa olyckor inträffar på arbetsplatser med färre än 100 anställda, vilket visar på vikten av att säkerhetsarbete prioriteras oavsett företagsstorlek.</p>
+        </div>
+    </div>
+
+    <!-- Overlay-lagret för att dimma sidan -->
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        
+
+        // Hantering av pop-up för första knappen
+        const openPopupBtn1 = document.getElementById('openPopup1');
+        const closePopupBtn1 = document.getElementById('closePopup1');
+        const popup1 = document.getElementById('popup1');
+        const overlay = document.getElementById('overlay');
+
+        openPopupBtn1.addEventListener('click', function() {
+            popup1.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn1.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Stäng popup om man klickar på overlayn
+        overlay.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+    </script>
+</body>
+</html>
