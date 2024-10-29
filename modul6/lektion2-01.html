@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fördelar för arbetsgivare</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;   
+        }
+
+        h1, p  {
+            text-align: center;
+            padding-right: 10%;
+            padding-left: 10%;
+        }
+
+        .circle-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            max-width: 800px;
+        }
+
+        .circle-button-green1, .circle-button-green2, .circle-button-green3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            width: 130px;
+            height: 130px;
+            padding: 14px;
+            
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            
+            border-radius: 50%;
+            border: none;
+            
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .circle-button-green1 {
+            background-color: #00866d;
+        }
+
+        .circle-button-green2 {
+            background-color: #005646;
+        }
+
+        .circle-button-green3 {
+            background-color: #01332a;
+
+        }
+
+        .circle-button-green1:hover, .circle-button-green2:hover, .circle-button-green3:hover {
+            background-color: #aff0e5;
+            color: #01332a;
+        }
+
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            
+            max-width: 700px;
+            margin-top: 5%;  
+        }
+
+        .toggle-radio:checked + .content {
+            display: flex;
+        }
+
+        .content img {
+            width: 200px;
+            margin: 0;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 16px;
+            text-align: left;
+            padding: 0 5% 0 2%;
+            
+        }
+
+        .green {
+            color: #005646;
+        }
+
+           /* CSS för att markera den aktiva knappen */
+           .circle-button-green1.active, .circle-button-green2.active, .circle-button-green3.active {
+        background-color: #aff0e5;
+        color: #01332a;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+        </div>
+        <h1>Fördelar för arbetsgivare</h1>
+        <p>Klicka på de olika <b class="green">gröna knapparna</b> nedan för att läsa mer om de viktigaste fördelarna för arbetsgivare.</p>
+        
+        <div class="circle-container">
+            <!-- FÖRSTA RADEN -->
+            <label class="circle-button-green1" for="toggle1">Ökad lönsamhet</label>
+            <label class="circle-button-green3" for="toggle2">Stärkt företagsrykte</label>
+            <label class="circle-button-green1" for="toggle3">Minskad risk för konflikter</label>
+        </div>
+
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/.png" alt="Bild för ">
+            <p><b>Ökad lönsamhet</b>
+            <br>När anställda mår bra och är produktiva ökar lönsamheten. Med minskad sjukfrånvaro och låg 
+            personalomsättning sjunker kostnaderna, medan effektiviteten och vinsten ökar. En arbetsplats som 
+            prioriterar arbetsmiljön attraherar och behåller även kompetenta medarbetare.</p>
+        </div>
+
+        <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/.png" alt="Bild för ">
+            <p><b>Stärkt företagsrykte</b>
+            <br>Företag som värnar om sina anställdas välmående och arbetsmiljö får ofta ett gott rykte, vilket lockar 
+            nya kunder och kvalificerade medarbetare. Detta bidrar till långsiktig framgång och hållbarhet.</p>
+        </div>
+
+        <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/.png" alt="Bild för">
+            <p><b>Minskad risk för konflikter och juridiska problem</b>
+            <br>En god arbetsmiljö förebygger konflikter och minskar risken för arbetsrelaterade tvister. Genom att 
+            följa arbetsmiljölagar och riktlinjer undviker företaget kostsamma juridiska problem som kan uppstå vid 
+            missförhållanden.</p>
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript för att scrolla ner när ett alternativ väljs
+document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Javascript för att markera en knapp som aktiv
+document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(button => {
+    button.addEventListener('click', function() {
+        // Ta bort aktiv klass från alla knappar
+        document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Lägg till aktiv klass på den klickade knappen
+        this.classList.add('active');
+    });
+});
+
+
+    </script>
+    
+</body>
+</html>
