@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uppgiftsfördelning och dokumentation</title>
+    <title>Den nya regelstrukturen</title>
     <link rel="stylesheet" href="../styles.css">
     
     <style>
@@ -11,18 +11,11 @@
             display: flex;
             justify-content: center;
             flex-direction: column;   
-            padding-right: 7%;
-            padding-left: 7%;
-            margin: 0;
-            position: relative; /* För att placera den expanderade bilden korrekt */
+            position: relative;
         }
 
         h1 {
             margin-bottom: 15px;
-        }
-
-        h2 {
-            font-size: 19px;
         }
 
         .flexbox {
@@ -34,65 +27,70 @@
         .column1 {
             text-align: left;
             flex: 1.5;
-            margin-right: 8%;
+            margin-right: 5%;
         }
 
-        .image-container {
+        .pdf-image-container {
+            width: 100%;
             flex: 0.5;
             text-align: end;
             position: relative;
         }
 
-        .image-container img.expandable {
-            width: 370px;
-            margin-top: 25%;
+        .pdf-image-container img {
+            width: 400px;
+            margin-top: 15%;
             cursor: pointer;
             transition: all 0.5s ease;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
 
-        /* Hover-effekt för den klickbara bilden */
-        .image-container img.expandable:hover {
-            transform: scale(1.05); /* Expanderar bilden lite */
+        .pdf-image-container img:hover {
+            transform: scale(1.05);
         }
 
-        .bildtext {
-            margin: 0;
-            padding: 0;
-            font-size: 15px;
-        }
-
-        /* Separat styling för illustrationen */
-        .image-container .illustration {
-            width: 250px;
-            margin-bottom: 0;
-            margin-top: -20px;
-            padding-bottom: 0;
-            
-           
-        }
-
-        /* Stilen för den expanderade bilden som täcker hela containern */
-        .expanded-image {
+        /* Popup-styling */
+        .popup-overlay {
+            display: none;
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            
-            width: 90vw;  /* Täcker 90% av viewport-bredden */
-            height: auto;
-            max-height: 90vh; /* Justera för att hålla inom viewport-höjden */
-            
-            z-index: 1000; /* Lägger bilden framför allt */
-            
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .popup-content {
+            position: relative;
+            background: white;
+            padding: 20px;
+            width: 80%;
+            height: 80%;
+            border-radius: 10px;
+        }
+        
+        .popup-content iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            border: none;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff5f5f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
             cursor: pointer;
+            border-radius: 5px;
         }
-
-        /* Visa overlay */
-        .show {
-            display: block;
-        }
-
     </style>
 </head>
 <body>
@@ -111,41 +109,33 @@
                 <p>Om verksamheten har minst tio arbetstagare ska fördelningen av arbetsmiljöuppgifter dokumenteras 
                 skriftligt, enligt AFS 2003:4. Detta dokument säkerställer att alla är medvetna om sina ansvarsområden 
                 och att arbetsmiljöarbetet bedrivs effektivt och i enlighet med lagens krav.</p>
+
+                <p>Klicka på bilden intill för att se ett exempel på en fördelning av arbetsmiljöuppgifter.</p>
             </div>
 
-            <div class="image-container">
-                <img src="../images/.png" alt="Bildexempel mall fördelning av arbetsmiljöuppgifter" class="expandable" id="expandableImage">
-                
-                <!-- Illustration som får sin egen klass och styling -->
-                <img src="../images/klicka1.png" alt="Klicka på bilden instruktion" class="illustration">
+            <div class="pdf-image-container">
+                <!-- Klickbar bild som öppnar en PDF i popup -->
+                <img src="../images/fordeliningex.png" alt="PDF-förhandsvisning" onclick="openPopup()">
             </div>
         </div>
     </div>
 
-    <!-- Overlay-element som skapar bakgrundsdimning -->
-    <div class="overlay" id="overlay"></div>
+    <!-- Popup för PDF-visning -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup()">Stäng</button>
+            <iframe src="../pdf/Exempel på föredlning av arbetsmiljöarbete.pdf"></iframe>
+        </div>
+    </div>
 
     <script>
-        const image = document.getElementById('expandableImage');
-        const overlay = document.getElementById('overlay');
+        function openPopup() {
+            document.getElementById('popupOverlay').style.display = 'flex';
+        }
 
-        image.addEventListener('click', function() {
-            const expandedImage = document.createElement('img');
-            expandedImage.src = image.src;
-            expandedImage.classList.add('expanded-image');
-
-            // Lägg till den expanderade bilden på body
-            document.body.appendChild(expandedImage);
-
-            // Visa overlay
-            overlay.classList.add('show');
-
-            // Stäng bilden och overlay om man klickar på den expanderade bilden
-            expandedImage.addEventListener('click', function() {
-                expandedImage.remove();
-                overlay.classList.remove('show');
-            });
-        });
+        function closePopup() {
+            document.getElementById('popupOverlay').style.display = 'none';
+        }
     </script>
 </body>
 </html>
