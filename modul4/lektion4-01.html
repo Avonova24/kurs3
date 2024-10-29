@@ -75,7 +75,7 @@
                 hotar ska vara både allvarlig och omedelbar. Det spelar ingen roll om den som är utsatt för fara är 
                 anställd eller inhyrd arbetskraft.</p>
 
-                <a href="javascript:void(0);" class="button-link" id="openPopup1">Produktregler - Klicka här</a>
+                
             </div>
 
             <div class="image-container">
@@ -85,50 +85,6 @@
         </div>
     </div>
 
-    <!-- Pop-up för relevanta kapitel -->
-    <div class="popup" id="popup1">
-        <button class="close-btn" id="closePopup1">Stäng</button>
-        <div class="popup-content">
-            <h2>Produktregler - Föreskriftshäften</h2>
-            <ul>
-                <li><b>1. (2023:4) Produkter – Maskiner</b></li>
-                <li><b>2. (2023:5) Produkter – Tryckbärande anordningar</b></li>
-                <li><b>3. (2023:6) Produkter – Enkla tryckkärl</b></li>
-                <li><b>4. (2023:7) Produkter – Utrustning för potentiellt explosiva atmosfärer</b></li>
-                <li><b>5. (2023:8) Produkter – Förbud att på marknaden släppa ut ledade skärverktyg avsedda för bärbara handhållna röjsågar</b></li>
-                <li><b>6. (2023:9) Produkter – Stegar, ställningar, och viss annan utrustning för arbete på höjd, samt vissa trycksatta anordningar</b></li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Overlay-lagret för att dimma sidan -->
-    <div class="overlay" id="overlay"></div>
-
-    <script>
-        
-
-        // Hantering av pop-up för första knappen
-        const openPopupBtn1 = document.getElementById('openPopup1');
-        const closePopupBtn1 = document.getElementById('closePopup1');
-        const popup1 = document.getElementById('popup1');
-        const overlay = document.getElementById('overlay');
-
-        openPopupBtn1.addEventListener('click', function() {
-            popup1.classList.add('show');
-            overlay.classList.add('show');
-        });
-
-        closePopupBtn1.addEventListener('click', function() {
-            popup1.classList.remove('show');
-            overlay.classList.remove('show');
-        });
-
-        // Stäng popup om man klickar på overlayn
-        overlay.addEventListener('click', function() {
-            popup1.classList.remove('show');
-            popup2.classList.remove('show');
-            overlay.classList.remove('show');
-        });
-    </script>
+   
 </body>
 </html>
