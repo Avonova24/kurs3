@@ -7,55 +7,45 @@
     <link rel="stylesheet" href="styles.css">
     
     <style>
+        h1 {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
 
-       h1{
-        margin-bottom: 0;
-        padding-bottom: 0;
-       }
+        p {
+            margin-top: 10px;
+        }
 
-       p {
-        margin-top: 10px;
-
-       }
-
-       .video-container {
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 0;
-        overflow: hidden; /* Förhindrar att hörnen "spiller över" */
-        border-radius: 15px; /* Runda hörn på hela videon */
-        
-
+        .video-container {
+            margin-top: 20px;
+            padding: 0;
+            overflow: hidden; /* Förhindrar att hörnen "spiller över" */
+            border-radius: 15px; /* Runda hörn på hela videon */
+            width: 90%; /* Sätt en procentbaserad bredd för responsivitet */
+            max-width: 1000px; /* Sätter max-bredd för större skärmar */
         }
 
         .video-container iframe {
-            width: 100%;
-            height: 450px;
+            width: 100%; /* Fyller ut video-container */
+            height: auto; /* Justerar höjden proportionellt */
+            aspect-ratio: 16/9; /* Håller 16:9-förhållande */
             border: none;
             border-radius: 15px; /* Runda hörn på själva videon */
         }
-
-        
-
     </style>
 </head>
 <body>
     <div class="container">
-        
-                <div class="avonova-logo">
-                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
-                </div>
+        <div class="avonova-logo">
+            <img src="images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+        </div>
                
-                <h1>"Bättre arbetsliv för ett bättre samhälle"</h1>
-                <p>Klicka på play för att se vår film om arbetsmiljö</p>
+        <h1>"Bättre arbetsliv för ett bättre samhälle"</h1>
+        <p>Klicka på play för att se vår film om arbetsmiljö</p>
 
-                <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/933174544?dnt=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                
-          
+        <div class="video-container">
+            <iframe src="https://player.vimeo.com/video/933174544?dnt=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
-
-   
 </body>
 </html>
