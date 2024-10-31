@@ -12,6 +12,10 @@
 			
 		}
 
+        h1 {
+            margin-bottom: 0;
+        }
+
         .flexbox {
 			display: flex;
 
@@ -20,21 +24,25 @@
         .column1 {
             flex: 2;
 			width: 100%;
-			padding-right: 30px;
+			
         }
 		
 		.column2 {
 			display: flex;
-            justify-content: start;
+            justify-content: center;
             align-items: center;
 			flex-direction: column;
 			flex: 1;
-			margin-top: 3%;
 		} 
 		
 		.column2 img {
-			width: 100%;
-            min-width: 300px;
+			width: 500px;
+            margin-bottom: 0;
+        }
+
+        .lista {
+            margin-top: 10%;
+            margin-bottom: 10%;
         }
 		
     </style>
@@ -45,25 +53,27 @@
         <div class="avonova-logo">
             <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
         </div>
+        <h1>Anmälan av arbetsskador</h1>
         <div class="flexbox">
             <div class="column1"> 
-                <h1>Anmälan av arbetsskador</h1>
+                
                 <p>Arbetsskador är olyckor som inträffar på arbetsplatsen eller på vägen till och från arbetet. Det kan 
                 även omfatta sjukdomar som uppstår på grund av arbetsmiljön. Dessa sjukdomar kan vara både fysiska och 
                 psykiska.</p>
                 
-                <p>Här är några exempel på arbetsskador:</p>
-                <ul>
-                    <li>Stukad fot efter att man snubblat</li>
-                    <li>Klämskador</li>
-                    <li>Ryggskott orsakad av tunga lyft</li>
-                    <li>Skärsår efter att en kniv slinter</li>
-                    <li>Att man upplever psykisk ohälsa till följd av destruktiva konflikter</li>
-                </ul>
+                <div class="lista"><p>Här är några exempel på arbetsskador:</p>
+                    <ul>
+                        <li>Stukad fot efter att man snubblat</li>
+                        <li>Klämskador</li>
+                        <li>Ryggskott orsakad av tunga lyft</li>
+                        <li>Skärsår efter att en kniv slinter</li>
+                        <li>Att man upplever psykisk ohälsa till följd av destruktiva konflikter</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="column2">
-                <img src="../images/.png" alt="Bild för">
+                <img src="../images/arbskadarygg.png" alt="Bild för">
             </div>
         </div>
 
@@ -72,10 +82,11 @@
             skyddsombudet (i verksamheter med fler än 5 anställda) och den som har drabbats, så att ni har en gemensam 
             bild av vad som har inträffat.</p>
 
-            <p>Enklaste sättet att anmäla är genom webbplatsen: www.anmalarbetsskada.se</p>
-        
-			 
-			
+            <p>Enklaste sättet att anmäla är genom webbplatsen www.anmalarbetsskada.se</p>
+            
+            <a href="https://www.anmalarbetsskada.se/" class="button-link">Anmäl arbetskada här</a>
+
+       	
 	</div>
 </body>
 </html>
