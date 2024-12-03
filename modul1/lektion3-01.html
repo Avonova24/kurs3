@@ -1,215 +1,163 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Det förebyggande arbetet</title>
-    <link rel="stylesheet" href="../styles.css">
+    <title>Händelser vid arbetsolyckor med dödlig utgång</title>
+	<link rel="stylesheet" href="../styles.css">
     <style>
-        .container {
+
+        .flexbox {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            gap: 35px;
         }
 
-        .toggle-container, .toggle-buttons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-top: 3%;
+        .column1 {
+            flex: 1;
+            
         }
 
-        .toggle-buttons {
-            gap: 15px;
+        .column2 {
+            flex: 1;
+            
         }
 
-        .circle-button-green1, .circle-button-green2 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 130px;
-            height: 130px;
-            padding: 14px;
-            text-align: center;
+        .column3 {
+           
+            flex: 1;
+        }
+
+        ul li {
+            margin: 15px 0 5px 0;
+            font-size: 18px;
+            line-height: 25px;
+        }
+
+        ul li:first-child {
+            margin-top: 0;
+        }
+
+        ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .bulletlevel2 {
+            margin-left: 0;
+            margin-top: 0;
+        }
+
+        .bulletlevel2 li {
+            margin-bottom: 30px;
+            background-image: none;
             font-size: 15px;
-            font-weight: bold;
-            text-decoration: none;
-            color: white;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
-
-        .circle-button-green1 {
-            background-color: #00866d;
-        }
-
-        .circle-button-green2 {
-            background-color: #005646;
-        }
-
-        .circle-button-green1:hover, .circle-button-green2:hover {
-            background-color: #aff0e5;
-            color: #01332a;
-        }
-
-        .toggle-checkbox {
-            display: none;
-        }
-
-        .toggle-content-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 700px;
-            margin-top: 5%;
-        }
-
-        .toggle-content {
-            display: none;
-            opacity: 0;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            text-align: left;
-            width: 100%;
-            gap: 20px;
-            margin: 15px 0 0;
-            transition: opacity 0.3s ease, position 0.3s ease;
-        }
-
-        .toggle-checkbox:checked + .toggle-content {
-            display: flex;
-            position: static;
-            opacity: 1;
-        }
-
-        .toggle-image {
-            width: 200px;
-            height: auto;
-        }
-
-        .toggle-text {
-            font-size: 16px;
-            text-align: left;
-            margin: 0;
-            padding-left: 2%;
-            padding-right: 5%;
-        }
-
-        .green {
-            color: #005646;
-        }   
-
-        /* CSS för att markera den aktiva knappen */
-        .circle-button-green1.active, .circle-button-green2.active {
-        background-color: #aff0e5;
-        color: #01332a;
-}
-
+        
     </style>
 </head>
+	
 <body>
     <div class="container">
-        <div class="avonova-logo">
+		<div class="avonova-logo">
             <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
-        </div>
-        
-        <h1 class="typewriter" id="typewriterText">Det förebyggande arbetet</h1>
-        <p>Lagen lägger stor vikt vid det förebyggande arbetsmiljöarbetet. Det innebär 
-        att arbetsgivaren har ansvar för att identifiera och förebygga risker som kan påverka 
-        arbetstagarnas hälsa och säkerhet, för att förhindra skador och ohälsa innan de 
-        leder till problem.</p>
-        
-        <p>Klicka på de <b class="green">gröna knapparna</b> nedan för att ta del av exempel 
-        på vad det förebyggande arbetet kan omfatta och innebära.</p>
+       	</div>
+            <h1>Händelser vid arbetsolyckor med dödlig utgång</h1>
+            <p>Se nedan några exempel på händelser vid arbestolyckor som haft dödlig utgång.</p>
+           
+        <div class="flexbox">
+            <div class="column1">
+                <ul>
+                    <li><strong>29-årig arbetsledare (Skåne)</strong></li> 
+                        <ul class="bulletlevel2">
+                            <li>Klämd under vältande grävmaskin</li>
+                        </ul>
+                    
+                    <li><strong>65-årig lastbilschaufför (VGR)</strong></li>
+                        <ul class="bulletlevel2">
+                            <li>Kollision mellan lastbilar</li>
+                        </ul>
+                        
+                    <li><strong>20-årig byggnadsarbetare (VGR)</strong></li>
+                        <ul class="bulletlevel2">
+                            <li>Frontalkrock med lastbil</li>
+                        </ul>
+                    
+                    <li><strong>40–årig busschaufför (Örebro)</strong></li>
+                        <ul class="bulletlevel2">
+                            <li>Kollision medförande brand</li>
+                        </ul>
 
-        <div class="toggle-container">
-            <div class="toggle-buttons">
-                <label for="toggle1" class="circle-button-green1">Arbetsuppgifter</label>
-                <label for="toggle2" class="circle-button-green2">Arbetsgivare</label>
-                <label for="toggle3" class="circle-button-green1">Arbetstagare</label>
+                    <li><strong>39-årig isolerare (VGR)</strong></li>
+                        <ul class="bulletlevel2">
+                            <li>Klämd mellan pelarlift och rör</li>
+                        </ul>
+                        
+
+                        
+                </ul>
             </div>
-        </div>
-        
-        <div class="toggle-content-container">
-            <input type="radio" id="toggle1" name="toggle" class="toggle-checkbox">
-            <div class="toggle-content">
-                <img src="../images/arbetsuppgifter.png" alt="Bild 1" class="toggle-image">
-                <p class="toggle-text"><b>Arbetsuppgifter</b> <br>Arbetsuppgifterna ska vara 
-                rimliga och att arbetstagarens resurser och förutsättningar ska matcha kraven 
-                i arbetsuppgifterna. <br><br>Detta kan innebära att organisera arbetsuppgifterna 
-                på ett sätt som minskar stress, erbjuda relevant utbildning, planera och prioritera 
-                arbetet, samt ge arbetstagarna möjlighet till återhämtning.</p>
-            </div>
+
+            <div class="column2">
+                <ul>
+                    
+                    <li><strong>31-årig växlare (Värmland)</strong></li>
+                        <ul class="bulletlevel2">
+                            <li>Klämskada vid växlingsarbete</li>
+                        </ul>
             
-            <input type="radio" id="toggle2" name="toggle" class="toggle-checkbox">
-            <div class="toggle-content">
-                <img src="../images/arbetsgivare.png" alt="Bild 2" class="toggle-image">
-                <p class="toggle-text"><b>Arbetsgivare</b> <br>Arbetsgivaren måste undersöka 
-                arbetsmiljön, bedöma risker och vidta åtgärder för att förebygga ohälsosam 
-                arbetsbelastning.</p>
+                    <li><strong>38-årig maskinoperatör (Stockholm)</strong></li>
+                        <ul class="bulletlevel2">
+                            <li>Städade tank, fick  syrebrist</li>
+                        </ul>
+                    
+                    <li><Strong>38-årig lantbrukare</Strong></li>
+                        <ul class="bulletlevel2">
+                            <li>Klämd i balpress</li>
+                        </ul>
+
+                    <li><Strong>Taxichaufför</Strong></li>
+                        <ul class="bulletlevel2">
+                            <li>Misstänkt mördad</li>
+                        </ul>
+
+                    <li><Strong>55-årig lastbilschaufför (Kronoberg)</Strong></li>
+                        <ul class="bulletlevel2">
+                            <li>Kollision mellan lastbil och personbil</li>
+                        </ul> 
+
+                    
+                </ul>
+                
             </div>
-            
-            <input type="radio" id="toggle3" name="toggle" class="toggle-checkbox">
-            <div class="toggle-content">
-                <img src="../images/arbetstagare.png" alt="Bild 3" class="toggle-image">
-                <p class="toggle-text"><b>Arbetstagare</b> <br>Arbetstagarna har också ett ansvar 
-                att följa arbetsmiljölagens krav och medverka i det förebyggande arbetsmiljöarbetet. 
-                Det inkluderar att rapportera risker och delta i arbetsmiljöutbildningar 
-                eller skyddsronder.</p>
+
+            <div class="column3">
+                <ul>
+                <li><Strong>45-årig lastbilschaufför (VGR)</Strong></li>
+                    <ul class="bulletlevel2">
+                         <li>Lastbil föll från viadukt</li>
+                    </ul>
+
+                <li><Strong>46-årig undersköterska, äldreomsorg i hemmet (Dalarna)</Strong></li>
+                    <ul class="bulletlevel2">
+                         <li>Påkörd av ett tåg</li>
+                    </ul>
+
+                <li><Strong>51-årig grävmaskinförare (Östergötland)</Strong></li>
+                    <ul class="bulletlevel2">
+                        <li>Grävmaskin välte</li>
+                    </ul>
+
+                <li><Strong>35-årig bageribiträde (Norrbotten)</Strong></li>
+                    <ul class="bulletlevel2">
+                        <li>Klämd under container som föll från lastbil</li>
+                    </ul>
+
+                <li><Strong>70-årig potatisodlare (Skåne)</Strong></li>
+                    <ul class="bulletlevel2">
+                        <li>Fastklämd i en lantbruksmaskin</li>
+                    </ul>
+                </ul>
             </div>
         </div>
-    </div>
 
-    <script>
-        // JavaScript för att scrolla ner när ett alternativ väljs
-        document.querySelectorAll('.toggle-checkbox').forEach(function(checkbox) {
-            checkbox.addEventListener('change', function() {
-                if (this.checked) {
-                    this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Javascript för att markera en knapp som aktiv
-        document.querySelectorAll('.circle-button-green1, .circle-button-green2').forEach(button => {
-        button.addEventListener('click', function() {
-       
-        // Ta bort aktiv klass från alla knappar
-        document.querySelectorAll('.circle-button-green1, .circle-button-green2').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        
-        // Lägg till aktiv klass på den klickade knappen
-        this.classList.add('active');
-    });
-});
-
-
-        const text = document.getElementById('typewriterText').innerText;
-        let index = 0;
-        
-        function typeWriterEffect() {
-            if (index < text.length) {
-                document.getElementById('typewriterText').style.width = (index + 1) + "ch";
-                index++;
-                setTimeout(typeWriterEffect, 100); // 100ms per bokstav
-            } else {
-                // När effekten är klar, ta bort markören
-                document.getElementById('typewriterText').style.borderRight = "none";
-            }
-        }
-        
-        // Starta effekten
-        typeWriterEffect();
-
-    </script>
 </body>
 </html>

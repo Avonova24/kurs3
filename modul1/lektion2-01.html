@@ -3,49 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syftet med arbetsmiljölagen</title>
-	<link rel="stylesheet" href="../styles.css">
+    <title>Viktig statistik</title>
+    <link rel="stylesheet" href="../styles.css">
+    
     <style>
-		
-		.container {
-			text-align: center;
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;   
+            padding-right: 5%;
+            position: relative; /* För att placera den expanderade bilden korrekt */
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .flexbox {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+            margin-right: 5%;
+        }
+
+        .image-container {
+            flex: 0.5;
+            text-align: end;
+            position: relative;
+        }
+
+        .image-container img.expandable {
+            width: 370px;
+            margin-top: 15%;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        /* Hover-effekt för den klickbara bilden */
+        .image-container img.expandable:hover {
+            transform: scale(1.05); /* Expanderar bilden lite */
+        }
+
+        .bildtext {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+
+        /* Separat styling för illustrationen */
+        .image-container .illustration {
+            width: 250px;
+            margin-bottom: 0;
+            margin-top: 10px;
             padding-bottom: 0;
+            
+           
+        }
 
-		}
+        /* Stilen för den expanderade bilden som täcker hela containern */
+        .expanded-image {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+            width: 90vw;  /* Täcker 90% av viewport-bredden */
+            height: auto;
+            max-height: 90vh; /* Justera för att hålla inom viewport-höjden */
+            
+            z-index: 1000; /* Lägger bilden framför allt */
+            
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
 
-		.image-container img {
-			width: 90%; /* Bevarar bildens storlek */
-            min-width: 300px;
-            max-width: 700px;
-			margin-top: 0;
-		}
-		
+        /* Visa overlay */
+        .show {
+            display: block;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="avonova-logo">
-            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+        <div class="flexbox">
+            <div class="column1">
+                <div class="avonova-logo">
+                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+                </div>
+                <h1>Viktig statistik</h1>
+                <p>Arbetsmiljöverket har sammanställt statistik som visar hur dödsolyckorna på arbetsplatser 
+                har minskat sedan 1955. Under denna period finns det ett tydligt undantag – Estoniaolyckan 1994. 
+                På grund av att många anställda omkom ombord medan de var i tjänst ledde denna tragiska händelse 
+                till en tillfällig ökning av dödsfall i arbetet.</p>
+
+                <p>Det finns även en tydlig skillnad mellan könen när det gäller dödsolyckor. Män är betydligt mer 
+                drabbade, vilket främst beror på att de oftare arbetar inom yrken med högre risker. Idag inträffar 
+                mellan 30 och 50 arbetsrelaterade dödsfall per år i Sverige.</p>
+
+            </div>
+
+            <div class="image-container">
+                <img src="../images/statistik.png" alt="Stapeldiagram dödsfall på arbetsplatsen" class="expandable" id="expandableImage">
+                
+                <!-- Illustration som får sin egen klass och styling -->
+                <img src="../images/klicka3.png" alt="Klicka på bilden instruktion" class="illustration">
+            </div>
         </div>
-		
-		
-		<h1>Syftet med arbetsmiljölagen</h1>
-			
-		<p>Syftet med Arbetsmiljölagen 1977:1160 (AML), är att förebygga ohälsa och olycksfall i arbetet 
-        samt att skapa en god arbetsmiljö. Lagen gäller för alla arbetsgivare och arbetstagare.</p> 
-        
-        <p>Arbetsgivaren ska systematiskt <b class="green">planera, leda</b> och <b class="green">kontrollera</b> verksamheten på ett sätt som 
-        säkerställer att arbetsmiljön uppfyller de föreskrivna kraven. Arbetsgivaren ska utreda 
-        arbetsskador, kontinuerligt undersöka riskerna i verksamheten och vidta nödvändiga åtgärder. 
-        Åtgärder som inte kan genomföras omedelbart ska <b class="green">tidsplaneras</b>.</p>
-        
-        <p>Lagen framhåller också att arbetsgivare och arbetstagare ska <b class="green">samverka</b> för att skapa en god 
-        arbetsmiljö.</p>
-	
-		
-		<div class="image-container">
-            <img src="../images/systematisktamarb.png" alt="Illustration AFS">
-        </div>
-	</div>
+        <h2>Egenföretagare och dödsolyckor</h2>
+        <p>För egenföretagare finns statistik från 1979. För drygt 30 år sedan låg antalet dödsfall bland egenföretagare på cirka 30 per år, 
+        medan det under de senaste tio åren har minskat till omkring 13 eller färre per år. År 2021 omkom 6 egenföretagare på jobbet. 
+        Statistiken visar att egenföretagare har en högre risk att drabbas av dödsolyckor, främst inom de riskutsatta sektorerna jordbruk, 
+        skogsbruk och fiske där många egenföretagare arbetar.</p>
+
+        <h2>Utländsk arbetskraft och dödsolyckor i Sverige</h2>
+        <p>Utländska arbetare omfattas inte av den svenska socialförsäkringen om de är här tillfälligt. Deras 
+        arbetsskador rapporteras istället i hemlandet, vilket innebär att de flesta arbetsskador för utländsk 
+        arbetskraft inte syns i Sveriges statistik. Däremot redovisas dödsolyckor bland utländsk arbetskraft 
+        som inträffar i Sverige separat. År 2021 inträffade 8 dödsolyckor i Sverige där utländska medborgare 
+        omkom i arbetet. Det är dock svårt att bedöma hur hög risken är för denna grupp, eftersom vi saknar 
+        data om det totala antalet utländska arbetstagare i Sverige och deras arbetsgivare.</p>
+    </div>
+
+    <!-- Overlay-element som skapar bakgrundsdimning -->
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        const image = document.getElementById('expandableImage');
+        const overlay = document.getElementById('overlay');
+
+        image.addEventListener('click', function() {
+            const expandedImage = document.createElement('img');
+            expandedImage.src = image.src;
+            expandedImage.classList.add('expanded-image');
+
+            // Lägg till den expanderade bilden på body
+            document.body.appendChild(expandedImage);
+
+            // Visa overlay
+            overlay.classList.add('show');
+
+            // Stäng bilden och overlay om man klickar på den expanderade bilden
+            expandedImage.addEventListener('click', function() {
+                expandedImage.remove();
+                overlay.classList.remove('show');
+            });
+        });
+    </script>
 </body>
 </html>
