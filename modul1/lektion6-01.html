@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbetsmiljörisker och hälsa</title>
+	<link rel="stylesheet" href="../styles.css">
+    <style>
+
+        .container {
+            text-align: center;
+            
+        }
+
+        p {
+            padding-right: 5%;
+            padding-left: 5%;
+        }
+
+        .buttons-container {
+            display: flex;
+            
+            justify-content: center;
+            
+            width: 100%;
+            max-width: 1000px;
+
+            
+            gap: 15px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            
+            background-color: #ffdcaf;
+            color: #005646;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            
+            width: 180px;
+            height: 100px;
+            padding: 20px;
+            
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .buttons:hover {
+            background-color: #00866d;
+            color: white;
+        }
+      
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            margin-top: 5px;
+            
+        }
+
+        .content ul {
+            margin-left: 20%;
+            text-align: left;
+        }
+
+        .toggle-radio:checked + .content {
+            display: block;
+        }
+
+         /* CSS för att markera den aktiva knappen */
+         .buttons.active {
+            background-color: #00866d;
+            color: white;
+        }
+
+        .button-link {
+            margin-top: 4%;
+            cursor: pointer;
+        }
+    
+		
+    </style>
+</head>
+	
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+       	</div>
+        <h1>Arbetsmiljörisker och hälsa</h1>
+        <p>Varje år dör ungefär <b class="green">3000 personer</b> i förtid på grund av sjukdomar och skador kopplade till 
+        ohälsosamma arbetsmiljöer. Enbart arbetsrelaterad stress leder till <b class="green">över 700 dödsfall årligen</b>, 
+        och risken för dödsfall på grund av stress förväntas öka framöver.</p> 
+        
+        <p>Ny forskning visar också att ungefär vart <b class="green">20e självmord</b> kan ha samband med arbetsplatsmobbning, 
+        vilket innebär cirka <b class="green">60 självmord om året</b>. Samband har också konstaterats mellan självmord och kränkande särbehandling 
+        samt sexuella trakasserier på arbetsplatsen.</p>
+
+        <p>Utöver detta visar studier att kränkande särbehandling, mobbning och destruktivt ledarskap 
+        är problem som drabbar cirka <b class="green">1 av 10</b> på arbetsplatsen och utgör ytterligare arbetsmiljörisker.</p>
+        
+      
+        <div class="buttons-container">
+            <label class="buttons" for="toggle1">Riskfaktorer som bidrar till förtida dödlighet</label>
+                    
+            <label class="buttons" for="toggle2">Riskutsatta grupper</label>
+                    
+            <label class="buttons" for="toggle3">Stress och ohälsa i arbetslivet</label>
+                    
+            <label class="buttons" for="toggle4">Faktorer <br>kopplade till arbetsrelaterade dödsfall (per år)</label>
+        </div>
+        
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Riskfaktorer som bidrar till förtida dödlighet</b>
+                <br>Arbetsrelaterade sjukdomar är en stor faktor bakom förtida dödsfall. På uppdrag av 
+                Arbetsmiljöverket har Bengt Järvholm, senior professor vid Umeå universitet, sammanställt 
+                riskfaktorer i arbetsmiljön som leder till sjukdomar och tidig död. Några av de faktorer som 
+                varje år leder till fler än 500 dödsfall vardera är hög arbetsbelastning, skiftarbete, 
+                arbetsrelaterad stress, motoravgaser, buller och tungt fysiskt arbete. Även damm, asbest, 
+                kvarts och passiv rökning bidrar med mellan 100 och 500 dödsfall per år. Totalt förväntas 
+                dödsfallen på grund av arbetsrelaterad stress öka medan antalet dödsfall kopplade till andra 
+                riskfaktorer minskar i framtiden.</p>
+
+            </div>
+        
+            <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <p><b>Riskutsatta grupper</b>
+                <br>Arbetstagare i små och medelstora företag, med färre än 100 anställda, är oftare drabbade 
+                av både dödsolyckor och arbetsrelaterade sjukdomar som leder till förtida död.</p>
+                    
+            </div>
+        
+            <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <p><b>Stress och ohälsa i arbetslivet</b>
+                <br>Undersökningar om upplevd stress från 1980-talet och framåt visar att andelen som upplever 
+                negativ stress har ökat från 13 procent 1981 till 22 procent 2000. De största ökningarna av stress 
+                har skett bland anställda inom handel, hotell, restaurang samt vård, omsorg och utbildning. Kvinnor 
+                rapporterar genomgående högre nivåer av negativ stress än män.</p>
+            </div>
+        
+            <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Faktorer kopplade till arbetsrelaterade dödsfall (per år)</b>
+
+                <a href="javascript:void(0);" class="button-link" id="openPopup1">Rapport från Umeå Universitet (2019:3) - Klicka här</a>
+            </div>
+	</div>
+
+     <!-- Pop-up för relevanta kapitel -->
+     <div class="popup" id="popup1">
+        <button class="close-btn" id="closePopup1">Stäng</button>
+        <div class="popup-content">
+            <h2>Rapport från Umeå Universitet (2019:3)</h2>
+            <ul>
+                <li><b>Stress: 772 dödsfall</b></li>
+                <li><b>Skiftarbete: 728 dödsfall</b></li>
+                <li><b>Damm (KOL): 421 dödsfall</b></li>
+                <li><b>Asbest: 268 dödsfall</b></li>
+                <li><b>Kvarts: 125 dödsfall</b></li>
+                <li><b>Motoravgaser: 547 dödsfall</b></li>   
+                <li><b>Passiv rökning: 195 dödsfall</b></li>
+                <li><b>Svetsrök: 71 dödsfall</b></li>
+                <li><b>Buller (mindre säkert samband): 777 dödsfall</b></li>
+                <li><b>Ihållande tungt arbete (mindre säkert samband): 549 dödsfall</b></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Overlay-lagret för att dimma sidan -->
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        // JavaScript för att scrolla ner när ett alternativ väljs
+document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Javascript för att markera en knapp som aktiv
+document.querySelectorAll('.buttons').forEach(button => {
+    button.addEventListener('click', function() {
+
+// Ta bort aktiv klass från alla knappar
+    document.querySelectorAll('.buttons').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+// Lägg till aktiv klass på den klickade knappen
+        this.classList.add('active');
+    });
+});
+
+// Hantering av pop-up för första knappen
+const openPopupBtn1 = document.getElementById('openPopup1');
+        const closePopupBtn1 = document.getElementById('closePopup1');
+        const popup1 = document.getElementById('popup1');
+        const overlay = document.getElementById('overlay');
+
+        openPopupBtn1.addEventListener('click', function() {
+            popup1.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn1.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+    // Stäng popup om man klickar på overlayn
+        overlay.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+
+
+    </script>
+
+</body>
+</html>

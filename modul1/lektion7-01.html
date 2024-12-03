@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vad säger arbetsmiljölagen?</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+
+        .container {
+            display: flex;
+            justify-content: center;
+        
+            flex-direction: column;   
+            
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+
+        .flexbox {
+            display: flex;
+            width: 100%;
+            align-items: center;
+
+        }
+
+        .column1 {
+            text-align: left;
+            margin-right: 5%;
+            
+
+
+        }
+
+        .image-container img {
+            width: 200px;
+            
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+        </div>
+        <h1 class="typewriter" id="typewriterText">Vad säger arbetsmiljölagen?</h1>
+        
+        <div class="flexbox">
+            <div class="column1">
+                
+                
+                <blockquote>
+                    <span class="quote-icon">❝</span><b class="green">3 a §​</b>
+                    <br>En arbetsgivare ska utan dröjsmål underrätta 
+                    den myndighet som regeringen bestämmer om dödsfall eller svårare personskada 
+                    som har inträffat i samband med arbetets utförande.​I lagen ställs det krav om 
+                    att olyckor på arbetsplatsen med dödsfall eller allvarliga skador som följd ska 
+                    rapporteras utan dröjsmål. Står i lagen därför också krav och kan medföra straff 
+                    (böter eller fängelse). 
+                </blockquote>
+            </div>
+
+            <div class="image-container">
+                <img src="../images/arbansvar.png" alt="Bild för arbetamiljöförordningen">
+            </div>
+        </div>
+       
+    </div>
+
+    <script>
+        const text = document.getElementById('typewriterText').innerText;
+        let index = 0;
+        
+        function typeWriterEffect() {
+            if (index < text.length) {
+                document.getElementById('typewriterText').style.width = (index + 1) + "ch";
+                index++;
+                setTimeout(typeWriterEffect, 100); // 100ms per bokstav
+            } else {
+                // När effekten är klar, ta bort markören
+                document.getElementById('typewriterText').style.borderRight = "none";
+            }
+        }
+        
+        // Starta effekten
+        typeWriterEffect();
+    </script>
+</body>
+</html>
