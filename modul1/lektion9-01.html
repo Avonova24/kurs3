@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En negativ trend</title>
+	<link rel="stylesheet" href="../styles.css">
+    <style>
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; 
+        }
+
+        h1, p  {
+            text-align: center;
+            padding-right: 10%;
+            padding-left: 10%;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            
+            justify-content: center;
+            
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            
+            background-color: #ffdcaf;
+            color: #005646;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            
+            width: 180px;
+            height: 100px;
+            padding: 20px;
+            
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .buttons:hover {
+            background-color: #00866d;
+            color: white;
+        }
+      
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            
+            max-width: 790px;
+            margin-top: 5%; 
+        }
+
+        .content img {
+            width: 200px;
+            margin: 0;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 16px;
+            text-align: left;
+            padding: 0 5% 0 2%;
+        }
+
+        .content ul {
+            margin-left: 5%;
+            text-align: left;
+            list-style-position: inside; /* Ensure bullets align properly */
+        }
+
+        .toggle-radio:checked + .content {
+            display: flex;
+        }
+
+        .button-link {
+            margin-top: 4%;
+            cursor: pointer;
+            margin-right: 2%;
+        }
+
+       
+    
+                    
+    </style>
+</head>
+	
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+       	</div>
+        <h1>En negativ trend</h1>
+        <p>De senaste tre åren har många arbetsplatser sett en försämring av arbetsmiljön. 
+        Stressnivåerna har stigit samtidigt som möjligheten till återhämtning har minskat sedan 
+        pandemins början. Idag uppger nästan 40 procent av medarbetarna att de känner sig stressade 
+        och upplever dålig återhämtning, jämfört med cirka en tredjedel i pandemins inledande skede.</p>
+        
+        <p>Klicka på de gula knapparna nedan för att läsa mer:</p>
+        
+      
+        <div class="buttons-container">
+            <label class="buttons" for="toggle1">Branscher som påverkas mest av ökad stress</label>
+                    
+            <label class="buttons" for="toggle2">Negativa konflikter på arbetsplatsen</label>
+
+            <label class="buttons" for="toggle3">Om undersökningen</label>
+
+            <label class="buttons" for="toggle4">Sammanfattning av nyckelfakta</label>
+                    
+        </div>
+        
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <img src="../images/stress.png" alt="Bild för stress på arbetet">
+                <div class="column2">
+                    <p><b>Branscher som påverkas mest av ökad stress</b>
+                    <br>Stressnivåerna har ökat mest inom servicebranschen, med bygg- och tillverkningssektorn 
+                    tätt efter. Dessutom upplever mer än en tredjedel av de anställda att de saknar möjlighet att 
+                    påverka sin arbetssituation efter pandemin, vilket särskilt gäller inom servicebranschen.</p>
+                </div>
+            </div>
+        
+            <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <img src="../images/konflikt.png" alt="Bild för konflikt på arbetsplatsen">
+                <div class="column2">
+                    <p><b>Negativa konflikter på arbetsplatsen</b>
+                    <br>Kartläggningen visar också att ungefär var fjärde medarbetare upplever negativa konflikter 
+                    på arbetsplatsen, och problemet har inte förbättrats över tid. Konflikter är särskilt vanliga inom 
+                    service-, bygg- och tillverkningsbranscherna, medan de förekommer mindre ofta i tjänstebranschen.</p>
+
+                </div>   
+            </div>
+
+            <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+
+            <div class="content">
+                <img src="../images/research.png" alt="Bild för undersökningen">
+                <div class="column2">
+                    <p><b>Om undersökningen</b>
+                    <br>Denna analys bygger på över en miljon svar från medarbetarundersökningar som Brilliant Future 
+                    genomförde mellan 2019 och 2023. Syftet med undersökningen var att kartlägga den organisatoriska 
+                    och sociala arbetsmiljön för att bättre förstå arbetsrelaterad stress och konflikter.</p>
+
+                </div>   
+            </div>
+
+            <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
+
+            <div class="content">
+                <img src="../images/conclusion.png" alt="Bild för sammanfattning">
+                <div class="column2">
+                    <p><b>Sammanfattning av nyckelfakta</b>
+                    <ul>
+                        <li>40 procent upplever ökad stress och bristande återhämtning</li>
+                        <li>Servicebranschen är mest utsatt för stress och konflikter</li>
+                        <li>Var fjärde medarbetare rapporterar om negativa konflikter</li>
+                    </ul>
+
+                </div>   
+            </div>
+        
+	</div>
+
+
+
+
+    <script>
+        // JavaScript för att scrolla ner när ett alternativ väljs
+        document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Javascript för att markera en knapp som aktiv
+        document.querySelectorAll('.buttons').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.buttons').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Hantering av pop-up för första knappen
+        const openPopupBtn1 = document.getElementById('openPopup1');
+        const closePopupBtn1 = document.getElementById('closePopup1');
+        const popup1 = document.getElementById('popup1');
+        const overlay = document.getElementById('overlay');
+
+        openPopupBtn1.addEventListener('click', function() {
+            popup1.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn1.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+    
+
+    </script>
+
+</body>
+</html>
