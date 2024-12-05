@@ -3,146 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arbetsmiljöområden</title>
+    <title>Arbetsmiljöpolicy - ett styrande dokument</title>
     <link rel="stylesheet" href="../styles.css">
     
     <style>
-
         .container {
             display: flex;
             justify-content: center;
-            align-items: center;
             flex-direction: column;   
+            position: relative;
         }
 
-        h1, p  {
-            text-align: center;
-            padding-right: 10%;
-            padding-left: 10%;
+        h1 {
+            margin-bottom: 15px;
         }
 
-
-        svg {
-            margin-top: -60px;
+        .flexbox {
+            display: flex;
             width: 100%;
-            height: auto;
-            max-width: 600px;
+            align-items: center;
         }
 
-        text {
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            font-weight: 500;
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+            margin-right: 5%;
         }
 
-        .circle-link {
+        .pdf-image-container {
+            width: 100%;
+            flex: 0.5;
+            text-align: end;
+            position: relative;
+        }
+
+        .pdf-image-container img {
+            width: 400px;
+            margin-top: 15%;
             cursor: pointer;
+            transition: all 0.5s ease;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .circle-link:hover circle {
-            stroke: white;
-            stroke-width: 1;
-            transform: scale(1.04);
-            transition: transform 0.3s ease;
+        .pdf-image-container img:hover {
+            transform: scale(1.05);
         }
 
-        .modal {
-            display: none; /* Döljer modalen initialt */
+        /* Popup-styling */
+        .popup-overlay {
+            display: none;
             position: fixed;
-            z-index: 1;
-            left: 0;
             top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
             justify-content: center;
             align-items: center;
+            z-index: 1000;
         }
-
-        .modal-content {
-            background-color: white;
+        
+        .popup-content {
+            position: relative;
+            background: white;
             padding: 20px;
+            width: 80%;
+            height: 80%;
             border-radius: 10px;
-            max-width: 400px;
-            text-align: center;
         }
-
-       
+        
+        .popup-content iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            border: none;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff5f5f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
     </style>
 </head>
-
 <body>
     <div class="container">
-        <div class="avonova-logo">
-            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
-        </div>
-        <h1>Arbetsmiljöområden</h1>
-        <p>Arbetsmiljön omfattar alla förhållanden på arbetsplatsen. Klicka på de olika delarna i figuren 
-        nedan för att läsa mer om varje område.</p>
+        <div class="flexbox">
+            <div class="column1">
+                <div class="avonova-logo">
+                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+                </div>
+                <h1>Arbetsmiljöpolicy - Ett styrande dokument</h1>
+                <p>En arbetsmiljöpolicy ska utformas för att tydligt visa arbetsgivarens långsiktiga mål, ambitioner och metoder 
+                för att upprätthålla och förbättra arbetsmiljön. Den fungerar som ett styrdokument för arbetsmiljöarbetet i 
+                verksamheten och beskriver hur arbetsplatsen ska vara organiserad och vilka mål man arbetar mot för att förebygga 
+                ohälsa och olycksfall samt främja en god arbetsmiljö.</p>
 
-        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-            <!-- Organisatorisk arbetsmiljö -->
-            <a href="#organisatorisk" class="circle-link" data-info="Den organisatoriska arbetsmiljön rör arbetsvillkor som ledning, styrning, kommunikation, delaktighet, handlingsutrymme samt fördelning av arbetsuppgifter, krav, resurser och ansvar.">
-                <circle cx="200" cy="130" r="60" fill="rgba(160, 232, 242, 0.5)"/>
-                <text x="200" y="130" fill="black" text-anchor="middle" dy=".3em">Organisatorisk</text>
-            </a>
-            <!-- Fysisk arbetsmiljö -->
-            <a href="#fysisk" class="circle-link" data-info="Den fysiska arbetsmiljön inkluderar arbetslokaler och utrustning, såsom skrivbord, stolar, datorer, värme, utrymme, ventilation och buller.">
-                <circle cx="270" cy="200" r="60" fill="rgba(247, 155, 155, 0.5)" />
-                <text x="270" y="200" fill="black" text-anchor="middle" dy=".3em">Fysisk</text>
-            </a>
-            <!-- Social arbetsmiljö -->
-            <a href="#social" class="circle-link" data-info="Social arbetsmiljö definieras som de villkor och förutsättningar i arbetet som rör socialt samspel, samarbete och stöd från chefer och kollegor.">
-                <circle cx="200" cy="270" r="60" fill="rgba(142, 227, 202, 0.5)" />
-                <text x="200" y="270" fill="black" text-anchor="middle" dy=".3em">Social</text>
-            </a>
-            <!-- Digital arbetsmiljö -->
-            <a href="#digital" class="circle-link" data-info="Digital arbetsmiljö omfattar de delar av arbetet som utförs eller styrs av digitala system, inklusive datorer och IT-program, samt hur väl dessa system är anpassade till användarna. Det handlar också om att sätta gränser för arbetstid i en uppkopplad miljö.">
-                <circle cx="130" cy="200" r="60" fill="rgba(255, 235, 202, 0.5)" />
-                <text x="130" y="200" fill="black" text-anchor="middle" dy=".3em">Digital</text>
-            </a>
-        </svg>
-        
-    
-        <!-- Modal struktur -->
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <p id="modal-text">Här visas arbetsmiljö information</p>
+                <p>Policyn bör omfatta alla aspekter som påverkar arbetsmiljön, inklusive fysiska, psykologiska och sociala 
+                förhållanden, och den ska säkerställa att arbetsmiljöarbetet är integrerat med övriga rutiner och processer 
+                i verksamheten. För företag med minst tio anställda krävs att arbetsmiljöpolicyn dokumenteras skriftligt.</p>
+
+                <p>Klicka på bilden intill för att se ett exempel på en arbetsmiljöpolicy.</p>
+            </div>
+
+            <div class="pdf-image-container">
+                <!-- Klickbar bild som öppnar en PDF i popup -->
+                <img src="../images/arbpolicyex.png" alt="PDF-förhandsvisning" onclick="openPopup()">
             </div>
         </div>
-        
+    </div>
+
+    <!-- Popup för PDF-visning -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup()">Stäng</button>
+            <iframe src="../pdf/systematiskt-arbetsmiljoarbete-exempel-startpaket-handbok-03-arbetsmiljopolicy.pdf"></iframe>
+        </div>
     </div>
 
     <script>
+        function openPopup() {
+            document.getElementById('popupOverlay').style.display = 'flex';
+        }
 
-        document.querySelectorAll('.circle-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const modal = document.getElementById('modal');
-                const modalText = document.getElementById('modal-text');
-                const info = link.getAttribute('data-info');
-                modalText.textContent = info;
-                modal.style.display = 'flex';
-            });
-        });
-
-        // Stäng modalen när man klickar på "stäng" knappen
-        document.querySelector('.close-btn').addEventListener('click', () => {
-            document.getElementById('modal').style.display = 'none';
-        });
-
-        // Stäng modalen om man klickar utanför den
-        window.addEventListener('click', (e) => {
-            const modal = document.getElementById('modal');
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-
+        function closePopup() {
+            document.getElementById('popupOverlay').style.display = 'none';
+        }
     </script>
-
-   
-    
 </body>
 </html>

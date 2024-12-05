@@ -3,139 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arbetsmiljöpolicy - ett styrande dokument</title>
+    <title>Rutiner för systematiskt arbetsmiljöarbete (SAM)</title>
     <link rel="stylesheet" href="../styles.css">
     
     <style>
+
         .container {
             display: flex;
             justify-content: center;
-            flex-direction: column;   
-            position: relative;
+            flex-direction: column;  
+            padding-right: 8%; 
+            
         }
 
         h1 {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
+
+        h2 {
+            font-size: 19px;
+        }
+
 
         .flexbox {
             display: flex;
             width: 100%;
             align-items: center;
+
         }
 
         .column1 {
             text-align: left;
-            flex: 1.5;
-            margin-right: 5%;
+            
+
+
         }
 
-        .pdf-image-container {
-            width: 100%;
-            flex: 0.5;
-            text-align: end;
-            position: relative;
+        .image-container {
+            padding-left: 3%;
+            
         }
 
-        .pdf-image-container img {
-            width: 400px;
-            margin-top: 15%;
-            cursor: pointer;
-            transition: all 0.5s ease;
-            border-radius: 10px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        .image-container img {
+            width: 340px;
+            
         }
 
-        .pdf-image-container img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Popup-styling */
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        
-        .popup-content {
-            position: relative;
-            background: white;
-            padding: 20px;
-            width: 80%;
-            height: 80%;
-            border-radius: 10px;
-        }
-        
-        .popup-content iframe {
-            width: 100%;
-            height: 100%;
-            border-radius: 10px;
-            border: none;
-        }
-        
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #ff5f5f;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+    
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+        </div>
+        <h1 class="typewriter" id="typewriterText">Rutiner för systematiskt arbetsmiljöarbete (SAM)</h1>
+        
         <div class="flexbox">
             <div class="column1">
-                <div class="avonova-logo">
-                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
-                </div>
-                <h1>Arbetsmiljöpolicy - Ett styrande dokument</h1>
-                <p>En arbetsmiljöpolicy ska utformas för att tydligt visa arbetsgivarens långsiktiga mål, ambitioner och metoder 
-                för att upprätthålla och förbättra arbetsmiljön. Den fungerar som ett styrdokument för arbetsmiljöarbetet i 
-                verksamheten och beskriver hur arbetsplatsen ska vara organiserad och vilka mål man arbetar mot för att förebygga 
-                ohälsa och olycksfall samt främja en god arbetsmiljö.</p>
+                <p>För att genomföra arbetsmiljöarbetet på ett effektivt sätt ska rutiner utvecklas och följas för 
+                alla aktiviteter som ingår i SAM. Rutinerna bör omfatta allt från riskbedömning och åtgärdsplanering 
+                till uppföljning av arbetsmiljön och hantering av eventuella incidenter. Dessa rutiner måste vara 
+                tydligt kopplade till andra relevanta rutiner och aktiviteter inom verksamheten och kunna samordnas 
+                med dessa för att skapa en helhet. För verksamheter med tio eller fler anställda ska även dessa 
+                rutiner dokumenteras skriftligt.</p>
 
-                <p>Policyn bör omfatta alla aspekter som påverkar arbetsmiljön, inklusive fysiska, psykologiska och sociala 
-                förhållanden, och den ska säkerställa att arbetsmiljöarbetet är integrerat med övriga rutiner och processer 
-                i verksamheten. För företag med minst tio anställda krävs att arbetsmiljöpolicyn dokumenteras skriftligt.</p>
-
-                <p>Klicka på bilden intill för att se ett exempel på en arbetsmiljöpolicy.</p>
+                <p>Genom att följa en tydligt utformad arbetsmiljöpolicy och tillhörande rutiner kan arbetsgivaren 
+                skapa en systematisk och förebyggande arbetsmiljöstrategi som är integrerad i den dagliga 
+                verksamheten och bidrar till både säkerhet och trivsel på arbetsplatsen.</p>
             </div>
 
-            <div class="pdf-image-container">
-                <!-- Klickbar bild som öppnar en PDF i popup -->
-                <img src="../images/arbpolicyex.png" alt="PDF-förhandsvisning" onclick="openPopup()">
+            <div class="image-container">
+                <img src="../images/fordelninguppgifter.png" alt="Bild för ansvar uppgiftsfördelning">
             </div>
         </div>
-    </div>
-
-    <!-- Popup för PDF-visning -->
-    <div class="popup-overlay" id="popupOverlay">
-        <div class="popup-content">
-            <button class="close-btn" onclick="closePopup()">Stäng</button>
-            <iframe src="../pdf/systematiskt-arbetsmiljoarbete-exempel-startpaket-handbok-03-arbetsmiljopolicy.pdf"></iframe>
-        </div>
+       
     </div>
 
     <script>
-        function openPopup() {
-            document.getElementById('popupOverlay').style.display = 'flex';
+        const text = document.getElementById('typewriterText').innerText;
+        let index = 0;
+        
+        function typeWriterEffect() {
+            if (index < text.length) {
+                document.getElementById('typewriterText').style.width = (index + 1) + "ch";
+                index++;
+                setTimeout(typeWriterEffect, 100); // 100ms per bokstav
+            } else {
+                // När effekten är klar, ta bort markören
+                document.getElementById('typewriterText').style.borderRight = "none";
+            }
         }
-
-        function closePopup() {
-            document.getElementById('popupOverlay').style.display = 'none';
-        }
+        
+        // Starta effekten
+        typeWriterEffect();
     </script>
 </body>
 </html>
