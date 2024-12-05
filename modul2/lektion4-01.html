@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grundläggande principer för arbetsmiljöansvar</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;   
+            padding-right: 5%;
+            position: relative; /* För att placera den expanderade bilden korrekt */
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .flexbox {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+            margin-right: 5%;
+        }
+
+        .image-container {
+            flex: 0.5;
+            text-align: end;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 360px;
+        }
+
+        
+
+        .bildtext {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+    
+        /* Visa overlay */
+        .show {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flexbox">
+            <div class="column1">
+                <div class="avonova-logo">
+                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+                </div>
+                <h1>Grundläggande principer för arbetsmiljöansvar</h1>
+                <p>Arbetsmiljölagen (AML) har som mål att förebygga ohälsa och olycksfall i arbetet och 
+                skapa en sund och säker arbetsmiljö för alla. Lagen är tillämplig på alla arbetsgivare 
+                och arbetstagare och understryker arbetsgivarens ansvar att aktivt och systematiskt 
+                planera, leda och följa upp arbetsmiljöarbetet för att uppfylla säkerhetskraven. Detta 
+                innebär att arbetsgivaren ska utreda alla arbetsskador, identifiera risker och genomföra 
+                nödvändiga åtgärder för att minimera dem. Om åtgärder inte kan vidtas omedelbart, ska de 
+                tidsplaneras och genomföras så snart som möjligt. AML betonar också vikten av samarbete 
+                mellan arbetsgivare och arbetstagare för att skapa en bra arbetsmiljö.</p>
+
+                
+            </div>
+
+            <div class="image-container">
+                <img src="../images/arbmiljoansvar.png" alt="Bild för produktregler">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up för relevanta kapitel -->
+    <div class="popup" id="popup1">
+        <button class="close-btn" id="closePopup1">Stäng</button>
+        <div class="popup-content">
+            <h2>Produktregler - Föreskriftshäften</h2>
+            <ul>
+                <li><b>1. (2023:4) Produkter – Maskiner</b></li>
+                <li><b>2. (2023:5) Produkter – Tryckbärande anordningar</b></li>
+                <li><b>3. (2023:6) Produkter – Enkla tryckkärl</b></li>
+                <li><b>4. (2023:7) Produkter – Utrustning för potentiellt explosiva atmosfärer</b></li>
+                <li><b>5. (2023:8) Produkter – Förbud att på marknaden släppa ut ledade skärverktyg avsedda för bärbara handhållna röjsågar</b></li>
+                <li><b>6. (2023:9) Produkter – Stegar, ställningar, och viss annan utrustning för arbete på höjd, samt vissa trycksatta anordningar</b></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Overlay-lagret för att dimma sidan -->
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        
+
+        // Hantering av pop-up för första knappen
+        const openPopupBtn1 = document.getElementById('openPopup1');
+        const closePopupBtn1 = document.getElementById('closePopup1');
+        const popup1 = document.getElementById('popup1');
+        const overlay = document.getElementById('overlay');
+
+        openPopupBtn1.addEventListener('click', function() {
+            popup1.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn1.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Stäng popup om man klickar på overlayn
+        overlay.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+    </script>
+</body>
+</html>
