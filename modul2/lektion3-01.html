@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Europeiska Arbetsmiljöbyråns kampanj: "Friska arbetsplatser i ett digitalt arbetsliv"</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;   
+            padding-right: 5%;
+            position: relative; /* För att placera den expanderade bilden korrekt */
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .flexbox {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+            margin-right: 5%;
+        }
+
+        .image-container {
+            flex: 0.5;
+            text-align: center;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 350px;
+        }
+
+        .button-link {
+            margin-top: 5%;
+        }
+
+        
+
+        .bildtext {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+    
+        /* Visa overlay */
+        .show {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+        </div>
+        <h1>Europeiska Arbetsmiljöbyråns kampanj: <br>"Friska arbetsplatser i ett digitalt arbetsliv"</h1>
+        <p>Europeiska Arbetsmiljöbyrån (EU-OSHA) har lanserat en kampanj, <b class="green">"Friska arbetsplatser i ett 
+        digitalt arbetsliv"</b>. Kampanjens mål är att öka medvetenheten kring de utmaningar och risker för 
+        arbetsmiljön som uppstår med digital teknik.</p>
+
+        <p><b>Syftet med kampanjen</b> 
+        <br>Digitaliseringen medför stora förändringar för både arbetsgivare och arbetstagare. 
+        Den här kampanjen syftar till att belysa och hantera arbetsmiljörisker kopplade till exempelvis 
+        programmering och andra digitala uppgifter.</p>
+
+        <div class="flexbox">
+            <div class="column1">
+                <p><b>Fokusområden för kampanjen</b>
+                <br>Kampanjen undersöker ett brett spektrum av digitalt arbete, inklusive:</p>
+
+                <ul>
+                    <li>Arbeten på digitala plattformar</li>
+                    <li>Användning av avancerad robotik och artificiell intelligens</li>
+                    <li>Distansarbete och dess påverkan på arbetsmiljön</li>
+                    <li>Smarta digitala system för arbetsledning</li>
+                    <li>Hantering av personal med hjälp av artificiell intelligens</li>
+                </ul>
+
+                <p>Kampanjen sträcker sig över perioden <b class="green">2023-2025</b> och har som ambition att öka 
+                förståelsen för hur vi kan skapa en säker och hälsosam arbetsmiljö i ett alltmer 
+                digitaliserat arbetsliv.
+                </p>
+            </div>
+
+            <div class="image-container">
+                <img src="../images/EU.png" alt="Bild för produktregler">
+                <a href="https://osha.europa.eu/en/campaigns-and-awards/healthy-workplaces-campaigns" class="button-link">Kampanjens sida - Klicka här</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up för relevanta kapitel -->
+    <div class="popup" id="popup1">
+        <button class="close-btn" id="closePopup1">Stäng</button>
+        <div class="popup-content">
+            <h2>Produktregler - Föreskriftshäften</h2>
+            <ul>
+                <li><b>1. (2023:4) Produkter – Maskiner</b></li>
+                <li><b>2. (2023:5) Produkter – Tryckbärande anordningar</b></li>
+                <li><b>3. (2023:6) Produkter – Enkla tryckkärl</b></li>
+                <li><b>4. (2023:7) Produkter – Utrustning för potentiellt explosiva atmosfärer</b></li>
+                <li><b>5. (2023:8) Produkter – Förbud att på marknaden släppa ut ledade skärverktyg avsedda för bärbara handhållna röjsågar</b></li>
+                <li><b>6. (2023:9) Produkter – Stegar, ställningar, och viss annan utrustning för arbete på höjd, samt vissa trycksatta anordningar</b></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Overlay-lagret för att dimma sidan -->
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        
+
+        // Hantering av pop-up för första knappen
+        const openPopupBtn1 = document.getElementById('openPopup1');
+        const closePopupBtn1 = document.getElementById('closePopup1');
+        const popup1 = document.getElementById('popup1');
+        const overlay = document.getElementById('overlay');
+
+        openPopupBtn1.addEventListener('click', function() {
+            popup1.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn1.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Stäng popup om man klickar på overlayn
+        overlay.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+    </script>
+</body>
+</html>
