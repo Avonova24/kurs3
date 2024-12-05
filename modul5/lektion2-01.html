@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dödsolyckor</title>
+    <title>Arbetstagarens ansvar</title>
     <link rel="stylesheet" href="../styles.css">
     
     <style>
@@ -11,7 +11,7 @@
             display: flex;
             justify-content: center;
             flex-direction: column;   
-            padding-right: 5%;
+            
         }
 
         h1 {
@@ -31,6 +31,7 @@
         .column1 {
             text-align: left;
             flex: 1.5;
+            margin-right: 5%;
         }
 
         .image-container {
@@ -40,10 +41,13 @@
         }
 
         .image-container img {
-            width: 450px;
+            width: 350px;
         }
 
-        
+        .button-link {
+            margin-top: 5%;
+        }
+
 
     </style>
 </head>
@@ -54,33 +58,41 @@
                 <div class="avonova-logo">
                     <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
                 </div>
-                <h1>Dödsolyckor</h1>
-                <p>Varje år omkommer nästan 50 personer i arbetsplatsolyckor i Sverige, vilket motsvarar nästan en 
-                person i veckan. De flesta av dessa olyckor drabbar män.</p>
+                <h1>Arbetstagarens ansvar</h1>
+                <p>För att skapa en god arbetsmiljö är samverkan mellan arbetsgivare och arbetstagare avgörande. 
+                Arbetstagaren spelar en viktig roll i detta samarbete och har flera ansvar som bidrar till att 
+                säkerställa en trygg och säker arbetsplats.</p>
             
-                <p>En dödsolycka innebär att en eller flera personer hastigt omkommit och detta ska rapporteras utan 
-                dröjsmål. Antalet dödsolyckor på arbetsplatser har minskat under de senaste årtiondena, men fortfarande 
-                är det många som drabbas av allvarliga skador eller dör i arbetet. Regeringen har som mål att helt 
-                eliminera dödsolyckor och strävar efter en arbetsmiljö där ingen förlorar livet på jobbet.</p>
+                <h2>Medverkan i arbetsmiljöarbetet</h2>
 
-                <p>Klicka på knappen för att läsa om de värst drabbade branscherna.</p>
+                <p>Arbetstagaren ska aktivt delta i arbetsmiljöarbetet och vidta nödvändiga åtgärder för att förebygga 
+                risker. Detta innebär att:</p>
 
-                <a href="javascript:void(0);" class="button-link" id="openPopup1">Vilka branscher är mest drabbade?</a>
+                <ul>
+                    <li>Följa alla arbetsmiljöföreskrifter och regler</li>
+                    <li>Använda skyddsanordningar och säkerhetsutrustning</li>
+                    <li>Vara medveten om arbetsplatsens risker för att förebygga ohälsa och olycksfall</li>
+                </ul>
+
+                <a href="javascript:void(0);" class="button-link" id="openPopup1">Vad ska arbetstagaren göra vi omedelbar fara?</a>
             </div>
 
             <div class="image-container">
-                <img src="../images/dodsolycka.png" alt="Bild för dödsolyckor">
+                <img src="../images/arbetstagarensansvar.png" alt="Bild för ">
                 
             </div>
         </div>
     </div>
 
-    <!-- Pop-up för relevanta kapitel -->
+    <!-- Pop-up -->
     <div class="popup" id="popup1">
         <button class="close-btn" id="closePopup1">Stäng</button>
         <div class="popup-content">
-            <h2>Vilka branscher är mest drabbade?</h2>
-            <p>Dödsolyckorna sker främst inom byggbranschen, transport samt inom jordbruk, skogsbruk och fiske. Även tillverkningsindustrin är hårt drabbad. Ungefär 80 procent av dessa olyckor inträffar på arbetsplatser med färre än 100 anställda, vilket visar på vikten av att säkerhetsarbete prioriteras oavsett företagsstorlek.</p>
+            <h2>Vid omedelbar fara</h2>
+            <p>Om arbetstagaren upptäcker en omedelbar och allvarlig fara för liv eller hälsa i sitt arbete, ska detta 
+            genast rapporteras till arbetsgivaren eller skyddsombudet. Arbetstagaren har då rätt att avbryta sitt 
+            arbete tills besked ges om att det är säkert att återuppta. Ingen ersättningsskyldighet gäller för skador 
+            som uppstår under väntetiden.</p>
         </div>
     </div>
 

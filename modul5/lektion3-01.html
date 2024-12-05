@@ -3,39 +3,117 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tillbud</title>
+    <title>Skyddsombudets roll och uppdrag</title>
 	<link rel="stylesheet" href="../styles.css">
     <style>
 
-		.container {
-			width: 100%;
-			
-		}
-
-        .flexbox {
-			display: flex;
-
-        }
-		
-        .column1 {
-            flex: 2;
-			width: 100%;
-			padding-right: 30px;
-        }
-		
-		.column2 {
-			display: flex;
-            justify-content: start;
+        .container {
+            display: flex;
+            justify-content: center;
             align-items: center;
-			flex-direction: column;
-			flex: 1;
-			margin-top: 3%;
-		} 
-		
-		.column2 img {
-			width: 450px;
+            flex-direction: column; 
         }
-		
+
+        h1, p  {
+            text-align: center;
+            padding-right: 10%;
+            padding-left: 10%;
+        }
+
+        .buttons-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Skapar 3 kolumner */
+            gap: 15px;
+            justify-items: center; /* Centrerar varje knapp inom sin grid-cell */
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            
+            background-color: #ffdcaf;
+            color: #005646;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            
+            width: 180px;
+            height: 100px;
+            padding: 20px;
+            
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .buttons:hover {
+            background-color: #00866d;
+            color: white;
+        }
+      
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            
+            max-width: 790px;
+            margin-top: 5%; 
+        }
+
+        .content img {
+            width: 200px;
+            margin: 0;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 16px;
+            text-align: left;
+            padding: 0 5% 0 2%;
+        }
+
+        .content ul {
+            margin-left: 20%;
+            text-align: left;
+            list-style-position: inside; /* Ensure bullets align properly */
+        }
+
+        .toggle-radio:checked + .content {
+            display: flex;
+        }
+
+        .button-link {
+            margin-top: 4%;
+            cursor: pointer;
+        }
+
+        .bulletlevel2 {
+            margin-bottom: 10px;
+        }
+
+        .bulletlevel2 li {
+            background-size: 15px 15px;
+
+        }
+
+        .undertext {
+            margin-top: -10px;
+            padding: 0;
+            text-align: left;
+        }
+        
     </style>
 </head>
 	
@@ -43,33 +121,154 @@
     <div class="container">
         <div class="avonova-logo">
             <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+       	</div>
+        <h1>Skyddsombudets roll och uppdrag</h1>
+        <p>Klicka på de gula knapparna nedan för att läsa mer kring skyddsombudets roll och uppdrag</p>
+        
+      
+        <div class="buttons-container">
+            <label class="buttons" for="toggle1">Skyddsombudets utnämning</label>
+                    
+            <label class="buttons" for="toggle2">Krav på skyddsombud</label>
+                    
+            <label class="buttons" for="toggle3">Uppdrag</label>
+
+            <label class="buttons" for="toggle4">Utbildning och stöd</label>
+            
+            <label class="buttons" for="toggle5">Arbetsgivarens skyldigheter</label>
+
+            <label class="buttons" for="toggle6">Huvud- och regionalt skyddsombud</label>
+                    
         </div>
-        <h1>Tillbud</h1>
-        <div class="flexbox">
-            <div class="column1"> 
-                
-                <p>Ett tillbud är en händelse där en olycka nästan inträffade, men där ingen kom till skada. 
-                Exempelvis kan det handla om att en ställning fallit ihop där en arbetare kunde befunnit sig. 
-                Om tillbudet bedöms vara allvarligt, ska det omedelbart rapporteras.</p>
-                
-                <p>Andra allvarliga tillbud kan exempelvis vara:</p>
-                    <ul>
-                        <li>En person faller från en höjd vid monteringsarbete, utan att skada sig</li>
-                        <li>Allvarlig kränkande särbehandling, mobbning eller liknande trakasserier</li>
-                        <li>En person blir allvarligt hotad av en kund</li>
-                        <li>En fraktlåda går sönder från sin kran när den lyfts upp i luften och faller där en arbetare kunde befunnit sig</li>
-                    </ul>
+        
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <img src="../images/skyddsombud.png" alt="Bild för övriga regler">
+                <div class="column2">
+                    <p><b>Skyddsombudets utnämning</b>
+                    <br>Enligt arbetsmiljölagen kapitel 6, 2 § ska arbetsplatser med minst fem anställda utse ett 
+                    eller flera skyddsombud för att representera medarbetarna i arbetsmiljöfrågor.
+                    
+                    <br><br>Skyddsombudet utses av det lokala facket, eller av arbetstagarna om inget fack finns. När 
+                    skyddsombudet utses gäller både förtroendemannalagen och arbetsmiljölagen, och skyddsombudet anses 
+                    vara en facklig förtroendeman. Facket ansvarar också för att informera arbetsgivaren om vem som är 
+                    skyddsombud och vilket område som täcks.</p>
+                </div>
+            </div>
+        
+            <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <img src="../images/skyddsombud.png" alt="Bild för övriga regler">
+                <div class="column2">
+                    <p><b>Krav på skyddsombudet</b>
+                    <br>Skyddsombud ska ha både intresse och kunskap om arbetsmiljö. I vissa kollektivavtal, som 
+                    Byggnads, utses skyddsombud av Byggnadsregionen. Regionala skyddsombud har samma funktion men 
+                    verkar på arbetsplatser utan lokalt skyddsombud.</p>
+                </div>   
+            </div>
+        
+            <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <img src="../images/skyddsombud.png" alt="Bild för övriga regler">
+                <p><b>Uppdrag</b>
+                <br>Skyddsombudets uppdrag är att företräda medarbetarna i arbetsmiljöfrågor och verka för en 
+                tillfredsställande arbetsmiljö. Skyddsombudet ska känna till arbetsförhållandena, representera 
+                arbetstagarna, bevaka arbetsgivarens arbetsmiljöarbete samt delta i planeringen av arbetsmiljörelaterade 
+                frågor. Uppdraget är på tre år.</p>
             </div>
 
-            <div class="column2">
-                <img src="../images/tillbud.png" alt="Bild för tillbud">
+            <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <img src="../images/skyddsombud.png" alt="Bild för övriga regler">
+                <p><b>Utbildning och stöd</b>
+                <br>Skyddsombudet ska få den utbildning som behövs för att effektivt kunna utföra sitt uppdrag. 
+                Arbetsgivaren får inte fördela arbetsmiljöuppgifter till skyddsombudet eller hindra denne i sitt arbete.</p>
             </div>
-        </div>
 
-            <p>Det är upp till arbetsgivaren att bedöma, från fall till fall, om ett tillbud är tillräckligt allvarligt 
-            för att behöva anmälas. Om du är osäker på allvaret i en händelse, är det alltid bättre att anmäla än att 
-            låta bli.</p>
-    
+            <input type="radio" id="toggle5" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <img src="../images/skyddsombud.png" alt="Bild för övriga regler">
+                <p><b>Arbetsgivarens skyldigheter</b>
+                <br>Arbetsgivaren ska informera skyddsombudet om förändringar som påverkar arbetsmiljön, involvera det i 
+                riskbedömningar och ge det arbetstid och en plats för uppdraget.</p>
+            </div>
+
+            <input type="radio" id="toggle6" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <img src="../images/skyddsombud.png" alt="Bild för övriga regler">
+                <p><b>Huvud- och regionalt skyddsombud</b>
+                <br>Huvudskyddsombudet samordnar arbetsplatsens skyddsombud och fungerar som extern representant. Ett 
+                regionalt skyddsombud utses av en facklig organisation för att representera arbetstagare på arbetsplatser 
+                utan lokalt skyddsombud.</p>
+            </div>
 	</div>
+
+
+    <script>
+        // JavaScript för att scrolla ner när ett alternativ väljs
+        document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Javascript för att markera en knapp som aktiv
+        document.querySelectorAll('.buttons').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.buttons').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Hantering av pop-up för första knappen
+        const openPopupBtn1 = document.getElementById('openPopup1');
+        const closePopupBtn1 = document.getElementById('closePopup1');
+        const popup1 = document.getElementById('popup1');
+        const overlay = document.getElementById('overlay');
+
+        openPopupBtn1.addEventListener('click', function() {
+            popup1.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn1.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Hantering av pop-up för andra knappen
+        const openPopupBtn2 = document.getElementById('openPopup2');
+        const closePopupBtn2 = document.getElementById('closePopup2');
+        const popup2 = document.getElementById('popup2');
+
+        openPopupBtn2.addEventListener('click', function() {
+            popup2.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn2.addEventListener('click', function() {
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Stäng popup om man klickar på overlayn
+        overlay.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+    </script>
+
 </body>
 </html>
