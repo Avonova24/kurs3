@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uppgiftsfördelning och dokumentation</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;   
+            position: relative;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        .flexbox {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+            margin-right: 5%;
+        }
+
+        .pdf-image-container {
+            width: 100%;
+            flex: 0.5;
+            text-align: end;
+            position: relative;
+        }
+
+        .pdf-image-container img {
+            width: 400px;
+            
+            cursor: pointer;
+            transition: all 0.5s ease;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .pdf-image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Popup-styling */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .popup-content {
+            position: relative;
+            background: white;
+            padding: 20px;
+            width: 80%;
+            height: 80%;
+            border-radius: 10px;
+        }
+        
+        .popup-content iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            border: none;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff5f5f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+        </div>
+        <h1>Uppgiftsfördelning och dokumentation</h1>
+        
+        <div class="flexbox">
+            <div class="column1">
+                
+                <p>Enligt arbetsmiljöföreskrifterna (AFS 2001:1 6 §) ska arbetsmiljöuppgifter fördelas så att chefer, 
+                arbetsledare eller andra arbetstagare får ansvar för att förebygga risker och säkerställa en säker 
+                arbetsmiljö. Arbetsgivaren ska se till att dessa personer har rätt befogenheter, resurser och den 
+                nödvändiga kompetensen för att kunna bedriva ett systematiskt arbetsmiljöarbete.</p>
+
+            </div>
+
+            <div class="pdf-image-container">
+                <!-- Klickbar bild som öppnar en PDF i popup -->
+                <img src="../images/fordeliningex.png" alt="PDF-förhandsvisning" onclick="openPopup()">
+            </div>
+        </div>
+            <p>Om verksamheten har minst tio arbetstagare ska fördelningen av arbetsmiljöuppgifter dokumenteras 
+            skriftligt, enligt AFS 2003:4. Detta dokument säkerställer att alla är medvetna om sina ansvarsområden 
+            och att arbetsmiljöarbetet bedrivs effektivt och i enlighet med lagens krav.</p>
+
+            <p><b class="green">Klicka på bilden för att se ett exempel på en fördelning av arbetsmiljöuppgifter.</b></p>
+
+    </div>
+
+    <!-- Popup för PDF-visning -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup()">Stäng</button>
+            <iframe src="../pdf/Exempel på föredlning av arbetsmiljöarbete.pdf"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function openPopup() {
+            document.getElementById('popupOverlay').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popupOverlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

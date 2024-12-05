@@ -1,97 +1,343 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uppgiftsfördelning</title>
-    <link rel="stylesheet" href="../styles.css">
-    
+    <title>AFS 2023:1</title>
+	<link rel="stylesheet" href="../styles.css">
     <style>
 
         .container {
             display: flex;
             justify-content: center;
-        
-            flex-direction: column;   
-            
-        }
-
-        h1 {
-            margin-bottom: 15px;
-        }
-
-        h2 {
-            font-size: 19px;
-        }
-
-
-        .flexbox {
-            display: flex;
-            width: 100%;
             align-items: center;
-
+            flex-direction: column; 
         }
 
-        .column1 {
+        h1, p  {
+            text-align: center;
+            padding-right: 10%;
+            padding-left: 10%;
+        }
+
+        .buttons-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Skapar 3 kolumner */
+            gap: 15px;
+            justify-items: center; /* Centrerar varje knapp inom sin grid-cell */
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            
+            background-color: #ffdcaf;
+            color: #005646;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            
+            width: 180px;
+            height: 100px;
+            padding: 20px;
+            
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .buttons:hover {
+            background-color: #00866d;
+            color: white;
+        }
+      
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            
+            max-width: 790px;
+            margin-top: 5%; 
+        }
+
+        .content img {
+            width: 200px;
+            margin: 0;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 16px;
             text-align: left;
-            
+            padding: 0 5% 0 2%;
+        }
 
+        .content ul {
+            margin-left: 20%;
+            text-align: left;
+            list-style-position: inside; /* Ensure bullets align properly */
+        }
+
+        .toggle-radio:checked + .content {
+            display: flex;
+        }
+
+        .button-link {
+            margin-top: 4%;
+            cursor: pointer;
+        }
+
+        .bulletlevel2 {
+            margin-bottom: 10px;
+        }
+
+        .bulletlevel2 li {
+            background-size: 15px 15px;
 
         }
 
-        .image-container {
-            padding-left: 7%;
-            
+        .undertext {
+            margin-top: -10px;
+            padding: 0;
+            text-align: left;
         }
-
-        .image-container img {
-            width: 300px;
-            
-        }
-
-    
+        
     </style>
 </head>
+	
 <body>
     <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+       	</div>
+        <h1>AFS 2023:1</h1>
+        <p><b>Systematiskt arbetsmiljöarbete – En väg till en trygg och säker arbetsplats</b>
+        <br>Att skapa en god arbetsmiljö är inte bara en skyldighet utan också en investering i 
+        välmående och produktivitet. Med systematiskt arbetsmiljöarbete (SAM) kan du som arbetsgivare 
+        säkerställa en trygg arbetsplats där risker förebyggs och trivsel främjas.</p>
+
+        <p><b>Vad innebär systematiskt arbetsmiljöarbete?</b>
+        <br>Systematiskt arbetsmiljöarbete handlar om att regelbundet:</p>
+
+        <ul>
+            <li>Undersöka och bedöma risker i arbetsmiljön</li>
+            <li>Vidta åtgärder för att förebygga ohälsa och olycksfall</li>
+            <li>Följa upp och utvärdera arbetsmiljön för att ständigt förbättra den</li>
+        </ul>
+
+        <p>Detta arbete bör vara en naturlig del av verksamheten och inkludera alla aspekter 
+        av arbetsmiljön – såväl fysiska som psykologiska och sociala faktorer.</p>
         
-        <div class="flexbox">
-            <div class="column1">
-                <div class="avonova-logo">
-                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+      
+        <div class="buttons-container">
+            <label class="buttons" for="toggle1">Delaktighet och dialog</label>
+                    
+            <label class="buttons" for="toggle2">Policy och rutiner</label>
+                    
+            <label class="buttons" for="toggle3">Riskbedömning och handlingsplan</label>
+
+            <label class="buttons" for="toggle4">Snabbt agerande vid tillbud eller olycksfall</label>
+            
+            <label class="buttons" for="toggle5">Företagshälsovård och extern expertis</label>
+
+            <label class="buttons" for="toggle6">Årlig uppföljning</label>
+                    
+        </div>
+        
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <img src="../images/ovrigaregler.png" alt="Bild för övriga regler">
+                <div class="column2">
+                    <p><b>Risker i arbetsmiljön (AFS 2023:10)</b>
+                    <br><br>I denna föreskrift kan du läsa vad som gäller vid undersökning, riskbedömning och 
+                    åtgärder vid buller, vibrationer, kemiska riskkällor och belastningsergonomi.
+                    <br><br> Klicka på knappen för att komma till översikten över de relevanta kapitlen.</p>
+                    <a href="javascript:void(0);" class="button-link" id="openPopup1">Relevanta kapitel - Klicka här</a>
                 </div>
-                <h1 class="typewriter" id="typewriterText">Uppgiftsfördelning</h1>
-                <p>Arbetsgivaren har ansvar för att fördela arbetsmiljöuppgifter till arbetstagarna och se till att 
-                de som får dessa uppgifter har tillräckliga kunskaper och resurser. Det innebär att arbetsgivaren måste 
-                säkerställa att de utvalda personerna är väl förtrogna med relevanta arbetsmiljöregler samt förstår de 
-                fysiska, psykologiska och sociala faktorer som kan innebära risker för ohälsa eller olyckor. De ska även 
-                ha kunskap om hur dessa risker kan förebyggas och om arbetsförhållanden som bidrar till en god arbetsmiljö</p>
+            </div>
+        
+            <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <img src="../images/ovrigaregler.png" alt="Bild för övriga regler">
+                <div class="column2">
+                    <p><b>Arbetsutrustning och personlig skyddsutrustning – Säker användning (AFS 2023:11)</b>
+                    <br><br>Denna föreskrift gäller användning av arbetsutrustning såsom maskiner, anordningar, 
+                    verktyg, redskap eller installationer som används i arbetet.
+                
+                    <br><br> Klicka på knappen för att komma till översikten över de relevanta kapitlen.</p>
+
+                    <a href="javascript:void(0);" class="button-link" id="openPopup2">Relevanta kapitel - Klicka här</a>
+                </div>   
+            </div>
+        
+            <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <img src="../images/ovrigaregler.png" alt="Bild för övriga regler">
+                <p><b>Utformning av arbetsplatser (AFS 2023:12)</b>
+                <br><br>Syftet med föreskriften är att arbetsplatser ska utformas för att förebygga ohälsa och 
+                olycksfall samt skapa förutsättningar för en god arbetsmiljö.</p>
             </div>
 
-            <div class="image-container">
-                <img src="../images/fordelninguppgifter.png" alt="Bild för ansvar uppgiftsfördelning">
+            <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <img src="../images/ovrigaregler.png" alt="Bild för övriga regler">
+                <p><b>Risker vid vissa typer av arbeten (AFS 2023:13)</b>
+                <br><br>Syftet med dessa föreskrifter är att förebygga ohälsa och olycksfall vid riskfyllda arbeten, 
+                såsom arbete med asbest, dykeriarbete eller sprängarbete.</p>
             </div>
+
+            <input type="radio" id="toggle5" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <img src="../images/ovrigaregler.png" alt="Bild för övriga regler">
+                <p><b>Gränsvärden för luftvägsexponering i arbetsmiljö (AFS 2023:14)</b>
+                <br><br>Föreskriften syftar till att förebygga ohälsa hos arbetstagare som utsätts för de 
+                ämnen som anges i föreskriften, tidigare kallade hygieniska gränsvärden.</p>
+            </div>
+
+            <input type="radio" id="toggle6" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <img src="../images/ovrigaregler.png" alt="Bild för övriga regler">
+                <p><b>Medicinska kontroller i arbetslivet (AFS 2023:15)</b>
+                <br><br>Syftet med dessa föreskrifter är att minska risken för arbetsrelaterad ohälsa 
+                genom medicinska kontroller som:
+                <br><br>1. Bedömer om arbetstagarens hälsotillstånd tillåter en viss typ av arbete,
+                <br>2. Möjliggör tidig upptäckt av tecken på ohälsa som orsakas av exponering,
+                <br>3. Ger underlag för att vidta åtgärder på arbetsplatsen.
+                </p>
+            </div>
+	</div>
+
+    <!-- Pop-up för relevanta kapitel -->
+    <div class="popup" id="popup1">
+        <button class="close-btn" id="closePopup1">Stäng</button>
+        <div class="popup-content">
+            <h2>Relevanta kapitel - Risker i arbetsmiljön</h2>
+            <p class="undertext">Skrolla neråt för att se samliga kapitel</p>
+            <ul>
+                <li><b>2 kap. Buller</b></li>
+                <li><b>3 kap. Vibrationer</b></li>
+                <li><b>4 kap. Skydd mot skada genom fall</b></li>
+                <li><b>5 kap. Skydd mot skada genom ras</b></li>
+                <li><b>6 kap. Belastningsergonomi</b></li>
+                <li><b>7-10 kap. Kemiska riskkällor:</b></li>
+                    <ul class="bulletlevel2">
+                        <li>Anestesigas</li>
+                        <li>Bekämpningsmedel</li>
+                        <li>Blybatterier</li>
+                        <li>Cytostatika och andra läkemedel som kan orsaka bestående ohälsa</li>
+                        <li>Färg och lack</li>
+                        <li>Gaser</li>
+                        <li>Kvartshaltigt damm</li>
+                        <li>Syntetiska oorganiska fibrer</li>
+                    </ul>
+                <li><b>11 kap. Smittrisker</b></li>
+                <li><b>12 kap. Artificiell optisk strålning</b></li>
+                <li><b>13 kap. Elektromagnetiska fält</b></li>
+            </ul>
         </div>
-       
     </div>
 
+    <div class="popup" id="popup2">
+        <button class="close-btn" id="closePopup2">Stäng</button>
+        <h2>Relevanta kapitel - Arbetsutrustning och personlig skyddsutrustning</h2>
+        <ul>
+            <li><b>2 kap. Användning av arbetsutrustning</b></li>
+            <li><b>3 kap. Användning av bildskärm</b></li>
+            <li><b>4 kap. Användning av truckar</b></li>
+            <li><b>5 kap. Användning av motorkedjesågar och röjsågar</b></li>
+            <li><b>6 kap. Användning av traktorer</b></li>
+            <li><b>7 kap. Användning av stegar och arbetsbockar</b></li>
+            <li><b>8 kap. Användning av Ställningar</b></li>
+            <li><b>9 kap. Användning av trycksatta anordningar</b></li>
+            <li><b>10 kap. Kontroll av trycksatta anordningar</b></li>
+            <li><b>11 kap. Användning av lyftanordningar och lyftredskap</b></li>
+            <li><b>12 kap. Krav vid tillfälliga personlyft med kranar eller truckar som inte är konstruerade för personlyft</b></li>
+            <li><b>13 kap. Besiktning av lyftanordningar och vissa andra tekniska anordningar</b></li>
+            <li><b>14 kap. Användning av pressar och gradsaxar</b></li>
+            <li><b>15 kap. Val och användning av personlig skyddsutrustning</b></li>
+        </ul>
+    </div>
+
+    <!-- Overlay-lagret för att dimma sidan -->
+    <div class="overlay" id="overlay"></div>
+
     <script>
-        const text = document.getElementById('typewriterText').innerText;
-        let index = 0;
-        
-        function typeWriterEffect() {
-            if (index < text.length) {
-                document.getElementById('typewriterText').style.width = (index + 1) + "ch";
-                index++;
-                setTimeout(typeWriterEffect, 100); // 100ms per bokstav
-            } else {
-                // När effekten är klar, ta bort markören
-                document.getElementById('typewriterText').style.borderRight = "none";
-            }
-        }
-        
-        // Starta effekten
-        typeWriterEffect();
+        // JavaScript för att scrolla ner när ett alternativ väljs
+        document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Javascript för att markera en knapp som aktiv
+        document.querySelectorAll('.buttons').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.buttons').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Hantering av pop-up för första knappen
+        const openPopupBtn1 = document.getElementById('openPopup1');
+        const closePopupBtn1 = document.getElementById('closePopup1');
+        const popup1 = document.getElementById('popup1');
+        const overlay = document.getElementById('overlay');
+
+        openPopupBtn1.addEventListener('click', function() {
+            popup1.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn1.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Hantering av pop-up för andra knappen
+        const openPopupBtn2 = document.getElementById('openPopup2');
+        const closePopupBtn2 = document.getElementById('closePopup2');
+        const popup2 = document.getElementById('popup2');
+
+        openPopupBtn2.addEventListener('click', function() {
+            popup2.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn2.addEventListener('click', function() {
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Stäng popup om man klickar på overlayn
+        overlay.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
     </script>
+
 </body>
 </html>
