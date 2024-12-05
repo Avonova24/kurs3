@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syftet med belastningsergonomi</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;   
+            padding-right: 5%;
+            position: relative; /* För att placera den expanderade bilden korrekt */
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .flexbox {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+            margin-right: 5%;
+        }
+
+        .image-container {
+            flex: 0.5;
+            text-align: end;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 350px;
+        }
+
+        
+
+        .bildtext {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+
+        .button-link {
+            margin-top: 4%;
+        }
+    
+        /* Visa overlay */
+        .show {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flexbox">
+            <div class="column1">
+                <div class="avonova-logo">
+                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+                </div>
+                <h1>Syftet med belastningsergonomi</h1>
+                <p>Belastningsergonomi handlar om att skapa en arbetsmiljö som främjar hälsa och 
+                hållbarhet genom att minska risken för både fysiska och mentala belastningar. Det 
+                innebär att förbättra arbetsställningar, hantera tunga lyft på ett säkert sätt och 
+                förebygga problem som kan uppstå vid repetitiva uppgifter eller stillasittande arbete. 
+                Genom att utforma arbetsplatser och arbetsuppgifter för att undvika skadliga eller 
+                onödigt tröttande belastningar skapas en miljö där medarbetarna kan arbeta tryggt och 
+                effektivt. Målet är att förebygga skador och samtidigt göra arbetsdagen mer hållbar, 
+                bekväm och produktiv för alla.</p>
+            </div>
+
+            <div class="image-container">
+                <img src="../images/ergonomi.png" alt="Bild för risker i arbete - en varningstriangel">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up för relevanta kapitel -->
+    <div class="popup" id="popup1">
+        <button class="close-btn" id="closePopup1">Stäng</button>
+        <div class="popup-content">
+            <h2>AFS 2023:10 Risker i arbetsmiljön <br>(nu med kapitelindelning)</h2>
+            <ul>
+                <li><b>2 kap. Buller</b></li>
+                <li><b>3 kap. Vibrationer</b></li>
+                <li><b>4 kap. Skydd mot skada genom fall</b></li>
+                <li><b>5 kap. Skydd mot skada genom ras</b></li>
+                <li><b>6 kap. Belastningsergonomi</b></li>
+                <li><b>7-10 kap. Kemiska riskkällor</b></li>
+                <ul class="bulletlevel2">
+                    <li>Anestesigas</li>
+                    <li>Bekämpningsmedel</li>
+                    <li>Blybatterier</li>
+                    <li>Cytostatika och andra läkemedel som kan orsaka bestående ohälsa</li>
+                    <li>Färg och lack</li>
+                    <li>Gaser</li>
+                    <li>Kvartshaltigt damm</li>
+                    <li>Syntetiska oorganiska fibrer</li>
+                </ul>
+                <li><b>11 kap. Smittrisker</b></li>
+                <li><b>12 kap. Artificiell optisk strålning</b></li>
+                <li><b>13 kap. Elektromagnetiska fält</b></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Overlay-lagret för att dimma sidan -->
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        
+
+        // Hantering av pop-up för första knappen
+        const openPopupBtn1 = document.getElementById('openPopup1');
+        const closePopupBtn1 = document.getElementById('closePopup1');
+        const popup1 = document.getElementById('popup1');
+        const overlay = document.getElementById('overlay');
+
+        openPopupBtn1.addEventListener('click', function() {
+            popup1.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn1.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Stäng popup om man klickar på overlayn
+        overlay.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+    </script>
+</body>
+</html>
