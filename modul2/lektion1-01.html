@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En trygg och positiv arbetsmiljö</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .toggle-container {
+            display: flex;
+            justify-content: center; /* Centrerar hela sektionen horisontellt */
+            align-items: center;    /* Centrerar vertikalt om det behövs */
+            flex-wrap: wrap;        /* Tillåter innehållet att brytas till flera rader */
+            margin-top: 3%;         /* Skapar utrymme ovanför */
+            max-width: 800px;       /* Sätter en maximal bredd för sektionen */
+            
+        }
+
+        .toggle-buttons {
+            display: flex;
+            flex-wrap: wrap;        /* Tillåter knapparna att brytas till flera rader */
+            justify-content: center;/* Centrerar knapparna horisontellt */
+            gap: 15px;              /* Mellanrum mellan knapparna */
+            max-width: 550px;       /* Begränsar bredden för layouten */
+           
+        }
+
+        .circle-button-green1, .circle-button-green2, .circle-button-green3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 130px;
+            height: 130px;
+            padding: 14px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .circle-button-green1 {
+            background-color: #00866d;
+        }
+
+        .circle-button-green2 {
+            background-color: #005646;
+        }
+
+        .circle-button-green3 {
+            background-color: #01332a;
+
+        }
+
+        .circle-button-green1:hover, .circle-button-green2:hover, .circle-button-green3:hover {
+            background-color: #aff0e5;
+            color: #01332a;
+        }
+
+        .toggle-checkbox {
+            display: none;
+        }
+
+        .toggle-content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 700px;
+            margin-top: 5%;
+        }
+
+        .toggle-content {
+            display: none;
+            opacity: 0;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            width: 100%;
+            gap: 20px;
+            margin: 15px 0 0;
+            transition: opacity 0.3s ease, position 0.3s ease;
+        }
+
+        .toggle-checkbox:checked + .toggle-content {
+            display: flex;
+            position: static;
+            opacity: 1;
+        }
+
+        .toggle-image {
+            width: 200px;
+            height: auto;
+        }
+
+        .toggle-text {
+            font-size: 16px;
+            text-align: left;
+            margin: 0;
+            padding-left: 2%;
+            padding-right: 5%;
+        }
+
+          
+
+        /* CSS för att markera den aktiva knappen */
+        .circle-button-green1.active, .circle-button-green2.active, .circle-button-green3.active {
+        background-color: #aff0e5;
+        color: #01332a;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+        </div>
+        
+        <h1 class="typewriter" id="typewriterText">En trygg och positiv arbetsmiljö</h1>
+        <p>Att ingen ska behöva skadas eller förlora livet på jobbet är en grundläggande moralisk vision. 
+        Genom att prioritera en säker och hälsosam arbetsmiljö kan företag uppnå flera viktiga fördelar.</p>
+        
+        <p>Klicka på de <b class="green">gröna knapparna</b> nedan för att ta del av de olika fördelarna:</p>
+
+        <div class="toggle-container">
+            <div class="toggle-buttons">
+                <label for="toggle1" class="circle-button-green1">Minskade kostnader</label>
+                <label for="toggle2" class="circle-button-green2">Ökad produktivitet</label>
+                <label for="toggle3" class="circle-button-green3">Förbättrat rykte och konkurrens-<br>fördelar</label>
+
+                <label for="toggle4" class="circle-button-green3">Högre <br>motivation och engagemang</label>
+                <label for="toggle5" class="circle-button-green1">Mer lönsamhet</label>
+               
+            </div>
+        </div>
+        
+        <div class="toggle-content-container">
+            <input type="radio" id="toggle1" name="toggle" class="toggle-checkbox">
+            <div class="toggle-content">
+                <img src="../images/minskadekostnader.png" alt="Bild 1" class="toggle-image">
+                <p class="toggle-text"><b>Minskade kostnader</b> <br>Färre skador och olyckor leder till minskad sjukfrånvaro 
+                och ett minskat behov av vikarier, vilket i sin tur skapar förutsättningar för en mer stabil arbetsstyrka. 
+                Dessutom bidrar mindre övertid, färre fel och färre reklamationer till en kostnadseffektivare verksamhet, 
+                där resurser kan användas mer strategiskt och produktivt.</p>
+            </div>
+            
+            <input type="radio" id="toggle2" name="toggle" class="toggle-checkbox">
+            <div class="toggle-content">
+                <img src="../images/produktivitet.png" alt="Bild 2" class="toggle-image">
+                <p class="toggle-text"><b>Ökad produktivitet</b> <br>Lägre sjukfrånvaro och minskad sjuknärvaro innebär att fler 
+                medarbetare är friska och närvarande på jobbet. Detta, i kombination med ökat engagemang och motivation, bidrar 
+                till bättre resultat och högre produktivitet i verksamheten.</p>
+            </div>
+            
+            <input type="radio" id="toggle3" name="toggle" class="toggle-checkbox">
+            <div class="toggle-content">
+                <img src="../images/konkurrens.png" alt="Bild 3" class="toggle-image">
+                <p class="toggle-text"><b>Förbättrat rykte och konkurrensfördelar</b> <br>En god arbetsmiljö gör företaget mer attraktivt 
+                för både kunder och anställda. Starkare renommé och hög kvalitet i leveranser skapar anbudsfördelar och kan göra företaget 
+                till kundens första val. Samtidigt bidrar en trivsam arbetsplats till att locka nya talanger och minska personalomsättningen, 
+                vilket stärker företagets långsiktiga konkurrenskraft.</p>
+            </div>
+
+            <input type="radio" id="toggle4" name="toggle" class="toggle-checkbox">
+            <div class="toggle-content">
+                <img src="../images/motivation.png" alt="Bild 3" class="toggle-image">
+                <p class="toggle-text"><b>Högre motivation och engagemang</b> <br>När anställda trivs och känner sig trygga på jobbet ökar 
+                både deras prestationer och närvaro. Engagerade medarbetare tenderar att stanna längre, stödja varandra, utveckla nya 
+                färdigheter och bidra till nöjdare kunder, vilket stärker verksamhetens framgång.</p>
+            </div>
+
+            <input type="radio" id="toggle5" name="toggle" class="toggle-checkbox">
+            <div class="toggle-content">
+                <img src="../images/pengar.png" alt="Bild 3" class="toggle-image">
+                <p class="toggle-text"><b>Mer lönsamhet</b> <br>Enligt en rapport från den internationella 
+                socialförsäkringsorganisationen ISSA får företagen tillbaka mer än dubbelt så mycket på att 
+                investera i arbetsmiljö. Deras svar visar att bättre arbetsmiljö minskar olycksrisker och 
+                tillbud samt ökar personalens engagemang och medvetenhet om riskerna. Dessutom förbättras 
+                företagens image och antalet produktionsstopp och avvikelser minskar. Allt är fördelar som 
+                kommer företaget till nytta.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript för att scrolla ner när ett alternativ väljs
+        document.querySelectorAll('.toggle-checkbox').forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Javascript för att markera en knapp som aktiv
+        document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(button => {
+        button.addEventListener('click', function() {
+       
+        // Ta bort aktiv klass från alla knappar
+        document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Lägg till aktiv klass på den klickade knappen
+        this.classList.add('active');
+    });
+});
+
+
+        const text = document.getElementById('typewriterText').innerText;
+        let index = 0;
+        
+        function typeWriterEffect() {
+            if (index < text.length) {
+                document.getElementById('typewriterText').style.width = (index + 1) + "ch";
+                index++;
+                setTimeout(typeWriterEffect, 100); // 100ms per bokstav
+            } else {
+                // När effekten är klar, ta bort markören
+                document.getElementById('typewriterText').style.borderRight = "none";
+            }
+        }
+        
+        // Starta effekten
+        typeWriterEffect();
+
+    </script>
+</body>
+</html>
