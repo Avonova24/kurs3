@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stillasittande arbete</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;   
+            padding-right: 5%;
+            position: relative; /* För att placera den expanderade bilden korrekt */
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .flexbox {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+            margin-right: 5%;
+        }
+
+        .image-container {
+            flex: 0.5;
+            text-align: end;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 350px;
+        }
+
+        
+
+        .bildtext {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+    
+        /* Visa overlay */
+        .show {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flexbox">
+            <div class="column1">
+                <div class="avonova-logo">
+                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+                </div>
+                <h1>Stillasittande arbete</h1>
+                <p>För låg belastning, som vid stillasittande övervakningsarbete, kan orsaka problem för 
+                kroppens rörelse- och cirkulationsorgan. Muskler och leder behöver regelbunden rörelse 
+                för att bibehålla styrka och rörlighet.</p>
+            
+                <p>Vårt moderna liv, med mer stillasittande på både jobb och fritid samt ökad användning 
+                av fordon, har lett till att både barn och vuxna sitter stilla större delen av dagen. 
+                Långvarigt stillasittande ökar risken för typ 2-diabetes, hjärt-kärlsjukdomar och vissa 
+                cancerformer, och är därmed ett stort folkhälsoproblem. Det kan också leda till 
+                belastningsbesvär i nacke och axlar.</p>
+                
+            </div>
+
+            <div class="image-container">
+                <img src="" alt="Två personer som lyfter en tung byrå">
+                
+            </div>
+        </div>
+    </div>
+   
+</body>
+</html>
