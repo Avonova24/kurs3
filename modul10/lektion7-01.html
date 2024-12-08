@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback och ledarskap</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;   
+        }
+
+        h1, p  {
+            text-align: center;
+            padding-right: 10%;
+            padding-left: 10%;
+        }
+
+        .circle-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            max-width: 600px;
+        }
+
+        .circle-button-green1, .circle-button-green2, .circle-button-green3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            width: 130px;
+            height: 130px;
+            padding: 14px;
+            
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            
+            border-radius: 50%;
+            border: none;
+            
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .circle-button-green1 {
+            background-color: #00866d;
+        }
+
+        .circle-button-green2 {
+            background-color: #005646;
+        }
+
+        .circle-button-green3 {
+            background-color: #01332a;
+
+        }
+
+        .circle-button-green1:hover, .circle-button-green2:hover, .circle-button-green3:hover {
+            background-color: #aff0e5;
+            color: #01332a;
+        }
+
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            
+            justify-content: space-between;
+            
+            max-width: 700px;
+            margin-top: 5%;  
+        }
+
+        .toggle-radio:checked + .content {
+            display: flex;
+        }
+
+        .content img {
+            width: 200px;
+            margin: 0;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 16px;
+            text-align: center;
+            padding: 0 5% 0 2%;
+            
+        }
+
+        .green {
+            color: #005646;
+        }
+
+           /* CSS för att markera den aktiva knappen */
+           .circle-button-green1.active, .circle-button-green2.active, .circle-button-green3.active {
+        background-color: #aff0e5;
+        color: #01332a;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+        </div>
+        <h1>Feedback och ledarskap</h1>
+        <p>Feedback är nyckeln till effektivt ledarskap och hållbar utveckling. 
+        Klicka på de olika <b class="green">gröna knapparna</b> nedan för att läsa mer:</p>
+        
+        <div class="circle-container">
+            <!-- FÖRSTA RADEN -->
+            <label class="circle-button-green1" for="toggle1">Ledarskap och feedback i praktiken</label>
+            <label class="circle-button-green2" for="toggle2">Feedback och motivation</label>
+            <label class="circle-button-green1" for="toggle3">Att ge feedback på rätt sätt</label>
+            
+        </div>
+
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+        <div class="content">
+            <p><b>Ledarskap och feedback i praktiken</b>
+            <br>För att skapa en feedbackkultur krävs att ledaren sätter tonen genom sitt eget beteende. Det 
+            handlar om att ge regelbundna check-ins med medarbetarna, hålla en öppen och ärlig kommunikation och 
+            vara villig att ha svåra samtal om det behövs. Ledare som är bra på att ge feedback gör det inte bara 
+            som en reaktiv åtgärd när problem uppstår – de arbetar proaktivt för att hjälpa sina medarbetare att 
+            växa och nå sina mål.
+
+            <br><br>Det är också viktigt att komma ihåg att feedback inte alltid måste ges i formella möten eller 
+            prestationsevalueringar. Ofta kan det vara små kommentarer och samtal i vardagen som gör den största 
+            skillnaden. Att snabbt ge beröm för ett väl utfört jobb eller ge tips på förbättring i realtid kan 
+            vara lika viktigt som de mer formella återkopplingarna.</p>
+        </div>
+
+        <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+        <div class="content">
+            <p><b>Feedback och motivation</b>
+            <br>En av de mest kraftfulla effekterna av feedback är hur den kan motivera medarbetare. Positiv 
+            feedback, särskilt när den är detaljerad och konkret, kan bidra till att förstärka de beteenden och 
+            prestationer som är viktiga för organisationen. Genom att ge erkännande och belöning för bra arbete, 
+            hjälper ledaren till att skapa en kultur där medarbetarna vill sträva efter att prestera ännu bättre.
+
+            <br><br>Samtidigt är det viktigt att vara ärlig och rättvis när feedback ges, även när det handlar om 
+            förbättringsområden. Om en medarbetare inte får konstruktiv feedback för sina svagheter, kommer de 
+            inte kunna utvecklas på samma sätt. Genom att ge utmanande, men stödjande feedback, kan ledaren 
+            motivera medarbetarna att växa och bli bättre.</p>
+        </div>
+
+        <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+        <div class="content">
+            <p><b>Att ge feedback på rätt sätt</b>
+            <br>För att feedback ska vara effektiv måste den vara specifik, tidsanpassad och konkret. En allmän 
+            kommentar som "Bra jobbat" eller "Du behöver förbättra dig" är sällan tillräcklig. Det är mer 
+            värdefullt att säga: "Jag uppskattar att du tog initiativet i det här projektet och såg till att 
+            hålla tidsplanen, men nästa gång skulle det vara bra om du också involverade teamet tidigare i 
+            processen." På så sätt får medarbetaren både uppskattning för sitt arbete och konkreta råd om hur 
+            de kan förbättra sig.
+
+            <br><br>Feedback bör också vara regelbundet och tidigt, snarare än att vänta tills något har blivit 
+            ett stort problem. Om en ledare ger feedback direkt efter att något har hänt, kan det ge medarbetaren 
+            en klarare förståelse för vad som behöver göras annorlunda och varför. Det skapar en miljö där små 
+            justeringar görs kontinuerligt, istället för att större problem växer sig större över tid.</p>
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript för att scrolla ner när ett alternativ väljs
+document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Javascript för att markera en knapp som aktiv
+document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(button => {
+    button.addEventListener('click', function() {
+        // Ta bort aktiv klass från alla knappar
+        document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Lägg till aktiv klass på den klickade knappen
+        this.classList.add('active');
+    });
+});
+
+
+    </script>
+    
+</body>
+</html>
