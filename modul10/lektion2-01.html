@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vad är det som gör att du trivs som chef?</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;   
+        }
+
+        h1, p  {
+            text-align: center;
+            padding-right: 10%;
+            padding-left: 10%;
+        }
+
+        .circle-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            max-width: 600px;
+        }
+
+        .circle-button-green1, .circle-button-green2, .circle-button-green3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            width: 130px;
+            height: 130px;
+            padding: 14px;
+            
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            
+            border-radius: 50%;
+            border: none;
+            
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .circle-button-green1 {
+            background-color: #00866d;
+        }
+
+        .circle-button-green2 {
+            background-color: #005646;
+        }
+
+        .circle-button-green3 {
+            background-color: #01332a;
+
+        }
+
+        .circle-button-green1:hover, .circle-button-green2:hover, .circle-button-green3:hover {
+            background-color: #aff0e5;
+            color: #01332a;
+        }
+
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            
+            max-width: 700px;
+            margin-top: 5%;  
+        }
+
+        .toggle-radio:checked + .content {
+            display: flex;
+        }
+
+        .content img {
+            width: 200px;
+            margin: 0;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 16px;
+            text-align: left;
+            padding: 0 5% 0 2%;
+            
+        }
+
+        .green {
+            color: #005646;
+        }
+
+           /* CSS för att markera den aktiva knappen */
+           .circle-button-green1.active, .circle-button-green2.active, .circle-button-green3.active {
+        background-color: #aff0e5;
+        color: #01332a;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+        </div>
+        <h1>Vad är det som gör att du trivs som chef?</h1>
+        <p>Reflektera över den här frågan! Vad är det som gör att du trivs som chef?
+        Kanske du känner igen dig i några av exemplen i din självreflektion.</p>
+        
+        <p>Klicka på de olika <b class="green">gröna knapparna</b> nedan för att läsa mer om 
+        varje område:</p>
+        
+        <div class="circle-container">
+            <!-- FÖRSTA RADEN -->
+            <label class="circle-button-green1" for="toggle1">Stödja och utveckla andra</label>
+            <label class="circle-button-green2" for="toggle2">Skapa en positiv arbetskultur</label>
+            <label class="circle-button-green3" for="toggle3">Möjligheten att påverka</label>
+            
+            <!-- ANDRA RADEN -->
+            <label class="circle-button-green3" for="toggle4">Utmaningarna och problemlösning</label>
+            <label class="circle-button-green1" for="toggle5">Att se resultat</label>
+           
+        </div>
+
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/diskrimineringslagen.png" alt="Bild för diskrimineringslagen">
+            <p><b>Stödja och utveckla andra</b>
+            <br>En av de mest givande delarna med att vara chef är att få vara med och hjälpa andra att 
+            växa. Att ge medarbetare möjlighet att utvecklas inom sina roller och skapa en kultur där 
+            lärande är en naturlig del av vardagen. Att kunna ge konstruktiv feedback, vägleda och bidra 
+            till deras personliga och professionella utveckling är något som ger både energi och tillfredsställelse.</p>
+        </div>
+
+        <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/anstskydd.png" alt="Bild för lagen om anställningsskydd">
+            <p><b>Skapa en positiv arbetskultur</b>
+            <br>En arbetsplats där det finns öppen kommunikation, respekt och samarbete inte bara gör 
+            att folk trivs, utan också att de presterar bättre. Chefen har en viktig roll i att forma 
+            och främja en kultur där alla känner sig trygga och uppskattade. När ledare visar att de 
+            värdesätter medarbetarnas insatser och lyssnar på deras åsikter, byggs förtroende och 
+            engagemang. En positiv arbetskultur gör det möjligt för varje individ att vara sitt bästa 
+            jag, vilket gör hela teamet starkare.</p>
+        </div>
+
+        <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/arbetstid.png" alt="Bild för arbetstidslagen">
+            <p><b>Möjligheten att påverka</b>
+            <br>En annan stor fördel med att vara chef är möjligheten att påverka både teamets och 
+            organisationens riktning. Det kan vara en känsla av att göra skillnad och skapa värde. Genom 
+            att fatta beslut och sätta mål för teamet bidrar till att driva verksamheten framåt och 
+            samtidigt ge medarbetarna rätt förutsättningar för att lyckas. Det handlar inte bara om att 
+            vara en ledare, utan också om att vara en coach som ser till att teamet har de resurser och 
+            den vägledning som behövs för att nå framgång.</p>
+        </div>
+
+        <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/fortroendeskydd.png" alt="Bild för förtroendemannalagen">
+            <p><b>Utmaningarna och problemlösning</b>
+            <br>Att vara chef innebär också att hantera olika utmaningar och ta sig an problem som kan 
+            uppstå på arbetsplatsen. Att tänka kreativt för att hitta lösningar på både små och stora 
+            frågor. Ibland handlar det om att hantera konflikter eller osäkerhet, och ibland om att 
+            fatta snabba beslut under press.</p>
+        </div>
+
+        <input type="radio" id="toggle5" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/skyddolyckor.png" alt="Bild för lag om skydd mot olyckor">
+            <p><b>Att se resultat</b>
+            <br>Inget känns mer belönande än att se resultatet av gemensamt arbete. När team når mål, 
+            oavsett om det handlar om att slutföra ett projekt eller uppnå en långsiktig strategi, är 
+            det en stark känsla av framgång. Att kunna fira både små och stora vinster tillsammans gör 
+            att man känner sig stolt över sitt ledarskap och sitt teams prestationer. Det ger också en 
+            boost för att fortsätta jobba mot nya mål och förbättra processen.</p>
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript för att scrolla ner när ett alternativ väljs
+document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Javascript för att markera en knapp som aktiv
+document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(button => {
+    button.addEventListener('click', function() {
+        // Ta bort aktiv klass från alla knappar
+        document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Lägg till aktiv klass på den klickade knappen
+        this.classList.add('active');
+    });
+});
+
+
+    </script>
+    
+</body>
+</html>

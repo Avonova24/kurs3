@@ -1,83 +1,226 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avslutning:Sammanfattning</title>
-    <link rel="stylesheet" href="../styles.css">
-    
+    <title>Att vara en förebild</title>
+	<link rel="stylesheet" href="../styles.css">
     <style>
 
         .container {
+            text-align: center;
             display: flex;
-            justify-content: center;
-            flex-direction: column;   
-            padding-right: 5%;
-        }
-
-        
-
-        .flexbox {
-            display: flex;
-            width: 100%;
+            flex-direction: column;
             align-items: center;
-        }
-
-        .column1 {
-            text-align: left;
-            flex: 1.5;
-        }
-
-        .image-container {
-            flex: 0.5;
-        }
-
-        .image-container img {
-            width: 430px;
             
         }
 
-        
+        p {
+            padding-right: 15%;
+            padding-left: 15%;
+        }
 
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+
+            justify-content: center;
+            
+            
+            max-width: 1000px;
+
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            
+            background-color: #ffdcaf;
+            color: #005646;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            
+            width: 180px;
+            height: 100px;
+            padding: 20px;
+            
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .buttons:hover {
+            background-color: #00866d;
+            color: white;
+        }
+      
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            margin-top: 5px;
+            
+        }
+
+        .content ul {
+            margin-left: 20%;
+            text-align: left;
+        }
+
+        .toggle-radio:checked + .content {
+            display: block;
+        }
+
+         /* CSS för att markera den aktiva knappen */
+         .buttons.active {
+            background-color: #00866d;
+            color: white;
+        }
+
+        ul li {
+            margin-left: 20px;
+        }
+    
+		
     </style>
 </head>
+	
 <body>
     <div class="container">
-        <div class="flexbox">
-            <div class="column1">
-                <div class="avonova-logo">
-                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
-                </div>
-                <h1 class="typewriter" id="typewriterText">Sammanfattning</h1>
-                <p>En trygg och hälsosam arbetsmiljö bidrar till högre produktivitet, lägre sjukfrånvaro och ökat 
-                engagemang hos medarbetarna, vilket gagnar både de anställda och arbetsgivaren.</p>
-                <p>Företagshälsan kan här vara ett viktigt stöd i att skapa och upprätthålla en sund arbetsplats. 
-                En sådan arbetsmiljö bygger också ett gott rykte och främjar företagets långsiktiga framgång och hållbarhet.</p>
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+       	</div>
+        <h1>Att vara en förebild</h1>
+        <p>Att vara en förebild som chef är avgörande för att skapa en positiv och produktiv 
+        arbetsmiljö.​ Genom att följa nedan principer och vara en förebild för dina medarbetare 
+        kan du skapa en positiv och produktiv arbetskultur där alla trivs och presterar på sin 
+        bästa nivå. ​Klicka på de gula korten nedan för att läsa mer om varje princip:</p>
+        
+      
+        <div class="buttons-container">
+            <label class="buttons" for="toggle1">Tydlighet och integritet</label>
+                    
+            <label class="buttons" for="toggle2">Kommunikation</label>
+                    
+            <label class="buttons" for="toggle3">Lyhördhet</label>
+                    
+            <label class="buttons" for="toggle4">Förväntningar och utveckling</label>
+
+            <label class="buttons" for="toggle5">Balans mellan arbete och fritid</label>
+
+            <label class="buttons" for="toggle6">Att våga ta risker och visa sårbarhet</label>
+
+            <label class="buttons" for="toggle7">Mångfald och inkluderin</label>
+
+            <label class="buttons" for="toggle8">Engagemang</label>
+        </div>
+        
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Tydlighet och integritet</b>
+                <br>Var tydlig med dina förväntningar och följ sedan upp med konsekvenserna. Upprätthåll 
+                hög integritet och agera på ett sätt som är förenligt med dina värderingar och företagets 
+                etiska riktlinjer.​</p>
+            </div>
+        
+            <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <p><b>Kommunikation</b>
+                <br>Kommunicera öppet och ärligt med dina medarbetare. Lyssna på deras synpunkter och 
+                feedback och visa att du tar dem på allvar.​</p>   
+            </div>
+        
+            <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <p><b>Lyhördhet</b>
+                <br>Var lyhörd för dina medarbetares behov och bekymmer. Visa empati och försök att 
+                hjälpa till att lösa problem och stödja dem i deras utveckling.​</p>
+            </div>
+        
+            <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Förväntningar och utveckling</b>
+                <br>Sätt höga förväntningar för dina medarbetare och ge dem möjligheter att växa och 
+                utvecklas både professionellt och personligt. Erbjud mentorprogram, utbildning och 
+                utvecklingsmöjligheter.​</p>
             </div>
 
-            <div class="image-container">
-                <img src="../images/sammanfattning.png" alt="Bild för sammanfattning">
+            <input type="radio" id="toggle5" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Balans mellan arbete och fritid</b>
+                <br>Visa att du värdesätter balansen mellan arbete och fritid genom att själv föregå 
+                med gott exempel. Uppmuntra till att ta pauser, semester och att skapa en sund arbetsmiljö.​</p>
             </div>
-        </div>
-    </div>
+
+            <input type="radio" id="toggle6" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Att våga ta risker och visa sårbarhet</b>
+                <br>Var modig nog att ta risker och experimentera med nya idéer och metoder. Visa även sårbarhet 
+                genom att erkänna misstag och använda dem som möjligheter till lärande och förbättring.</p>
+            </div>
+
+            <input type="radio" id="toggle7" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Mångfald och inkludering</b>
+                <br>Främja en kultur av mångfald och inkludering där alla känner sig välkomna och respekterade 
+                oavsett kön, etnisk bakgrund, sexuell läggning eller andra faktorer.​</p>
+            </div>
+
+            <input type="radio" id="toggle8" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Engagemang</b>
+                <br>Var engagerad i ditt arbete och visa passion för företagets vision och mål. Inspirera dina 
+                medarbetare att också vara engagerade och arbeta mot gemensamma mål.​</p>
+            </div>
+	</div>
 
     <script>
-        const text = document.getElementById('typewriterText').innerText;
-        let index = 0;
-        
-        function typeWriterEffect() {
-            if (index < text.length) {
-                document.getElementById('typewriterText').style.width = (index + 1) + "ch";
-                index++;
-                setTimeout(typeWriterEffect, 100); // 100ms per bokstav
-            } else {
-                // När effekten är klar, ta bort markören
-                document.getElementById('typewriterText').style.borderRight = "none";
-            }
+        // JavaScript för att scrolla ner när ett alternativ väljs
+document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
         }
+    });
+});
+
+// Javascript för att markera en knapp som aktiv
+document.querySelectorAll('.buttons').forEach(button => {
+    button.addEventListener('click', function() {
+
+// Ta bort aktiv klass från alla knappar
+    document.querySelectorAll('.buttons').forEach(btn => {
+            btn.classList.remove('active');
+        });
         
-        // Starta effekten
-        typeWriterEffect();
+// Lägg till aktiv klass på den klickade knappen
+        this.classList.add('active');
+    });
+});
+
+
     </script>
+
 </body>
 </html>

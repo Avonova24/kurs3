@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exempel på självledarskap</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;   
+        }
+
+        h1, p  {
+            text-align: center;
+            padding-right: 10%;
+            padding-left: 10%;
+        }
+
+        .circle-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            max-width: 600px;
+        }
+
+        .circle-button-green1, .circle-button-green2, .circle-button-green3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            width: 130px;
+            height: 130px;
+            padding: 14px;
+            
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            
+            border-radius: 50%;
+            border: none;
+            
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .circle-button-green1 {
+            background-color: #00866d;
+        }
+
+        .circle-button-green2 {
+            background-color: #005646;
+        }
+
+        .circle-button-green3 {
+            background-color: #01332a;
+
+        }
+
+        .circle-button-green1:hover, .circle-button-green2:hover, .circle-button-green3:hover {
+            background-color: #aff0e5;
+            color: #01332a;
+        }
+
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            
+            max-width: 900px;
+            margin-top: 5%;  
+        }
+
+        .toggle-radio:checked + .content {
+            display: flex;
+        }
+
+        .content img {
+            width: 200px;
+            margin: 0;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 16px;
+            text-align: left;
+            padding: 0 5% 0 2%;
+            
+        }
+
+        .green {
+            color: #005646;
+        }
+
+           /* CSS för att markera den aktiva knappen */
+           .circle-button-green1.active, .circle-button-green2.active, .circle-button-green3.active {
+        background-color: #aff0e5;
+        color: #01332a;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+        </div>
+        <h1>Exempel på självledarskap</h1>
+        <p>Klicka på de olika <b class="green">gröna knapparna</b> nedan för att läsa mer om 
+        varje exempel på självledarskap:</p>
+        
+        <div class="circle-container">
+            <!-- FÖRSTA RADEN -->
+            <label class="circle-button-green1" for="toggle1">Problemlösa</label>
+            <label class="circle-button-green2" for="toggle2">Kunna motivera sig själv​</label>
+            <label class="circle-button-green3" for="toggle3">Ta tag i sakerna själv​</label>
+            
+            <!-- ANDRA RADEN -->
+            <label class="circle-button-green3" for="toggle4">Ta ägandeskap och ansvar över eget arbete​</label>
+            <label class="circle-button-green1" for="toggle5">Anpassnings-<br>förmåga</label>
+           
+        </div>
+
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/diskrimineringslagen.png" alt="Bild för diskrimineringslagen">
+            <p><b>Problemlösa</b>
+            <br>Att kunna lösa problem är en av de mest värdefulla färdigheterna, både på arbetsplatsen 
+            och i vardagen. Problemlösning handlar inte bara om att hitta en lösning på ett specifikt 
+            problem, utan också om att kunna analysera situationen, identifiera orsaker och hitta kreativa 
+            vägar framåt. En bra problemlösare är inte rädd för att möta utmaningar och ser problem som en 
+            möjlighet att lära och växa. Det innebär att kunna tänka kritiskt och objektivt, bryta ner problem 
+            i hanterbara delar och testa olika lösningar tills man hittar den mest effektiva. Det handlar 
+            också om att vara flexibel i sitt tänkande och kunna anpassa sig till förändrade omständigheter.</p>
+        </div>
+
+        <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/anstskydd.png" alt="Bild för lagen om anställningsskydd">
+            <p><b>Kunna motivera sig själv</b>
+            <br>Att kunna motivera sig själv handlar om att hitta driv och energi även när omständigheterna inte 
+            är de bästa. Det är förmågan att hålla fokus på sina mål och fortsätta arbeta mot dem, även när man 
+            ställs inför hinder eller när det inte finns någon direkt belöning eller uppmuntran. Självmotivation 
+            handlar ofta om att ha en inre känsla av syfte – att förstå varför man gör det man gör, och att kunna 
+            påminna sig själv om de större målen eller värderingarna som ligger bakom det dagliga arbetet.</p>
+        </div>
+
+        <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/arbetstid.png" alt="Bild för arbetstidslagen">
+            <p><b>Ta tag i sakerna själv​</b>
+            <br>Att ta tag i saker själv, även utan att bli tillsagd, handlar om att vara proaktiv och ta ansvar 
+            för sin arbetsbörda. Det innebär att inte vänta på att någon annan ska ge direktiv eller påminnelser, 
+            utan att agera på egen hand när det behövs. Att vara en person som tar tag i saker själv visar på 
+            initiativförmåga och en vilja att bidra till att få saker gjort, utan att alltid behöva vägledning.</p>
+        </div>
+
+        <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/fortroendeskydd.png" alt="Bild för förtroendemannalagen">
+            <p><b>Ta ägandeskap och ansvar över eget arbete</b>
+            <br>Ansvarstagande innebär att inte bara ta ansvar för de uppgifter man får, utan även att ta ansvar 
+            för resultatet av sitt arbete. Det innebär att vara medveten om konsekvenserna av sina handlingar och 
+            göra sitt bästa för att uppnå de resultat som förväntas av en, eller ännu bättre – överträffa dem. 
+            Att ta ägandeskap över sitt arbete innebär att man inte bara utför uppgifterna som man blir tilldelad, 
+            utan ser till att de blir utförda på bästa möjliga sätt. Det innebär också att stå för sina misstag och 
+            ta ansvar för eventuella problem eller fel som kan uppstå.</p>
+        </div>
+
+        <input type="radio" id="toggle5" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/skyddolyckor.png" alt="Bild för lag om skydd mot olyckor">
+            <p><b>Anpassningsförmåga</b>
+            <br>Anpassningsförmåga, eller flexibilitet, handlar om att kunna hantera förändringar och nya situationer 
+            på ett effektivt sätt. Det innebär att kunna vara öppen för nya idéer och förändringar, och att snabbt 
+            kunna anpassa sig till nya omständigheter eller krav. I dagens arbetsmiljö, där förändringar kan komma 
+            snabbt och oväntat, är anpassningsförmåga en avgörande färdighet. Den som kan anpassa sig till nya teknologier, 
+            arbetsmetoder eller marknadsförhållanden blir ofta en ovärderlig medlem av teamet.</p>
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript för att scrolla ner när ett alternativ väljs
+document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Javascript för att markera en knapp som aktiv
+document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(button => {
+    button.addEventListener('click', function() {
+        // Ta bort aktiv klass från alla knappar
+        document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Lägg till aktiv klass på den klickade knappen
+        this.classList.add('active');
+    });
+});
+
+
+    </script>
+    
+</body>
+</html>

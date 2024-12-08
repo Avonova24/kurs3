@@ -3,35 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lycka till</title>
-	<link rel="stylesheet" href="../styles.css">
+    <title>Självledarskap – Det börjar med mig</title>
+    <link rel="stylesheet" href="../styles.css">
+    
     <style>
-        
         .container {
             display: flex;
-            padding: 0;
-            margin: 0;
-            flex-direction: column;
             justify-content: center;
+            flex-direction: column;   
+            padding-right: 5%;
+            position: relative; /* För att placera den expanderade bilden korrekt */
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .flexbox {
+            display: flex;
+            width: 100%;
             align-items: center;
         }
+
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+            margin-right: 5%;
+        }
+
+        .image-container {
+            flex: 0.5;
+            text-align: end;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 350px;
+        }
+
         
-        img {
-            width: 70%;
-            margin: 10% 20%;
 
-        } 
+        .bildtext {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+
+        .button-link {
+            margin-top: 4%;
+        }
     
-    
+        /* Visa overlay */
+        .show {
+            display: block;
+        }
+
     </style>
-    
 </head>
-
 <body>
     <div class="container">
-        
-        <img src="../images/lyckatill.png">
-     
+        <div class="flexbox">
+            <div class="column1">
+                <div class="avonova-logo">
+                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+                </div>
+                <h1>Självledarskap – Det börjar med mig</h1>
+                <p>Den tid då auktoritära chefer bestämde allt och anställda förväntades följa utan att 
+                ifrågasätta det. Idag värdesätts självledarskap – ett ledarskap där medarbetarna tar 
+                eget ansvar och har frihet att påverka sitt arbete. Självledarskap är ingen trend inom 
+                personlig utveckling, utan en teori baserad på 30 års forskning, med positiva effekter 
+                på arbetsplatsen.</p>
+
+                <p>I dagens arbetsliv, där autonomi är en nyckel, är självledarskap särskilt användbart 
+                för kunskapsarbetare. Medarbetare som får friheten att styra sitt eget arbete känner sig 
+                mer motiverade, produktiva och upplever mindre stress och oro. Detta sätt att leda bidrar 
+                även till ökad arbetskvalitet och minskad frånvaro.</p>
+
+                <p>Kärnan i självledarskap handlar om självreglering: att kunna påverka och ta ansvar för 
+                sina egna tankar och känslor, vilket i sin tur påverkar ens beteende och beslut. Att vara 
+                medveten om sina inre reaktioner och att sluta skylla på yttre omständigheter stärker 
+                självkänslan och ansvaret över egna val.</p>
+
+                <p>Självledarskap för medarbetare innebär att de själva styr sitt arbete, vilket är 
+                motsatsen till det traditionella, transaktionella ledarskapet, där chefen har kontroll 
+                över uppgifterna. Med självledarskap får medarbetarna större ansvar, vilket både sänker 
+                kostnader och ökar engagemanget genom ökat ägandeskap över arbetsuppgifterna.</p>
+            </div>
+
+            <div class="image-container">
+                <img src="../images/.png" alt="Bild för chefens egna arbetsmiljö">
+                
+            </div>
+        </div>
     </div>
+
+    
 </body>
 </html>
