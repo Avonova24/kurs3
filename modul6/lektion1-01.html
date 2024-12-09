@@ -7,220 +7,117 @@
     <link rel="stylesheet" href="../styles.css">
     
     <style>
-
         .container {
             display: flex;
             justify-content: center;
-            align-items: center;
             flex-direction: column;   
+            
+            position: relative; /* För att placera den expanderade bilden korrekt */
         }
 
-        h1, p  {
-            text-align: center;
-            padding-right: 10%;
-            padding-left: 10%;
+        h1 {
+            margin-bottom: 15px;
         }
 
-        .circle-container {
+        h2 {
+            font-size: 19px;
+            margin-top: 5%;
+        }
+
+        h3 {
+            margin-top: 5%;
+        }
+
+        .flexbox {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 15px;
-            max-width: 800px;
+            width: 100%;
+            align-items: start;
+            gap: 5%;
         }
 
-        .circle-button-green1, .circle-button-green2, .circle-button-green3 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            
-            width: 130px;
-            height: 130px;
-            padding: 14px;
-            
-            text-align: center;
-            font-size: 15px;
-            font-weight: bold;
-            text-decoration: none;
-            color: white;
-            
-            border-radius: 50%;
-            border: none;
-            
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .circle-button-green1 {
-            background-color: #00866d;
-        }
-
-        .circle-button-green2 {
-            background-color: #005646;
-        }
-
-        .circle-button-green3 {
-            background-color: #01332a;
-
-        }
-
-        .circle-button-green1:hover, .circle-button-green2:hover, .circle-button-green3:hover {
-            background-color: #aff0e5;
-            color: #01332a;
-        }
-
-        .toggle-radio {
-            display: none;
-        }
-
-        .content {
-            display: none;
-            align-items: center;
-            justify-content: space-between;
-            
-            max-width: 700px;
-            margin-top: 5%;  
-        }
-
-        .toggle-radio:checked + .content {
-            display: flex;
-        }
-
-        .content img {
-            width: 200px;
-            margin: 0;
-        }
-
-        .content p {
-            margin: 0;
-            font-size: 16px;
+        .column1 {
             text-align: left;
-            padding: 0 5% 0 2%;
-            
+            flex: 1.5;
+            margin-right: 5%;
         }
 
-        .green {
-            color: #005646;
+        .column2 {
+            flex: 1.5;
+            text-align: left;
+            position: relative;
         }
 
-           /* CSS för att markera den aktiva knappen */
-           .circle-button-green1.active, .circle-button-green2.active, .circle-button-green3.active {
-        background-color: #aff0e5;
-        color: #01332a;
+        .column2 img {
+            width: 300px;
+            margin-bottom: 10%;
+        }
+
+        
+
+        .bildtext {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+
+        .button-link {
+            margin-top: 4%;
+        }
+    
+        /* Visa overlay */
+        .show {
+            display: block;
         }
 
     </style>
 </head>
-
 <body>
     <div class="container">
-        <div class="avonova-logo">
-            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+        <div class="flexbox">
+            <div class="column1">
+                <div class="avonova-logo">
+                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+                </div>
+                <h1>Fysiska arbetsmiljörisker</h1>
+                <p>Fysiska arbetsmiljörisker förekommer i alla branscher. I bygg- och anläggningsarbete är det en hög olycksrisk, 
+                där fallolyckor är särskilt vanliga och ofta leder till allvarliga skador eller dödsfall. Fallolyckor kan delas in i två typer:</p>
+
+            </div>
+            <div class="column2">
+                <img src="../images/fall.png" alt="Bild för kunskap">
+                
+            </div>
+               
         </div>
-        <h1>Fysiska arbetsmiljörisker</h1>
-        <p>Fysiska arbetsmiljörisker förekommer i alla branscher. I bygg- och anläggningsarbete är det 
-        en hög olycksrisk, där fallolyckor är särskilt vanliga och ofta leder till allvarliga skador 
-        eller dödsfall. Fallolyckor kan delas in i två typer</p>
+
+        <div class="flexbox">
+            <div class="column1">
+                <h2>Typ 1: Fall på samma nivå</h2>
+                <p>Dessa olyckor sker när en person snubblar, halkar eller faller till samma nivå som de går eller står på. Vanliga orsaker är:</p>
+
+                <ul>
+                    <li>Ojämnt underlag</li>
+                    <li>Halkiga ytor</li>
+                    <li>Föremål som ligger i vägen</li>
+                </ul>
+
+                <h3>Förebyggande åtgärder</h3>
+                <p>God ordning och städning på arbetsplatsen minskar risken för dessa olyckor och bidrar till att undvika långvarig sjukfrånvaro.</p>
+            </div>
         
-        <p>Klicka på de olika <b class="green">gröna knapparna</b> nedan för att läsa mer om varje angränsande lag till arbetsmiljölagen.</p>
-        
-        <div class="circle-container">
-            <!-- FÖRSTA RADEN -->
-            <label class="circle-button-green1" for="toggle1">Diskriminerings-<br>lagen</label>
-            <label class="circle-button-green3" for="toggle2">Lag om anställningsskydd (LAS)</label>
-            <label class="circle-button-green2" for="toggle3">Arbetstidslagen</label>
-            <label class="circle-button-green1" for="toggle4">Förtroendemanna-<br>lagen</label>
-            
-            <!-- ANDRA RADEN -->
-            <label class="circle-button-green2" for="toggle5">Lag om skydd mot olyckor</label>
-            <label class="circle-button-green1" for="toggle6">Miljöbalken</label>
-            <label class="circle-button-green3" for="toggle7">Socialförsäkrings-<br>balken</label>
+
+            <div class="column2">
+                <h2>Typ 2: Fall till lägre nivå</h2>
+                <p>Fall till lägre nivå är en av de främsta orsakerna till dödsfall inom byggbranschen. Dessa olyckor uppstår ofta när:</p>
+                
+                <ul>
+                    <li>Fallskydd saknas</li>
+                    <li>Fallskyddet är otillräckligt eller felaktigt installerat</li>
+                </ul>
+            </div>
         </div>
 
-        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
-        <div class="content">
-            <img src="../images/diskrimineringslagen.png" alt="Bild för diskrimineringslagen">
-            <p><b>Diskrimineringslagen</b>
-            <br>Denna lag syftar till att motverka diskriminering och främja lika 
-            rättigheter och möjligheter oavsett kön, könsöverskridande identitet eller uttryck, 
-            etnisk tillhörighet, religion eller annan trosuppfattning, funktionsnedsättning, 
-            sexuell läggning eller ålder.</p>
-        </div>
-
-        <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
-        <div class="content">
-            <img src="../images/anstskydd.png" alt="Bild för lagen om anställningsskydd">
-            <p><b>Lag om anställningskydd (LAS)</b>
-            <br>Denna lag skyddar arbetstagares rättigheter och reglerar uppsägning, avsked och 
-            anställningsformer.</p>
-        </div>
-
-        <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
-        <div class="content">
-            <img src="../images/arbetstid.png" alt="Bild för arbetstidslagen">
-            <p><b>Arbetstidslagen</b>
-            <br>Arbetstidslagen innehåller bestämmelser om arbetstidens längd och förläggning.
-        </p>
-        </div>
-
-        <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
-        <div class="content">
-            <img src="../images/fortroendeskydd.png" alt="Bild för förtroendemannalagen">
-            <p><b>Förtroendemannalagen</b>
-            <br>Lag om facklig förtroendemans ställning på arbetsplatsen. Innehåller regler och 
-            skydd för de fackliga förtroendemän som de anställda utsett till sina företrädare.</p>
-        </div>
-
-        <input type="radio" id="toggle5" name="toggle" class="toggle-radio">
-        <div class="content">
-            <img src="../images/skyddolyckor.png" alt="Bild för lag om skydd mot olyckor">
-            <p><b>Lag om skydd mot olyckor</b>
-            <br>Syftar till att skydda människors liv och hälsa samt egendom och miljö mot olyckor.</p>
-        </div>
-
-        <input type="radio" id="toggle6" name="toggle" class="toggle-radio">
-        <div class="content">
-            <img src="../images/miljobalken.png" alt="Bild för miljöbalken">
-            <p><b>Miljöbalken</b>
-            <br>Miljöbalken syftar till att främja en hälsosam och god miljö.</p>
-        </div>
-
-        <input type="radio" id="toggle7" name="toggle" class="toggle-radio">
-        <div class="content">
-            <img src="../images/social.png" alt="Bild för socialförsäkring">
-            <p><b>Socialförsäkringsbalken</b>
-            <br>Denna lag bestämmer om social trygghet genom olika socialförsäkringar 
-            och bidrag.</p>
-        </div>
     </div>
 
-    <script>
-        // JavaScript för att scrolla ner när ett alternativ väljs
-document.querySelectorAll('.toggle-radio').forEach(function(radio) {
-    radio.addEventListener('change', function() {
-        if (this.checked) {
-            this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-});
-
-// Javascript för att markera en knapp som aktiv
-document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(button => {
-    button.addEventListener('click', function() {
-        // Ta bort aktiv klass från alla knappar
-        document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        
-        // Lägg till aktiv klass på den klickade knappen
-        this.classList.add('active');
-    });
-});
-
-
-    </script>
-    
 </body>
 </html>
