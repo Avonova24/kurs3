@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutiner mot kränkande särbehandling</title>
+	<link rel="stylesheet" href="../styles.css">
+    <style>
+
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+
+        p {
+            padding-right: 15%;
+            padding-left: 15%;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+
+            justify-content: center;
+            
+            
+            max-width: 900px;
+
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            
+            background-color: #ffdcaf;
+            color: #005646;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            
+            width: 180px;
+            height: 100px;
+            padding: 20px;
+            
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .buttons:hover {
+            background-color: #00866d;
+            color: white;
+        }
+      
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            margin-top: 5px;
+            max-width: 700px;
+            
+        }
+
+        .content p {
+            text-align: left;
+        }
+
+        .content ul {
+            margin-left: 10%;
+            text-align: left;
+        }
+
+        .toggle-radio:checked + .content {
+            display: block;
+        }
+
+         /* CSS för att markera den aktiva knappen */
+         .buttons.active {
+            background-color: #00866d;
+            color: white;
+        }
+
+        ul li {
+            margin-left: 20px;
+        }
+    
+		
+    </style>
+</head>
+	
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+       	</div>
+        <h1>Rutiner mot kränkande särbehandling</h1>
+        <p>Rutiner för att hantera kränkande särbehandling är en viktig del av arbetsmiljöarbetet och 
+        ska tydligt beskriva hur arbetsgivaren ska agera vid misstänkta fall. Rutinerna ska vara konkreta, 
+        lättförståeliga och tillgängliga för alla anställda.</p>
+        <p>​Klicka på de gula korten nedan för att läsa 
+        mer om vad som bör ingå:</p>
+        
+      
+        <div class="buttons-container">
+            <label class="buttons" for="toggle1">Syfte och mål med rutinerna</label>
+                    
+            <label class="buttons" for="toggle2">Definition av kränkande särbehandling</label>
+                    
+            <label class="buttons" for="toggle3">Hur man rapporterar kränkande särbehandling</label>
+                    
+            <label class="buttons" for="toggle4">Hur arbetsgivaren hanterar en rapport</label>
+
+            <label class="buttons" for="toggle5">Uppföljning och stöd</label>
+
+            <label class="buttons" for="toggle6">Kommunikation och tillgänglighet</label>
+
+        </div>
+        
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Syfte och mål med rutinerna</b>
+                <br>Klargör att syftet med rutinerna är att förebygga kränkande särbehandling, skapa en 
+                trygg arbetsmiljö och hantera eventuella incidenter snabbt och effektivt.
+                
+                <br><br>Betona att alla anställda ska behandlas med respekt och värdighet.​</p>
+            </div>
+        
+            <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <p><b>Definition av kränkande särbehandling</b>
+                <br>Förtydliga vad som menas med kränkande särbehandling och ge exempel på beteenden som omfattas.
+                
+                <br><br>Skilj mellan kränkande särbehandling och andra typer av konflikter eller oenigheter för att undvika missförstånd.​</p>   
+            </div>
+        
+            <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <p><b>Hur man rapporterar kränkande särbehandling</b>
+                <br>Ange hur en anställd ska gå tillväga för att rapportera en händelse:</p>
+                
+                <ul>
+                    <li>Till vem? (t.ex. chef, HR-avdelning, skyddsombud)</li>
+                    <li>Hur? (muntligt, skriftligt eller via anonym kanal om möjligt)</li>
+                    <li>Vad rapporten bör innehålla (beskrivning av händelsen, tid, plats och inblandade personer)</li>
+                </ul>
+            </div>
+        
+            <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Hur arbetsgivaren hanterar en rapport</b></p>
+                
+                <ul>
+                    <li>Bekräftelse: Bekräfta att anmälan har mottagits</li>
+                    <li>Utredning: Beskriv hur arbetsgivaren säkerställer en opartisk och grundlig utredning</li>
+                    <li>Resurser: Klargör vilka resurser som används, t.ex. interna utredare, HR eller externa experter</li>
+                    <li>Skydd av inblandade: Förklara hur arbetsgivaren skyddar både anmälaren och den som anklagas under utredningen. Förhindra repressalier och skapa trygghet för alla parter</li>
+                    <li>Tidsram: Ge en uppskattning av hur lång tid utredningen kan ta</li>
+                        
+                </ul>
+            </div>
+
+            <input type="radio" id="toggle5" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Uppföljning och stöd</b>
+                <br>Beskriv hur arbetsgivaren följer upp ärendet efter att åtgärderna vidtagits för att 
+                säkerställa att problemet inte återkommer.</p>
+                
+                <p>Ange vilket stöd som finns tillgängligt för drabbade, exempelvis:</p>
+                
+                <ul>
+                    <li>Tillgång till företagshälsovård</li>
+                    <li>Samtalsterapi eller psykologiskt stöd</li>
+                    <li>Kontakt med fackliga företrädare</li>
+                </ul>
+                
+            </div>
+
+            <input type="radio" id="toggle6" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Kommunikation och tillgänglighet</b></p>
+                <ul>
+                    <li>Förklara hur rutinerna kommuniceras till medarbetarna, till exempel via introduktioner, 
+                        intranät eller arbetsplatsträffar</li>
+                    <li>Ange var dokumentet finns tillgängligt för alla</li>
+                    <li>Beskriv hur och hur ofta rutinerna ses över för att säkerställa att de är aktuella och effektiva</li>
+                    <li>Ange vem som ansvarar för att rutinerna uppdateras</li>
+                </ul>
+            </div>
+	</div>
+
+    <script>
+        // JavaScript för att scrolla ner när ett alternativ väljs
+document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Javascript för att markera en knapp som aktiv
+document.querySelectorAll('.buttons').forEach(button => {
+    button.addEventListener('click', function() {
+
+// Ta bort aktiv klass från alla knappar
+    document.querySelectorAll('.buttons').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+// Lägg till aktiv klass på den klickade knappen
+        this.classList.add('active');
+    });
+});
+
+
+    </script>
+
+</body>
+</html>
