@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Förebyggande arbete</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;   
+        }
+
+        h1, p  {
+            text-align: center;
+            padding-right: 10%;
+            padding-left: 10%;
+        }
+
+        .circle-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            max-width: 600px;
+        }
+
+        .circle-button-green1, .circle-button-green2, .circle-button-green3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            width: 130px;
+            height: 130px;
+            padding: 14px;
+            
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            
+            border-radius: 50%;
+            border: none;
+            
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .circle-button-green1 {
+            background-color: #00866d;
+        }
+
+        .circle-button-green2 {
+            background-color: #005646;
+        }
+
+        .circle-button-green3 {
+            background-color: #01332a;
+
+        }
+
+        .circle-button-green1:hover, .circle-button-green2:hover, .circle-button-green3:hover {
+            background-color: #aff0e5;
+            color: #01332a;
+        }
+
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            
+            max-width: 700px;
+            margin-top: 5%;  
+        }
+
+        .toggle-radio:checked + .content {
+            display: flex;
+        }
+
+        .content img {
+            width: 200px;
+            margin: 0;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 16px;
+            text-align: left;
+            padding: 0 5% 0 2%;
+            
+        }
+
+        .green {
+            color: #005646;
+        }
+
+           /* CSS för att markera den aktiva knappen */
+           .circle-button-green1.active, .circle-button-green2.active, .circle-button-green3.active {
+        background-color: #aff0e5;
+        color: #01332a;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+        </div>
+        <h1>Förebyggande arbete</h1>
+        <p>Arbetsgivaren bör arbeta systematiskt med att förebygga kränkande särbehandling genom att:</p>
+    
+        
+        <div class="circle-container">
+            <!-- FÖRSTA RADEN -->
+            <label class="circle-button-green1" for="toggle1">Utforma tydliga policydokument</label>
+            <label class="circle-button-green2" for="toggle2">Främja en positiv arbetskultur</label>
+            <label class="circle-button-green3" for="toggle3">Utbilda chefer och medarbetare</label>
+
+            <!-- ANDRA RADEN -->
+            <label class="circle-button-green3" for="toggle4">Etablera tydliga rutiner för hantering</label>
+            <label class="circle-button-green1" for="toggle5">Genomföra regelbundna riskbedömningar</label>
+        </div>
+
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/atgarder.png" alt="Bild för diskrimineringslagen">
+            <p><b>Utforma tydliga policydokument</b>
+            <br>En arbetsmiljöpolicy ska inkludera rutiner för att identifiera, hantera och följa upp kränkande särbehandling.</p>
+        </div>
+
+        <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/mindrekonflikt.png" alt="Bild för lagen om anställningsskydd">
+            <p><b>Främja en positiv arbetskultur</b>
+            <br>Uppmuntra öppen kommunikation, respekt och samarbete på arbetsplatsen.</p>
+        </div>
+
+        <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/informera.png" alt="Bild för arbetstidslagen">
+            <p><b>Utbilda chefer och medarbetare</b>
+            <br>Utbildningar om konflikthantering, likabehandling och arbetsmiljö kan minska riskerna.</p>
+        </div>
+
+        <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/atgarder.png" alt="Bild för förtroendemannalagen">
+            <p><b>Etablera tydliga rutiner för hantering</b>
+            <br>Det ska vara klart för alla hur man rapporterar misstänkt kränkande särbehandling och vilka åtgärder som vidtas.</p>
+        </div>
+
+        <input type="radio" id="toggle5" name="toggle" class="toggle-radio">
+        <div class="content">
+            <img src="../images/riskbedomning.png" alt="Bild för förtroendemannalagen">
+            <p><b>Genomföra regelbundna riskbedömningar</b>
+            <br>Identifiera potentiella riskområden och vidta proaktiva åtgärder.</p>
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript för att scrolla ner när ett alternativ väljs
+document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Javascript för att markera en knapp som aktiv
+document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(button => {
+    button.addEventListener('click', function() {
+        // Ta bort aktiv klass från alla knappar
+        document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Lägg till aktiv klass på den klickade knappen
+        this.classList.add('active');
+    });
+});
+
+
+    </script>
+    
+</body>
+</html>
