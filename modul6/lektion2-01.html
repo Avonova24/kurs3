@@ -27,7 +27,7 @@
             justify-content: center;
             gap: 15px;
             margin-top: 15px;
-            max-width: 800px;
+            max-width: 600px;
         }
 
         .circle-button-green1, .circle-button-green2, .circle-button-green3 {
@@ -128,11 +128,11 @@
             <!-- FÖRSTA RADEN -->
             <label class="circle-button-green1" for="toggle1">Risk för ras</label>
             <label class="circle-button-green2" for="toggle2">Fallande föremål</label>
-            <label class="circle-button-green1" for="toggle3">Maskiner och utrustning</label>
+            <label class="circle-button-green3" for="toggle3">Maskiner och utrustning</label>
 
             <!-- ANDRA RADEN -->
-            <label class="circle-button-green2" for="toggle4">Handhållna maskiner</label>
-            <label class="circle-button-green2" for="toggle4">Entreprenadmaskiner</label>
+            <label class="circle-button-green3" for="toggle4">Handhållna maskiner</label>
+            <label class="circle-button-green1" for="toggle4">Entreprenad-<br>maskiner</label>
             
         </div>
 
@@ -140,35 +140,60 @@
         <div class="content">
             <img src="../images/roller.png" alt="Bild för diskrimineringslagen">
             <p><b>Risk för ras</b>
-            <br>Oklarheter kring arbetsfördelning, prestationer och arbetssätt skapar frustration och missförstånd.</p>
+            <br>Vid markarbete och grundläggning finns det risk för ras, särskilt om säkerhetsåtgärder 
+            inte vidtas. Tunga utrustningar, som kranar, kan också välta och orsaka olyckor.</p>
         </div>
 
         <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
         <div class="content">
             <img src="../images/grafisk15.png" alt="Bild för lagen om anställningsskydd">
             <p><b>Fallande föremål</b>
-            <br>Långa arbetsdagar och orimliga krav kan öka stress och spänningar mellan medarbetare.</p>
+            <br>Områden där det finns risk för fallande föremål ska spärras av och tydligt markeras. 
+            Skyddstak, täckta gångar eller liknande ska användas om det är nödvändigt att beträda dessa områden.</p>
         </div>
 
         <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
         <div class="content">
             <img src="../images/konflikt.png" alt="Bild för arbetstidslagen">
             <p><b>Maskiner och utrustning</b>
-            <br>Olösta konflikter kan skapa en grogrund för negativa beteenden och personangrepp.</p>
+            <br>Maskiner är ofta inblandade i arbetsplatsolyckor. Olyckor kan inträffa när:
+            <br><br>- Maskinskydd tas bort
+            <br>- Maskiner används felaktigt
+            <br>- Bristande kunskap eller utbildning förekommer
+            <br>- Maskinen inte har besiktigats eller underhållits korrekt
+            </p>
         </div>
 
         <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
         <div class="content">
             <img src="../images/stress.png" alt="Bild för förtroendemannalagen">
             <p><b>Handhållna maskiner</b>
-            <br>Omorganisationer, rationaliseringar eller omstruktureringar kan skapa otrygghet, konkurrens och osäkerhet, vilket ökar risken för kränkningar.</p>
+            <br>Sågar, borrmaskiner och andra handverktyg kan orsaka allvarliga skador, särskilt på 
+            händer och ben på grund av hög vibrationsexponering under en längre tid. Material som flyger 
+            iväg vid användning kan också träffa och skada andra. Användning av skyddsutrustning, som 
+            skyddsglasögon och hörselskydd, är ofta nödvändig.</p>
         </div>
 
-        <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
+        <input type="radio" id="toggle5" name="toggle" class="toggle-radio">
         <div class="content">
             <img src="../images/stress.png" alt="Bild för förtroendemannalagen">
             <p><b>Entreprenadmaskiner</b>
-            <br>Omorganisationer, rationaliseringar eller omstruktureringar kan skapa otrygghet, konkurrens och osäkerhet, vilket ökar risken för kränkningar.</p>
+            <br>Grävmaskiner, lyftkranar och truckar är exempel på entreprenadmaskiner där risker inkluderar 
+            förlorad kontroll över maskinen, såsom:
+            
+            <br><br>- Klämskador
+            <br>- Vältolyckor
+            <br>- Det saknas kunskap om maskinen
+            <br>- Maskinen används felaktigt
+            <br>- Maskinen är inte besiktigad
+            <br>- Maskinen har inte kontrollerats och underhållits
+            <br>- Maskinskydd tas bort eller skyddsutrustning inte används.
+            
+            <br><br>Åtgärder:
+            <br>- Dokumenterad utbildning för förare
+            <br>- Arbetsgivarens skriftliga tillstånd för användning av vissa maskiner
+            <br>- Regelbundna kontroller och underhåll
+            </p>
         </div>
 
     </div>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kemiska arbetsmiljörisker</title>
+	<link rel="stylesheet" href="../styles.css">
+    <style>
+
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+
+        p {
+            padding-right: 15%;
+            padding-left: 15%;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+
+            justify-content: center;
+            
+            
+            max-width: 800px;
+
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            
+            background-color: #ffdcaf;
+            color: #005646;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            
+            width: 180px;
+            height: 100px;
+            padding: 20px;
+            
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .buttons:hover {
+            background-color: #00866d;
+            color: white;
+        }
+      
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            margin-top: 5px;
+            text-align: center;
+            max-width: 850px;
+            
+        }
+
+        .content ul {
+            margin-left: 20%;
+            text-align: left;
+            max-width: 550px;
+        }
+
+        .toggle-radio:checked + .content {
+            display: block;
+        }
+
+         /* CSS för att markera den aktiva knappen */
+         .buttons.active {
+            background-color: #00866d;
+            color: white;
+        }
+
+        ul li {
+            margin-left: 20px;
+        }
+    
+		
+    </style>
+</head>
+	
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+       	</div>
+        <h1>Kemiska arbetsmiljörisker</h1>
+        <p>Byggsektorn innebär arbete med många olika farliga ämnen, som kan förekomma i olika skeden av 
+        byggprocessen, exempelvis vid markarbete, rivning eller uppförande av byggnader. Dessa ämnen kan 
+        innebära allvarliga risker för hälsa och säkerhet om inte rätt åtgärder vidtas.</p> 
+        
+        <p>​Klicka på de gula korten nedan för att läsa mer om varje område:</p>
+        
+      
+        <div class="buttons-container">
+            <label class="buttons" for="toggle1">Vanliga farliga ämnen</label>
+                    
+            <label class="buttons" for="toggle2">Riskbedömning av kemiska arbetsmiljörisker</label>
+                    
+            <label class="buttons" for="toggle3">När ska riskbedömningar göras?</label>
+                    
+            <label class="buttons" for="toggle4">Särskilda krav för farliga ämneng</label>
+
+            <label class="buttons" for="toggle5">Personlig skyddsutrustning och planering</label>
+
+            <label class="buttons" for="toggle6">Inventering av farliga ämnen</label>
+        </div>
+        
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Vanliga farliga ämnen</b></p>
+                
+                <ul>
+                    <li>Asbest: Förekommer ofta vid rivningsarbeten av äldre byggnader</li>
+                    <li>Kvarts (damm): Bildas vid arbete med material som betong, sten och tegel</li>
+                    <li>Härdplaster till exempel isocyanater: Används i olika byggmaterial och kan avge skadliga kemikalier vid bearbetning</li>
+                </ul>
+                
+                <p>Andra material som färg, fogmassa, isolering, våtrumsskivor och betongprodukter kan också innehålla farliga ämnen. 
+                För att skydda sig är det viktigt att läsa varuinformationsblad och använda lämplig personlig skyddsutrustning.​</p>
+            </div>
+        
+            <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <p><b>Riskbedömning av kemiska arbetsmiljörisker</b></p>
+                <p>Arbeten med farliga ämnen kräver en noggrann riskbedömning som genomförs i tre steg:</p>
+
+                <ul>
+                    <li>Identifiera kemiska riskkällor: Ta reda på ämnets farliga egenskaper och vilka regler som gäller</li>
+                    <li>Identifiera farliga situationer: Bedöm vilka situationer som kan innebära risker</li>
+                    <li>Bestäm åtgärder: Fastställ vilka åtgärder som behövs för att minska riskerna</li>
+                </ul>
+            </div>
+        
+            <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <p><b>När ska riskbedömningar göras?</b></p>
+                
+                <ul>
+                    <li>Vid nya eller tidigare ej bedömda arbeten</li>
+                    <li>Vid förändringar, exempelvis ny information om risker, nya arbetsmetoder eller utrustning</li>
+                    <li>Innan tillfälliga arbeten påbörjas</li>
+                    <li>Varje gång arbete ska utföras i slutna utrymmen som cisterner, brunnar, silos, rör eller schakt</li>
+                    <li> Vid rivningsarbeten och liknande kan det uppstå risker som inte har identifierats i förväg. Då ska riskbedömningen omfatta tänkbara kemiska riskkällor, och åtgärder för dessa ska förberedas i förväg</li>
+                </ul>
+            </div>
+        
+            <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Särskilda krav för farliga ämnen</b>
+                <br>Sätt höga förväntningar för dina medarbetare och ge dem möjligheter att växa och 
+                utvecklas både professionellt och personligt. Erbjud mentorprogram, utbildning och 
+                utvecklingsmöjligheter​</p>
+            </div>
+
+            <input type="radio" id="toggle5" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Personlig skyddsutrustning och planering</b>
+                <br>Visa att du värdesätter balansen mellan arbete och fritid genom att själv föregå 
+                med gott exempel. Uppmuntra till att ta pauser, semester och att skapa en sund arbetsmiljö.​</p>
+            </div>
+
+            <input type="radio" id="toggle6" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Inventering av farliga ämnen</b>
+                <br>Var modig nog att ta risker och experimentera med nya idéer och metoder. Visa även sårbarhet 
+                genom att erkänna misstag och använda dem som möjligheter till lärande och förbättring.</p>
+            </div>
+	</div>
+
+    <script>
+        // JavaScript för att scrolla ner när ett alternativ väljs
+document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Javascript för att markera en knapp som aktiv
+document.querySelectorAll('.buttons').forEach(button => {
+    button.addEventListener('click', function() {
+
+// Ta bort aktiv klass från alla knappar
+    document.querySelectorAll('.buttons').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+// Lägg till aktiv klass på den klickade knappen
+        this.classList.add('active');
+    });
+});
+
+
+    </script>
+
+</body>
+</html>
