@@ -78,9 +78,11 @@
         .content {
             display: none;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+
+            width: 600px;
+            gap: 15px;
             
-            max-width: 700px;
             margin-top: 5%;  
         }
 
@@ -97,7 +99,11 @@
             margin: 0;
             font-size: 16px;
             text-align: left;
-            padding: 0 5% 0 2%;
+            padding: 0 5% 0 0;
+            
+        }
+
+        .content ul {
             
         }
 
@@ -120,53 +126,75 @@
             <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
         </div>
         <h1>Hög arbetsbelastning och stress​</h1>
-        <p>Arbetsgivaren bör arbeta systematiskt med att förebygga kränkande särbehandling genom att:</p>
+        <p>Arbetsgivaren ska se till att arbetsuppgifter och ansvar som ges till anställda inte leder till 
+        ohälsosam stress. Det innebär att resurserna ska vägas upp mot arbetets krav. Arbetsgivaren ska även 
+        se till att arbetsuppgifter och ansvar matchar de resurser som finns. Det är viktigt att upptäcka och 
+        åtgärda tecken på ohälsosam stress, som för hög arbetsmängd eller bristande stöd.</p>
     
         
         <div class="circle-container">
             <!-- FÖRSTA RADEN -->
-            <label class="circle-button-green1" for="toggle1">Utforma tydliga policydokument</label>
-            <label class="circle-button-green2" for="toggle2">Främja en positiv arbetskultur</label>
-            <label class="circle-button-green3" for="toggle3">Utbilda chefer och medarbetare</label>
+            <label class="circle-button-green1" for="toggle1">Exempel på åtgärder</label>
+            <label class="circle-button-green2" for="toggle2">Information till de anställda</label>
+            <label class="circle-button-green3" for="toggle3">Psykiskt påfrestande arbete</label>
 
             <!-- ANDRA RADEN -->
-            <label class="circle-button-green3" for="toggle4">Etablera tydliga rutiner för hantering</label>
-            <label class="circle-button-green1" for="toggle5">Genomföra regelbundna riskbedömningar</label>
+            <label class="circle-button-green3" for="toggle4">Arbetstidens förläggning</label>
+            <label class="circle-button-green1" for="toggle5">Vikten av dialog och samarbete</label>
         </div>
 
         <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
         <div class="content">
             <img src="../images/atgarder.png" alt="Bild för diskrimineringslagen">
-            <p><b>Utforma tydliga policydokument</b>
-            <br>En arbetsmiljöpolicy ska inkludera rutiner för att identifiera, hantera och följa upp kränkande särbehandling.</p>
+            <p><b>Exempel på åtgärder</b>
+            <br><br>- Minska arbetsmängd
+            <br>- Ändra prioriteringar
+            <br>- Variera arbetsuppgifter
+            <br>- Ge möjligheter till återhämtning
+            <br>- Öka bemanning eller förbättra kunskaper
+            <br>- Arbetsuppgifter och tydlighet</p>
         </div>
 
         <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
         <div class="content">
-            <img src="../images/mindrekonflikt.png" alt="Bild för lagen om anställningsskydd">
-            <p><b>Främja en positiv arbetskultur</b>
-            <br>Uppmuntra öppen kommunikation, respekt och samarbete på arbetsplatsen.</p>
+            <img src="../images/informera.png" alt="Bild för lagen om anställningsskydd">
+            <p><b>Information till de anställda</b>
+            <br><br>- Vad de ska göra
+            <br>- Vilket resultat som förväntas
+            <br>- Hur arbetet ska utföras
+            <br>- Vilka uppgifter som ska prioriteras vid tidsbrist
+            <br>- Vem de kan vända sig till för stöd
+            </p>
         </div>
 
         <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
         <div class="content">
-            <img src="../images/informera.png" alt="Bild för arbetstidslagen">
-            <p><b>Utbilda chefer och medarbetare</b>
-            <br>Utbildningar om konflikthantering, likabehandling och arbetsmiljö kan minska riskerna.</p>
+            <img src="../images/.png" alt="Bild för arbetstidslagen">
+            <p><b>Psykiskt påfrestande arbete</b>
+            <br>Vid arbetsuppgifter som är psykiskt krävande, som att hantera konflikter eller 
+            traumatiska situationer, ska arbetsgivaren ge stöd och utbildning samt ha rutiner för att 
+            hantera dessa situationer.</p>
         </div>
 
         <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
         <div class="content">
-            <img src="../images/atgarder.png" alt="Bild för förtroendemannalagen">
-            <p><b>Etablera tydliga rutiner för hantering</b>
-            <br>Det ska vara klart för alla hur man rapporterar misstänkt kränkande särbehandling och vilka åtgärder som vidtas.</p>
+            <img src="../images/arbetstid.png" alt="Bild för förtroendemannalagen">
+            <p><b>Arbetstidens förläggning</b>
+            <br>Arbetsgivaren ska planera arbetstider så att de inte leder till ohälsa. Risker finns vid:
+
+            <br><br>- Skiftarbete och nattarbete
+            <br>- Delade pass eller långa arbetspass
+            <br>- Förväntan att alltid vara nåbar
+            <br>- Återhämtning är särskilt viktig att prioritera</p>
         </div>
 
         <input type="radio" id="toggle5" name="toggle" class="toggle-radio">
         <div class="content">
-            <img src="../images/riskbedomning.png" alt="Bild för förtroendemannalagen">
-            <p><b>Genomföra regelbundna riskbedömningar</b>
-            <br>Identifiera potentiella riskområden och vidta proaktiva åtgärder.</p>
+            <img src="../images/samarbete.png" alt="Bild för förtroendemannalagen">
+            <p><b>Vikten av dialog och samarbete</b>
+            <br>Arbetsgivaren ska skapa en miljö där anställda kan påpeka höga krav, brister i resurser 
+            eller andra problem. Regelbunden dialog mellan chefer och anställda är avgörande för att 
+            upptäcka och lösa obalanser i arbetsbelastning.</p>
         </div>
 
     </div>
