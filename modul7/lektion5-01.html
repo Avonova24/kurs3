@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbetsgivarens ansvar</title>
+	<link rel="stylesheet" href="../styles.css">
+    <style>
+
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+
+        p {
+            padding-right: 15%;
+            padding-left: 15%;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+
+            justify-content: center;
+            
+            
+            max-width: 800px;
+
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            
+            background-color: #ffdcaf;
+            color: #005646;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            
+            width: 180px;
+            height: 100px;
+            padding: 20px;
+            
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .buttons:hover {
+            background-color: #00866d;
+            color: white;
+        }
+      
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            margin-top: 5px;
+            text-align: center;
+            max-width: 850px;
+            
+        }
+
+        .content ul {
+            margin-left: 20%;
+            text-align: left;
+            max-width: 550px;
+        }
+
+        .toggle-radio:checked + .content {
+            display: block;
+        }
+
+         /* CSS för att markera den aktiva knappen */
+         .buttons.active {
+            background-color: #00866d;
+            color: white;
+        }
+
+        ul li {
+            margin-left: 20px;
+        }
+    
+		
+    </style>
+</head>
+	
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+       	</div>
+        <h1>Arbetsgivarens ansvar</h1>
+    
+        <p>​Klicka på de gula korten nedan för att läsa mer om varje område som arbetsgivaren ansvarar för:</p>
+        
+      
+        <div class="buttons-container">
+            <label class="buttons" for="toggle1">Undersökning och riskbedömning</label>
+                    
+            <label class="buttons" for="toggle2">Arbetsställningar och rörelser</label>
+                    
+            <label class="buttons" for="toggle3">Manuell hantering och kraftutövning</label>
+                    
+            <label class="buttons" for="toggle4">Repetitivt arbete</label>
+
+            <label class="buttons" for="toggle5">Handlingsutrymme</label>
+
+            <label class="buttons" for="toggle6">Kunskap och information</label>
+        </div>
+        
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Undersökning och riskbedömning</b></p>
+                
+                <p>Arbetsgivaren ska undersöka arbetsmiljön för att se om det finns hälsofarliga eller 
+                tröttande moment, till exempel dåliga arbetsställningar eller repetitivt arbete. 
+                Synförhållanden ska också kontrolleras, eftersom de kan påverka hur arbetsställningar 
+                används. Riskbedömningen ska omfatta belastningens varaktighet, frekvens och intensitet, 
+                samt beakta fysiska, organisatoriska och psykosociala faktorer. Vid behov ska 
+                arbetsgivaren anlita företagshälsovård för sakkunnig hjälp.​</p>
+            </div>
+        
+            <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <p><b>Arbetsställningar och rörelser</b></p>
+                <p>Arbetsgivaren ska utforma arbetsuppgifter och arbetsplatser så att arbetstagare kan använda 
+                ergonomiska arbetsställningar. Man ska undvika uppgifter som kräver att man böjer eller vrider 
+                bålen, arbetar med händerna över axelhöjd eller utför kraftansträngningar i ogynnsamma positioner. 
+                Synhjälpmedel ska tillhandahållas om det behövs för att skapa gynnsamma arbetsförhållanden</p>
+            </div>
+        
+            <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <p><b>Manuell hantering och kraftutövning</b></p>
+                
+                <p>För att minska risken för belastningsskador, särskilt i ryggen, ska arbetsgivaren vidta åtgärder 
+                kring utformning av arbetsmiljön och använda tekniska hjälpmedel vid manuell hantering av tunga 
+                föremål. Om manuell hantering inte kan undvikas, ska särskilda ergonomiska faktorer beaktas.</p>
+            </div>
+        
+            <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Repetitivt arbete</b>
+                <br>​Arbetsgivaren ska undvika repetitivt och bundet arbete. Om sådant arbete ändå behövs ska riskerna 
+                förebyggas genom att skapa variation i arbetsuppgifterna, exempelvis genom arbetsväxling och pauser.</p>
+            </div>
+
+            <input type="radio" id="toggle5" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Handlingsutrymme</b>
+                <br>Arbetstagare ska ha möjlighet att påverka sitt arbete för att skapa rörelsevariation och 
+                möjlighet till återhämtning.</p>
+            </div>
+
+            <input type="radio" id="toggle6" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Kunskap och information</b>
+                <br>Arbetsgivaren ska se till att arbetstagarna har kunskap om ergonomiska arbetsställningar, användning av 
+                hjälpmedel och tidiga tecken på överbelastning. De ska också få information om vikten och tyngdpunkten på de laster som hanteras, samt träning i att använda rätt arbetsteknik.</p>
+            </div>
+	</div>
+
+    <script>
+        // JavaScript för att scrolla ner när ett alternativ väljs
+document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Javascript för att markera en knapp som aktiv
+document.querySelectorAll('.buttons').forEach(button => {
+    button.addEventListener('click', function() {
+
+// Ta bort aktiv klass från alla knappar
+    document.querySelectorAll('.buttons').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+// Lägg till aktiv klass på den klickade knappen
+        this.classList.add('active');
+    });
+});
+
+
+    </script>
+
+</body>
+</html>
