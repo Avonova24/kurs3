@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biologiska arbetsmiljörisker</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;   
+            padding-right: 5%;
+            
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .flexbox {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+        }
+
+        .image-container {
+            flex: 0.5;
+            text-align: end;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 450px;
+        }
+
+        
+
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flexbox">
+            <div class="column1">
+                <div class="avonova-logo">
+                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+                </div>
+                <h1>Biologiska arbetsmiljörisker</h1>
+                <p>Exempel på arbetsplatser där det är vanligt att smittrisker förekommer i arbetsmiljön:</p>
+
+                <ul>
+                    <li>Sjukhusavdelningar – Smitta från patienter eller omgivningen</li>
+                    <li>Sjukhuslaboratorier – Smitta från patientprover</li>
+                    <li>Veterinärverksamhet och djurvård – Smitta från djuren (zoonoser)</li>
+                    <li>Förskolor – Smitta från barnen</li>
+                    <li>Lantbruk – Smitta från djuren eller där djur har vistats (zoonoser)</li>
+                    <li>Särskilda boenden (SÄBO), hemtjänst – Smitta från brukare/boende</li>
+                    <li>Avloppsanläggningar – Smitta från avloppsvattnet</li>
+                    <li>Utomhusarbetsplatser – Smitta från djur eller deras avföring eller från insekter och spindeldjur</li>
+                </ul>
+
+            </div>
+
+            <div class="image-container">
+                <img src="../images/smitta.png" alt="Bild för smittad person">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up -->
+    <div class="popup" id="popup1">
+        <button class="close-btn" id="closePopup1">Stäng</button>
+        <div class="popup-content">
+            <h2>Vid omedelbar fara</h2>
+            <p>Om arbetstagaren upptäcker en omedelbar och allvarlig fara för liv eller hälsa i sitt arbete, ska detta 
+            genast rapporteras till arbetsgivaren eller skyddsombudet. Arbetstagaren har då rätt att avbryta sitt 
+            arbete tills besked ges om att det är säkert att återuppta. Ingen ersättningsskyldighet gäller för skador 
+            som uppstår under väntetiden.</p>
+        </div>
+    </div>
+
+    <!-- Overlay-lagret för att dimma sidan -->
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        
+
+        // Hantering av pop-up för första knappen
+        const openPopupBtn1 = document.getElementById('openPopup1');
+        const closePopupBtn1 = document.getElementById('closePopup1');
+        const popup1 = document.getElementById('popup1');
+        const overlay = document.getElementById('overlay');
+
+        openPopupBtn1.addEventListener('click', function() {
+            popup1.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn1.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Stäng popup om man klickar på overlayn
+        overlay.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+    </script>
+</body>
+</html>
