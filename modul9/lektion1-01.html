@@ -10,9 +10,7 @@
         .container {
             display: flex;
             justify-content: center;
-            flex-direction: column;   
-            padding-right: 5%;
-            position: relative; /* För att placera den expanderade bilden korrekt */
+            flex-direction: column; 
         }
 
         h1 {
@@ -21,12 +19,13 @@
 
         h2 {
             font-size: 19px;
+            margin-bottom: 0;
         }
 
         .flexbox {
             display: flex;
             width: 100%;
-            align-items: center;
+            align-items: start;
         }
 
         .column1 {
@@ -42,26 +41,10 @@
         }
 
         .image-container img {
-            width: 350px;
+            width: 300px;
         }
 
-        
-
-        .bildtext {
-            margin: 0;
-            padding: 0;
-            font-size: 15px;
-        }
-
-        .button-link {
-            margin-top: 4%;
-        }
-    
-        /* Visa overlay */
-        .show {
-            display: block;
-        }
-
+       
     </style>
 </head>
 <body>
@@ -72,6 +55,7 @@
                     <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
                 </div>
                 <h1>Organisering av arbetsanpassning</h1>
+                
                 <p>Som arbetsgivare ska du vid behov genomföra individuella åtgärder i arbetsmiljön för 
                 att förebygga sjukfrånvaro och underlätta för arbetstagare med nedsatt arbetsförmåga att 
                 utföra sina vanliga arbetsuppgifter eller återgå till arbetet efter sjukskrivning. Det 
@@ -82,22 +66,22 @@
                 ska arbetsgivaren anlita företagshälsovård eller annan sakkunnig hjälp. Detta säkerställer att 
                 anpassningen baseras på expertis och gynnar både arbetsplatsen och den berörda arbetstagaren.</p>
 
-                <h2>Rutiner för arbetsanpassning</h2>
-                <p>Arbetsgivaren ska se till att det finns rutiner för att ta emot information om behov av arbetsanpassning.</p>
+               
+            </div>
 
-                <p>Av rutinerna ska det framgå:</p>
+            <div class="image-container">
+                <img src="../images/arbetsanpassning.png" alt="Bild för individuell arbetsanpassning">
+                
+            </div>
+        </div>
+        <h2>Rutiner för arbetsanpassning</h2>
+                <p>Arbetsgivaren ska se till att det finns rutiner för att ta emot information om behov av arbetsanpassning. Av rutinerna ska det framgå:</p>
+                
                 <ul>
                     <li>Vem som ska ta emot informationen</li>
                     <li>Vad mottagaren ska göra</li>
                     <li>Hur informationen kommer att hanteras</li>
                 </ul>
-            </div>
-
-            <div class="image-container">
-                <img src="../images/.png" alt="Bild för individuell arbetsanpassning">
-                
-            </div>
-        </div>
     </div>
 
 </body>
