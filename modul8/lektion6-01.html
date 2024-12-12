@@ -10,8 +10,7 @@
         .container {
             display: flex;
             justify-content: center;
-            flex-direction: column;   
-            padding-right: 5%;
+            flex-direction: column; 
             position: relative; /* För att placera den expanderade bilden korrekt */
         }
 
@@ -21,6 +20,7 @@
 
         h2 {
             font-size: 19px;
+            margin-bottom: 0;
         }
 
         .flexbox {
@@ -37,30 +37,16 @@
 
         .image-container {
             flex: 0.5;
-            text-align: end;
-            position: relative;
+            
         }
 
         .image-container img {
-            width: 350px;
+            max-width: 300px;
         }
 
         
 
-        .bildtext {
-            margin: 0;
-            padding: 0;
-            font-size: 15px;
-        }
-
-        .button-link {
-            margin-top: 4%;
-        }
     
-        /* Visa overlay */
-        .show {
-            display: block;
-        }
 
     </style>
 </head>
@@ -72,6 +58,7 @@
                     <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
                 </div>
                 <h1>Kränkande särbehandling</h1>
+                
                 <p>Det är arbetsgivarens ansvar att skapa en sund och säker arbetsmiljö, där kränkande 
                 särbehandling inte bara förebyggs utan också hanteras snabbt och effektivt när det 
                 uppstår. Här är en mer utförlig sammanfattning och analys av ämnet:</p>
@@ -85,7 +72,15 @@
                 handlingarna är, desto större skada riskerar att uppstå. Om handlingarna eskalerar och pågår 
                 över en längre period kan det övergå i mobbning.</p>
 
-                <h2>Vad är mobbning?</h2>
+                
+            </div>
+
+            <div class="image-container">
+                <img src="../images/mobbing.png" alt="Bild">
+                
+            </div>
+        </div>
+        <h2>Vad är mobbning?</h2>
 
                 <p>Mobbning är en allvarligare form av kränkande särbehandling och kännetecknas av:</p>
 
@@ -95,13 +90,6 @@
                     <li>Maktobalans: En ojämn maktrelation mellan förövare och offer, där offret saknar förmåga att försvara sig</li>
                     <li>Konsekvens: Handlingarna leder till att offret blir isolerat och uteslutet från den sociala gemenskapen</li>
                 </ul>
-            </div>
-
-            <div class="image-container">
-                <img src="../images/.png" alt="Bild">
-                
-            </div>
-        </div>
     </div>
 
     
