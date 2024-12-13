@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sjukskrivningar i Sverige</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .flexbox {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+            margin-right: 5%;
+        }
+
+        .image-container {
+            flex: 0.5;
+            text-align: end;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 300px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+        </div>
+        <h1>Sjukskrivningar i Sverige</h1>
+        <div class="flexbox">
+            <div class="column1">
+               
+                <p>Sjukskrivningarna i Sverige har förändrats över tid. I början av 2000-talet fanns över 
+                300 000 pågående sjukfall varje månad. Antalet minskade fram till 2010 men har sedan ökat 
+                igen. Sjukskrivningar varierar också under året, med fler sjukfall under vinterhalvåret än 
+                på sommaren. <b class="green">Kvinnor är sjukskrivna oftare än män</b>.</p>
+
+                <p>I december 2022 hade <b class="green">197 950 personer</b> sjukpenning eller rehabiliteringspenning från 
+                Försäkringskassan. Av dessa var 65 procent kvinnor.</p>
+
+                <p>Nästan hälften av alla pågående sjukfall vid samma tidpunkt berodde på psykiatriska 
+                diagnoser. Psykisk ohälsa är också den vanligaste orsaken till sjukskrivning för personer 
+                i åldern <b class="green">30–39 år</b>.</p> 
+                
+                <p>Källa: Försäkringskassan</p>
+            </div>
+
+            <div class="image-container">
+                <img src="../images/sjukskrivning.png" alt="Bild">
+                
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

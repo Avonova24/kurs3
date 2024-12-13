@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tillvägagångssätt vid arbetsanpassning</title>
+	<link rel="stylesheet" href="../styles.css">
+    <style>
+
+        .container {
+            text-align: center;
+            
+        }
+
+        p {
+            padding-right: 5%;
+            padding-left: 5%;
+        }
+
+        .buttons-container {
+            display: flex;
+            
+            justify-content: center;
+            
+            width: 100%;
+            max-width: 1000px;
+
+            
+            gap: 15px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            
+            background-color: #ffdcaf;
+            color: #005646;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            
+            width: 180px;
+            height: 100px;
+            padding: 20px;
+            
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .buttons:hover {
+            background-color: #00866d;
+            color: white;
+        }
+      
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            margin-top: 5px;
+            
+        }
+
+        .content ul {
+            margin-left: 20%;
+            text-align: left;
+        }
+
+        .toggle-radio:checked + .content {
+            display: block;
+        }
+
+         /* CSS för att markera den aktiva knappen */
+         .buttons.active {
+            background-color: #00866d;
+            color: white;
+        }
+
+        .button-link {
+            margin-top: 4%;
+            cursor: pointer;
+        }
+    
+		
+    </style>
+</head>
+	
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+       	</div>
+        <h1>Tillvägagångssätt vid arbetsanpassning</h1>
+        <p><b class="green">Arbetsgivarens steg vid arbetsanpassning</b>
+        <br>När ett behov av arbetsanpassning har konstaterats ska arbetsgivaren:</p>
+            
+        
+      
+        <div class="buttons-container">
+            <label class="buttons" for="toggle1">1. <br>Utreda och besluta om åtgärder</label>
+                    
+            <label class="buttons" for="toggle2">2. <br>Genomföra anpassningen</label>
+                    
+            <label class="buttons" for="toggle3">3. <br>Följa upp och kontrollera</label>
+                    
+            <label class="buttons" for="toggle4">4. <br>Justera vid behov</label>
+        </div>
+        
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Utreda och besluta om åtgärder</b>
+                <br>Så snart som möjligt ska arbetsgivaren utreda behovet och fastställa hur arbetsanpassningen ska utformas</p>
+
+            </div>
+        
+            <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <p><b>Genomföra anpassningenr</b>
+                <br>Åtgärderna ska implementeras utan dröjsmål, så långt det är praktiskt möjligt.</p>
+                    
+            </div>
+        
+            <input type="radio" id="toggle3" name="toggle" class="toggle-radio">
+                   
+            <div class="content">
+                <p><b>Följa upp och kontrollera</b>
+                <br>Anpassningens effektivitet ska följas upp kontinuerligt för att säkerställa att den fungerar som avsett.</p>
+            </div>
+        
+            <input type="radio" id="toggle4" name="toggle" class="toggle-radio">
+                    
+            <div class="content">
+                <p><b>Justera vid behov</b>
+
+                    <br>Om arbetsanpassningen inte ger önskat resultat ska justeringar göras för att uppnå bättre effekt.</p>
+            </div>
+	</div>
+
+     <!-- Pop-up för relevanta kapitel -->
+     <div class="popup" id="popup1">
+        <button class="close-btn" id="closePopup1">Stäng</button>
+        <div class="popup-content">
+            <h2>Rapport från Umeå Universitet (2019:3)</h2>
+            <ul>
+                <li><b>Stress: 772 dödsfall</b></li>
+                <li><b>Skiftarbete: 728 dödsfall</b></li>
+                <li><b>Damm (KOL): 421 dödsfall</b></li>
+                <li><b>Asbest: 268 dödsfall</b></li>
+                <li><b>Kvarts: 125 dödsfall</b></li>
+                <li><b>Motoravgaser: 547 dödsfall</b></li>   
+                <li><b>Passiv rökning: 195 dödsfall</b></li>
+                <li><b>Svetsrök: 71 dödsfall</b></li>
+                <li><b>Buller (mindre säkert samband): 777 dödsfall</b></li>
+                <li><b>Ihållande tungt arbete (mindre säkert samband): 549 dödsfall</b></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Overlay-lagret för att dimma sidan -->
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        // JavaScript för att scrolla ner när ett alternativ väljs
+document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Javascript för att markera en knapp som aktiv
+document.querySelectorAll('.buttons').forEach(button => {
+    button.addEventListener('click', function() {
+
+// Ta bort aktiv klass från alla knappar
+    document.querySelectorAll('.buttons').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+// Lägg till aktiv klass på den klickade knappen
+        this.classList.add('active');
+    });
+});
+
+// Hantering av pop-up för första knappen
+const openPopupBtn1 = document.getElementById('openPopup1');
+        const closePopupBtn1 = document.getElementById('closePopup1');
+        const popup1 = document.getElementById('popup1');
+        const overlay = document.getElementById('overlay');
+
+        openPopupBtn1.addEventListener('click', function() {
+            popup1.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closePopupBtn1.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+    // Stäng popup om man klickar på overlayn
+        overlay.addEventListener('click', function() {
+            popup1.classList.remove('show');
+            popup2.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+
+
+    </script>
+
+</body>
+</html>
