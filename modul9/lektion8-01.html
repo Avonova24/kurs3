@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innehåll i rehabiliteringsplanen</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;   
+        }
+
+        h1, p  {
+            text-align: center;
+            padding-right: 10%;
+            padding-left: 10%;
+        }
+
+        .circle-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 35px;
+            margin-top: 15px;
+            max-width: 800px;
+        }
+
+        .circle-button-green1, .circle-button-green2, .circle-button-green3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            width: 130px;
+            height: 130px;
+            padding: 14px;
+            
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            
+            border-radius: 50%;
+            border: none;
+            
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .circle-button-green1 {
+            background-color: #00866d;
+        }
+
+        .circle-button-green2 {
+            background-color: #005646;
+        }
+
+        .circle-button-green3 {
+            background-color: #01332a;
+
+        }
+
+        .circle-button-green1:hover, .circle-button-green2:hover, .circle-button-green3:hover {
+            background-color: #aff0e5;
+            color: #01332a;
+        }
+
+        .toggle-radio {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            
+            max-width: 1000px;
+            margin-top: 5%;  
+        }
+
+        .toggle-radio:checked + .content {
+            display: flex;
+        }
+
+        .content img {
+            width: 200px;
+            margin: 0;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 16px;
+            text-align: center;
+            padding: 0 5% 0 2%;
+            
+        }
+
+        .green {
+            color: #005646;
+        }
+
+           /* CSS för att markera den aktiva knappen */
+           .circle-button-green1.active, .circle-button-green2.active, .circle-button-green3.active {
+        background-color: #aff0e5;
+        color: #01332a;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="avonova-logo">
+            <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+        </div>
+        <h1>Innehåll i rehabiliteringsplanen</h1>
+        <p>Rehabiliteringsplanen ska innehålla en tydlig beskrivning av:</p>
+        
+        <div class="circle-container">
+            <!-- FÖRSTA RADEN -->
+            <label class="circle-button-green1" for="toggle1">Ordinarie arbete och arbetsuppgifter</label>
+            <label class="circle-button-green2" for="toggle2">Åtgärder för att underlätta återgång i arbete</label>
+            
+            
+        </div>
+
+        <input type="radio" id="toggle1" name="toggle" class="toggle-radio">
+        <div class="content">
+            <p><b>Ordinarie arbete och arbetsuppgifter</b>
+            <br>Specificera arbetstagarens nuvarande roll och arbetsuppgifter.</p>
+        </div>
+
+        <input type="radio" id="toggle2" name="toggle" class="toggle-radio">
+        <div class="content">
+            <p><b class="green">Åtgärder för att underlätta återgång i arbete</b>
+            <br>Identifiera åtgärder som kan stödja en smidig återgång, till exempel:
+            
+            <br><br><b>Anpassning av resor till och från arbetet</b>
+            <br>Exempelvis möjlighet till distansarbete eller anpassade färdmedel
+            
+            <br><br><b>Anpassning av arbetstid</b>
+            <br>Till exempel deltid eller flexibla arbetstider
+            
+            <br><br><b>Anpassning av arbetsplats</b>
+            <br>Förändringar i den fysiska miljön, som ergonomiska hjälpmede</li>
+            
+            <br><br><b>Anpassning av arbetsuppgifter</b>
+            <br>Förändring av arbetsinnehåll för att matcha arbetstagarens förmåga</li>
+            
+            <br><br><b>Hjälpmedel</b>
+            <br>Teknisk eller annan utrustning som underlättar utförandet av arbetsuppgifter</li>
+            
+            <br><br><b>Annat arbete</b>
+            <br>Om möjligt erbjuda alternativa roller eller arbetsuppgifter inom organisationen</li>
+            
+            <br><br><b>Utbildning, upplärning eller handledning</b>
+            <br>Stöd för att uppdatera eller förbättra arbetstagarens kompetens</li>
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript för att scrolla ner när ett alternativ väljs
+document.querySelectorAll('.toggle-radio').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Javascript för att markera en knapp som aktiv
+document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(button => {
+    button.addEventListener('click', function() {
+        // Ta bort aktiv klass från alla knappar
+        document.querySelectorAll('.circle-button-green1, .circle-button-green2, .circle-button-green3').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Lägg till aktiv klass på den klickade knappen
+        this.classList.add('active');
+    });
+});
+
+
+    </script>
+    
+</body>
+</html>
