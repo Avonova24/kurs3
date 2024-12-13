@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genomförandet av arbetsanpassning​</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;   
+            position: relative; /* För att placera den expanderade bilden korrekt */
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 19px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin-top: 30px;
+        }
+
+        .flexbox {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .column1 {
+            text-align: left;
+            flex: 1.5;
+            margin-right: 5%;
+        }
+
+        .image-container {
+            flex: 0.5;
+            text-align: end;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 300px;
+        }
+
+        
+
+        .bildtext {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+
+        .button-link {
+            margin-top: 4%;
+        }
+    
+        .image-container img.expandable {
+            width: 330px;
+            margin-top: 15%;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        /* Hover-effekt för den klickbara bilden */
+        .image-container img.expandable:hover {
+            transform: scale(1.05); /* Expanderar bilden lite */
+        }
+
+        .bildtext {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+
+        /* Separat styling för illustrationen */
+        .image-container .illustration {
+            width: 250px;
+            margin-bottom: 0;
+            margin-top: 10px;
+            padding-bottom: 0;
+            
+           
+        }
+
+        /* Stilen för den expanderade bilden som täcker hela containern */
+        .expanded-image {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+            max-width: 1000px;  /* Täcker 90% av viewport-bredden */
+            height: auto;
+            max-height: 90vh; /* Justera för att hålla inom viewport-höjden */
+            
+            z-index: 1000; /* Lägger bilden framför allt */
+            
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        /* Visa overlay */
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flexbox">
+            <div class="column1">
+                <div class="avonova-logo">
+                    <img src="../images/Avonova_Logo_Green.png" alt="Avonova Logo" width="80">
+                </div>
+                <h1>Genomförandet av arbetsanpassning​</h1>
+                <p>Arbetsanpassning kan genomföras på många olika sätt. Det kan till exempel innebära:</p>
+
+                <ul>
+                    <li>Ändrade arbetstider</li>
+                    <li>Anpassning av arbetsuppgifter</li>
+                    <li>Användning av arbetshjälpmedel</li>
+                    <li>Socialt stöd</li>
+                    <li>Särskilda arbetsinstruktioner</li>
+                    <li>Personligt anpassad skyddsutrustning</li>
+                </ul>
+
+            </div>
+            <div class="image-container">
+                <img src="../images/arbetsanpassningbild.png" alt="Stapeldiagram dödsfall på arbetsplatsen" class="expandable" id="expandableImage">
+                
+                <!-- Illustration som får sin egen klass och styling -->
+                <img src="../images/klicka3.png" alt="Klicka på bilden instruktion" class="illustration">
+            </div>
+        </div>
+
+               
+
+                <h2>Identifiera behov av arbetsanpassning</h2>
+                <p>Arbetsgivaren ska kontinuerligt undersöka om någon arbetstagare behöver 
+                arbetsanpassning. Detta kräver en aktiv dialog med arbetstagarna samt rutiner för att 
+                fånga upp signaler om behov.</p>
+
+                <h2>Delaktighet från arbetstagaren</h2>
+                <p>Berörd arbetstagare ska ges möjlighet att medverka i utredningen, utformningen och 
+                uppföljningen av arbetsanpassningen. Detta stärker anpassningens kvalitet och bidrar 
+                till en lösning som är realistisk och genomförbar.</p>
+
+        
+    </div>
+
+    <!-- Overlay-element som skapar bakgrundsdimning -->
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        const image = document.getElementById('expandableImage');
+        const overlay = document.getElementById('overlay');
+
+        image.addEventListener('click', function() {
+            const expandedImage = document.createElement('img');
+            expandedImage.src = image.src;
+            expandedImage.classList.add('expanded-image');
+
+            // Lägg till den expanderade bilden på body
+            document.body.appendChild(expandedImage);
+
+            // Visa overlay
+            overlay.classList.add('show');
+
+            // Stäng bilden och overlay om man klickar på den expanderade bilden
+            expandedImage.addEventListener('click', function() {
+                expandedImage.remove();
+                overlay.classList.remove('show');
+            });
+        });
+    </script>
+
+    
+</body>
+</html>
+    
+        
+       
